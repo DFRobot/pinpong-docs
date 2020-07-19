@@ -1,0 +1,403 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="zh-cn" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="zh-cn" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>项目7 模拟交通灯 &mdash; pinpong 0.1 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/doctools.js"></script>
+        <script src="../../_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="项目8 桌面气象站" href="桌面气象站.html" />
+    <link rel="prev" title="项目6 噪声检测仪" href="噪声检测仪.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../index.html" class="icon icon-home"> pinpong
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">pinpong介绍</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../0.pinpong介绍/简介.html">简介</a></li>
+</ul>
+<p class="caption"><span class="caption-text">pinpong教程</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../安装教程/index.html">安装教程</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">进阶教程</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="项目准备.html">项目前置知识</a></li>
+<li class="toctree-l2"><a class="reference internal" href="LED闪烁.html">项目1 LED闪烁</a></li>
+<li class="toctree-l2"><a class="reference internal" href="神奇的按键.html">项目2 神奇的按键</a></li>
+<li class="toctree-l2"><a class="reference internal" href="调光台灯.html">项目3 调光台灯</a></li>
+<li class="toctree-l2"><a class="reference internal" href="智能节能灯.html">项目4 智能节能灯</a></li>
+<li class="toctree-l2"><a class="reference internal" href="近视警报器.html">项目5 近视警示器</a></li>
+<li class="toctree-l2"><a class="reference internal" href="噪声检测仪.html">项目6 噪声检测仪</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">项目7 模拟交通灯</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id2">一、概述</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id3">二、项目实施</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#lcd">（1）驱动LCD显示屏</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#led">（2）加入LED和倒计时</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#id8">三、代码分析</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id9">四、硬件分析</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="桌面气象站.html">项目8 桌面气象站</a></li>
+<li class="toctree-l2"><a class="reference internal" href="游园人数统计.html">项目9 游园人数统计</a></li>
+<li class="toctree-l2"><a class="reference internal" href="定时浇花装置.html">项目10 定时浇花装置</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../高级教程/index.html">高级教程</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../经典案例/index.html">经典案例</a></li>
+</ul>
+<p class="caption"><span class="caption-text">pinpong示例</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../2.pinpong示例/index1.html">基础库示例</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../2.pinpong示例/index2.html">常用库示例</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../2.pinpong示例/index3.html">扩展库示例</a></li>
+</ul>
+<p class="caption"><span class="caption-text">pinpong更新记录</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../4.pinpong更新记录/index.html">更新记录</a></li>
+</ul>
+<p class="caption"><span class="caption-text">FAQ常见问题</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../5.FAQ常见问题/index.html">常见问题</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">pinpong</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="index.html">进阶教程</a> &raquo;</li>
+        
+      <li>项目7 模拟交通灯</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../../_sources/1.pinpong教程/进阶教程/模拟交通灯.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="id1">
+<h1>项目7 模拟交通灯<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="id2">
+<h2>一、概述<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
+<p>交通灯我们经常能在路口上见到，已经习以为常，但是你知道它是如何工作的，如何实现交通灯的功能呢？接下来跟着我们来学习一下吧。</p>
+<img alt="../../_images/7th.png" src="../../_images/7th.png" />
+</div>
+<div class="section" id="id3">
+<h2>二、项目实施<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="lcd">
+<h3>（1）驱动LCD显示屏<a class="headerlink" href="#lcd" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id4">
+<h4>硬件准备：<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h4>
+<p>主控：Arduino UNO、IO 传感器扩展板 V7.1</p>
+<p>模块：1602LCD显示屏</p>
+<p>连接线：TypeAtoB方口USB连接线</p>
+<img alt="../../_images/0711.png" src="../../_images/0711.png" />
+<ul class="simple">
+<li><p>将1602LCD显示屏接入IIC接口</p></li>
+</ul>
+</div>
+<div class="section" id="id5">
+<h4>程序编写：<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h4>
+<p>1、打开示例程序lcd1602.py，运行程序。（关于1602的示例程序有两个，一个是lcd1602.py一个是rgb1602.py,本项目使用的是单色背光的1062模块，所以使用lcd1602.py。</p>
+<img alt="../../_images/0712.png" src="../../_images/0712.png" />
+<img alt="../../_images/0713.png" src="../../_images/0713.png" />
+<p>运行效果</p>
+<p>显示屏上第一行显示hello world，第二行显示1234，在屏幕上滚动播放。</p>
+<p>2、如果我们想要修改屏幕上的内容，还有文字显示的位置，我们可以根据内容进行调整。</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1">#实验效果：I2C LCD1602控制</span>
+<span class="c1">#接线：使用windows或linux电脑连接一块arduino主控板，LCD1602显示屏接到I2C口SCL及SDA</span>
+<span class="kn">import</span> <span class="nn">time</span>
+<span class="kn">from</span> <span class="nn">pinpong.pinpong</span> <span class="kn">import</span> <span class="n">PinPong</span>
+<span class="kn">from</span> <span class="nn">pinpong.libs.lcd1602_i2c</span> <span class="kn">import</span> <span class="n">LCD1602_I2C</span> <span class="c1">#从libs中导入lcd1602_i2c库</span>
+
+<span class="n">board</span> <span class="o">=</span> <span class="n">PinPong</span><span class="p">(</span><span class="s2">&quot;uno&quot;</span><span class="p">)</span>  <span class="c1">#初始化，选择板型和端口号，不输入则留空进行自动识别</span>
+
+<span class="n">lcd</span> <span class="o">=</span> <span class="n">LCD1602_I2C</span><span class="p">(</span><span class="n">board</span><span class="p">,</span> <span class="mh">0x20</span><span class="p">)</span> <span class="c1">#初始化LCD的I2C地址</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;I2C LCD1602 TEST...&quot;</span><span class="p">)</span>
+<span class="n">lcd</span><span class="o">.</span><span class="n">backlight</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>  <span class="c1">#打开背光</span>
+<span class="n">lcd</span><span class="o">.</span><span class="n">clear</span><span class="p">()</span>   <span class="c1">#清屏</span>
+<span class="n">lcd</span><span class="o">.</span><span class="n">set_cursor</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">0</span><span class="p">)</span>  <span class="c1">#设置光标位置</span>
+<span class="n">lcd</span><span class="o">.</span><span class="n">print</span><span class="p">(</span><span class="s2">&quot;Hello PinPong&quot;</span><span class="p">)</span> <span class="c1">#显示 &quot;Hello PinPong&quot;,1602屏像素点少，不能显示汉字</span>
+
+<span class="n">lcd</span><span class="o">.</span><span class="n">set_cursor</span><span class="p">(</span><span class="mi">6</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span>  <span class="c1">#设置光标位置</span>
+<span class="n">lcd</span><span class="o">.</span><span class="n">print</span><span class="p">(</span><span class="mi">6666</span><span class="p">)</span> <span class="c1">#显示数字6666</span>
+
+<span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+  <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+  <span class="n">lcd</span><span class="o">.</span><span class="n">scroll_left</span><span class="p">()</span> <span class="c1">#滚动显示</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="led">
+<h3>（2）加入LED和倒计时<a class="headerlink" href="#led" title="Permalink to this headline">¶</a></h3>
+<p>大家可能仔细回顾一下交通灯的灯光切换方式，在红灯时，倒计时结束会变为绿灯，当绿灯倒计时结束时会先切到黄灯几秒后再切换到红灯亮起，依据这个规律，我们让LCD显示倒计时秒数。</p>
+<div class="section" id="id6">
+<h4>硬件准备：<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h4>
+<p>主控：Arduino UNO、IO 传感器扩展板 V7.1</p>
+<p>模块：1602LCD显示屏、红色黄色绿色LED模块</p>
+<p>连接线：TypeAtoB方口USB连接线</p>
+<img alt="../../_images/0721.png" src="../../_images/0721.png" />
+<ul class="simple">
+<li><p>将1602LCD显示屏接入IIC接口</p></li>
+<li><p>将红色LED灯模块接D13数字引脚、绿色LED灯模块接D11数字引脚、黄色LED灯模块接D7数字引脚</p></li>
+</ul>
+</div>
+<div class="section" id="id7">
+<h4>程序编写：<a class="headerlink" href="#id7" title="Permalink to this headline">¶</a></h4>
+<p>1、导入必要库和模块，参考之前使用过LED灯的案例加上本次使用的LCD屏所需的部分。</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">time</span>
+<span class="kn">from</span> <span class="nn">pinpong.pinpong</span> <span class="kn">import</span> <span class="n">PinPong</span>
+<span class="kn">from</span> <span class="nn">pinpong.pinpong</span> <span class="kn">import</span> <span class="n">PinPong</span><span class="p">,</span><span class="n">Pin</span>
+<span class="kn">from</span> <span class="nn">pinpong.libs.lcd1602_i2c</span> <span class="kn">import</span> <span class="n">LCD1602_I2C</span>
+</pre></div>
+</div>
+<p>2、然后对需要用到的功能进行初始化设置。</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">board</span> <span class="o">=</span> <span class="n">PinPong</span><span class="p">(</span><span class="s2">&quot;uno&quot;</span><span class="p">)</span>
+<span class="n">ledR</span> <span class="o">=</span> <span class="n">Pin</span><span class="p">(</span><span class="n">board</span><span class="p">,</span> <span class="n">Pin</span><span class="o">.</span><span class="n">D13</span><span class="p">,</span> <span class="n">Pin</span><span class="o">.</span><span class="n">OUT</span><span class="p">)</span>
+<span class="n">ledG</span> <span class="o">=</span> <span class="n">Pin</span><span class="p">(</span><span class="n">board</span><span class="p">,</span> <span class="n">Pin</span><span class="o">.</span><span class="n">D11</span><span class="p">,</span> <span class="n">Pin</span><span class="o">.</span><span class="n">OUT</span><span class="p">)</span>
+<span class="n">ledY</span> <span class="o">=</span> <span class="n">Pin</span><span class="p">(</span><span class="n">board</span><span class="p">,</span> <span class="n">Pin</span><span class="o">.</span><span class="n">D7</span><span class="p">,</span> <span class="n">Pin</span><span class="o">.</span><span class="n">OUT</span><span class="p">)</span>
+<span class="n">lcd</span> <span class="o">=</span> <span class="n">LCD1602_I2C</span><span class="p">(</span><span class="n">board</span><span class="p">,</span> <span class="mh">0x20</span><span class="p">)</span>
+<span class="n">lcd</span><span class="o">.</span><span class="n">backlight</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>3、设置一段红灯的倒计时功能，另外两种灯用相同的方法设置。</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">30</span><span class="p">,</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="o">-</span><span class="mi">1</span><span class="p">):</span> <span class="c1">#设置倒计时的数值</span>
+   <span class="n">lcd</span><span class="o">.</span><span class="n">set_cursor</span><span class="p">(</span><span class="mi">7</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span>  <span class="c1">#设置光标位置</span>
+   <span class="n">lcd</span><span class="o">.</span><span class="n">print</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>         <span class="c1">#让LCD显示倒计时数值</span>
+   <span class="n">ledR</span><span class="o">.</span><span class="n">value</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+   <span class="n">ledG</span><span class="o">.</span><span class="n">value</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+   <span class="n">ledY</span><span class="o">.</span><span class="n">value</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+   <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+   <span class="n">lcd</span><span class="o">.</span><span class="n">clear</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="id8">
+<h2>三、代码分析<a class="headerlink" href="#id8" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">time</span>
+<span class="kn">from</span> <span class="nn">pinpong.pinpong</span> <span class="kn">import</span> <span class="n">PinPong</span>
+<span class="kn">from</span> <span class="nn">pinpong.pinpong</span> <span class="kn">import</span> <span class="n">PinPong</span><span class="p">,</span><span class="n">Pin</span>
+<span class="kn">from</span> <span class="nn">pinpong.libs.lcd1602_i2c</span> <span class="kn">import</span> <span class="n">LCD1602_I2C</span> <span class="c1">#从libs中导入lcd1602_i2c库</span>
+
+<span class="n">board</span> <span class="o">=</span> <span class="n">PinPong</span><span class="p">(</span><span class="s2">&quot;uno&quot;</span><span class="p">)</span>  <span class="c1">#初始化，选择板型和端口号，不输入则留空进行自动识别</span>
+<span class="n">ledR</span> <span class="o">=</span> <span class="n">Pin</span><span class="p">(</span><span class="n">board</span><span class="p">,</span> <span class="n">Pin</span><span class="o">.</span><span class="n">D13</span><span class="p">,</span> <span class="n">Pin</span><span class="o">.</span><span class="n">OUT</span><span class="p">)</span> <span class="c1">#引脚初始化为电平输出</span>
+<span class="n">ledG</span> <span class="o">=</span> <span class="n">Pin</span><span class="p">(</span><span class="n">board</span><span class="p">,</span> <span class="n">Pin</span><span class="o">.</span><span class="n">D11</span><span class="p">,</span> <span class="n">Pin</span><span class="o">.</span><span class="n">OUT</span><span class="p">)</span> <span class="c1">#引脚初始化为电平输出</span>
+<span class="n">ledY</span> <span class="o">=</span> <span class="n">Pin</span><span class="p">(</span><span class="n">board</span><span class="p">,</span> <span class="n">Pin</span><span class="o">.</span><span class="n">D7</span><span class="p">,</span> <span class="n">Pin</span><span class="o">.</span><span class="n">OUT</span><span class="p">)</span> <span class="c1">#引脚初始化为电平输出</span>
+<span class="n">lcd</span> <span class="o">=</span> <span class="n">LCD1602_I2C</span><span class="p">(</span><span class="n">board</span><span class="p">,</span> <span class="mh">0x20</span><span class="p">)</span> <span class="c1">#初始化LCD的I2C地址</span>
+<span class="n">lcd</span><span class="o">.</span><span class="n">backlight</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>  <span class="c1">#打开背光</span>
+
+<span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+  <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">30</span><span class="p">,</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="o">-</span><span class="mi">1</span><span class="p">):</span> <span class="c1">#设置倒计时的数值</span>
+    <span class="n">lcd</span><span class="o">.</span><span class="n">set_cursor</span><span class="p">(</span><span class="mi">7</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span>  <span class="c1">#设置光标位置</span>
+    <span class="n">lcd</span><span class="o">.</span><span class="n">print</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>         <span class="c1">#让LCD显示倒计时数值</span>
+    <span class="n">ledR</span><span class="o">.</span><span class="n">value</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+    <span class="n">ledG</span><span class="o">.</span><span class="n">value</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+    <span class="n">ledY</span><span class="o">.</span><span class="n">value</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+    <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+    <span class="n">lcd</span><span class="o">.</span><span class="n">clear</span><span class="p">()</span>
+  <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">30</span><span class="p">,</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="o">-</span><span class="mi">1</span><span class="p">):</span>
+    <span class="n">lcd</span><span class="o">.</span><span class="n">set_cursor</span><span class="p">(</span><span class="mi">7</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span>
+    <span class="n">lcd</span><span class="o">.</span><span class="n">print</span><span class="p">(</span><span class="n">j</span><span class="p">)</span>
+    <span class="n">ledG</span><span class="o">.</span><span class="n">value</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+    <span class="n">ledR</span><span class="o">.</span><span class="n">value</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+    <span class="n">ledY</span><span class="o">.</span><span class="n">value</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+    <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+    <span class="n">lcd</span><span class="o">.</span><span class="n">clear</span><span class="p">()</span>
+  <span class="k">for</span> <span class="n">y</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="o">-</span><span class="mi">1</span><span class="p">):</span>
+    <span class="n">lcd</span><span class="o">.</span><span class="n">set_cursor</span><span class="p">(</span><span class="mi">7</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span>
+    <span class="n">lcd</span><span class="o">.</span><span class="n">print</span><span class="p">(</span><span class="n">y</span><span class="p">)</span>
+    <span class="n">ledG</span><span class="o">.</span><span class="n">value</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+    <span class="n">ledR</span><span class="o">.</span><span class="n">value</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+    <span class="n">ledY</span><span class="o">.</span><span class="n">value</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+    <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+    <span class="n">lcd</span><span class="o">.</span><span class="n">clear</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>for i in range（）的作用：</p>
+<p>range（）是一个函数，for i in range（）就是给 i 赋值，比如：</p>
+<p>for i in range（30）：</p>
+<p>就是把0~30依次赋值给i，在程序中加入的：</p>
+<p>for i in range（30，-1，-1）：</p>
+<p>是将0~30的数值顺序倒序，按30~0的顺序赋值给i。</p>
+</div>
+<div class="section" id="id9">
+<h2>四、硬件分析<a class="headerlink" href="#id9" title="Permalink to this headline">¶</a></h2>
+<p>什么LCD1602？</p>
+<p>LCD1602液晶显示器是广泛使用的一种字符型液晶显示模块。1602的意思是显示屏一行最多可以显示16个字符，一共有2行。</p>
+<p>我们使用的是已经集成了控制驱动电路的成品模，通过iic接口与主控板连接。</p>
+<img alt="../../_images/0730.jpg" src="../../_images/0730.jpg" />
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="桌面气象站.html" class="btn btn-neutral float-right" title="项目8 桌面气象站" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="噪声检测仪.html" class="btn btn-neutral float-left" title="项目6 噪声检测仪" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2020, DFRobot
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

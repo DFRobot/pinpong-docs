@@ -1,0 +1,404 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="zh-cn" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="zh-cn" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>项目5 近视警示器 &mdash; pinpong 0.1 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/doctools.js"></script>
+        <script src="../../_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="项目6 噪声检测仪" href="噪声检测仪.html" />
+    <link rel="prev" title="项目4 智能节能灯" href="智能节能灯.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../index.html" class="icon icon-home"> pinpong
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">pinpong介绍</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../0.pinpong介绍/简介.html">简介</a></li>
+</ul>
+<p class="caption"><span class="caption-text">pinpong教程</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../安装教程/index.html">安装教程</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">进阶教程</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="项目准备.html">项目前置知识</a></li>
+<li class="toctree-l2"><a class="reference internal" href="LED闪烁.html">项目1 LED闪烁</a></li>
+<li class="toctree-l2"><a class="reference internal" href="神奇的按键.html">项目2 神奇的按键</a></li>
+<li class="toctree-l2"><a class="reference internal" href="调光台灯.html">项目3 调光台灯</a></li>
+<li class="toctree-l2"><a class="reference internal" href="智能节能灯.html">项目4 智能节能灯</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">项目5 近视警示器</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id2">一、概述</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id3">二、项目实施</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id4">（1）使用超声波测距</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id7">（2）使用蜂鸣器模块</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id10">（3）完成近视警示器</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#id13">三、代码分析</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id14">四、硬件分析</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="噪声检测仪.html">项目6 噪声检测仪</a></li>
+<li class="toctree-l2"><a class="reference internal" href="模拟交通灯.html">项目7 模拟交通灯</a></li>
+<li class="toctree-l2"><a class="reference internal" href="桌面气象站.html">项目8 桌面气象站</a></li>
+<li class="toctree-l2"><a class="reference internal" href="游园人数统计.html">项目9 游园人数统计</a></li>
+<li class="toctree-l2"><a class="reference internal" href="定时浇花装置.html">项目10 定时浇花装置</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../高级教程/index.html">高级教程</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../经典案例/index.html">经典案例</a></li>
+</ul>
+<p class="caption"><span class="caption-text">pinpong示例</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../2.pinpong示例/index1.html">基础库示例</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../2.pinpong示例/index2.html">常用库示例</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../2.pinpong示例/index3.html">扩展库示例</a></li>
+</ul>
+<p class="caption"><span class="caption-text">pinpong更新记录</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../4.pinpong更新记录/index.html">更新记录</a></li>
+</ul>
+<p class="caption"><span class="caption-text">FAQ常见问题</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../5.FAQ常见问题/index.html">常见问题</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">pinpong</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="index.html">进阶教程</a> &raquo;</li>
+        
+      <li>项目5 近视警示器</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../../_sources/1.pinpong教程/进阶教程/近视警报器.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="id1">
+<h1>项目5 近视警示器<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="id2">
+<h2>一、概述<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
+<p>近视眼越来越多，抛开遗传因素，主要还是不良用眼习惯导致的。特别是弓腰驼背，埋头看书，但是知道归知道，真的坐下本来挺直的腰杆又不知不觉地趴在桌子上。</p>
+<p>为了健康，为了保护视力，我们用蜂鸣器和超声波传感器做一个简易近视警示器。</p>
+<img alt="../../_images/5th.png" src="../../_images/5th.png" />
+</div>
+<div class="section" id="id3">
+<h2>二、项目实施<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id4">
+<h3>（1）使用超声波测距<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id5">
+<h4>硬件准备：<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h4>
+<p>主控：Arduino UNO、IO 传感器扩展板 V7.1</p>
+<p>模块：超声波传感器</p>
+<p>连接线：TypeAtoB方口USB连接线</p>
+<img alt="../../_images/0501L.png" src="../../_images/0501L.png" />
+<ul class="simple">
+<li><p>接线引脚TRIG–D7 、ECHO–D8、 GND–GND 、+5v–VCC</p></li>
+</ul>
+</div>
+<div class="section" id="id6">
+<h4>程序编写：<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h4>
+<p>1、在示例程序中找到hcr04.py，并用IDLE打开，并修改端口号，或删去端口号，使用自动识别。</p>
+<img alt="../../_images/0511.png" src="../../_images/0511.png" />
+<p>2、摁下F5运行程序，查看效果。在新弹出的窗口中会显示超声波传感器测得的距离。</p>
+<img alt="../../_images/0512.png" src="../../_images/0512.png" />
+<p>注意：在程序运行时不可以拔掉与Arduino连接的USB线，且不能关闭新弹出的Python shell运行窗口，如果拔线或者关闭运行窗口，程序功能就会停止执行。</p>
+</div>
+</div>
+<div class="section" id="id7">
+<h3>（2）使用蜂鸣器模块<a class="headerlink" href="#id7" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id8">
+<h4>硬件准备：<a class="headerlink" href="#id8" title="Permalink to this headline">¶</a></h4>
+<p>主控：Arduino UNO、IO 传感器扩展板 V7.1</p>
+<p>模块：蜂鸣器模块</p>
+<p>连接线：TypeAtoB方口USB连接线</p>
+<img alt="../../_images/0502L.png" src="../../_images/0502L.png" />
+<ul class="simple">
+<li><p>蜂鸣器模块连接到D7引脚</p></li>
+</ul>
+</div>
+<div class="section" id="id9">
+<h4>程序编写：<a class="headerlink" href="#id9" title="Permalink to this headline">¶</a></h4>
+<p>1、在示例程序中找到buzzer.py，并用IDLE打开，并修改端口号。</p>
+<img alt="../../_images/0521.png" src="../../_images/0521.png" />
+<p>2、摁下F5运行程序，查看效果。在新弹出的窗口中会显示蜂鸣器的声音频率，蜂鸣器会按音阶递进响起。</p>
+<img alt="../../_images/0522.png" src="../../_images/0522.png" />
+<p>注意：在程序运行时不可以拔掉与Arduino连接的USB线，且不能关闭新弹出的Python shell运行窗口，如果拔线或者关闭运行窗口，程序功能就会停止执行。</p>
+</div>
+</div>
+<div class="section" id="id10">
+<h3>（3）完成近视警示器<a class="headerlink" href="#id10" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id11">
+<h4>硬件准备：<a class="headerlink" href="#id11" title="Permalink to this headline">¶</a></h4>
+<p>主控：Arduino UNO、IO 传感器扩展板 V7.1</p>
+<p>模块：蜂鸣器模块、超声波传感器</p>
+<p>连接线：TypeAtoB方口USB连接线</p>
+<p>硬件连接图：</p>
+<img alt="../../_images/0503L.png" src="../../_images/0503L.png" />
+<ul class="simple">
+<li><p>接线引脚TRIG–D7 、ECHO–D8、 GND–GND 、+5v–VCC</p></li>
+<li><p>将蜂鸣器模块接入D4引脚。</p></li>
+</ul>
+</div>
+<div class="section" id="id12">
+<h4>程序编写：<a class="headerlink" href="#id12" title="Permalink to this headline">¶</a></h4>
+<p>1、设计程序逻辑图</p>
+<img alt="../../_images/05log.png" src="../../_images/05log.png" />
+<p>2、导入必要的包和初始化设置。</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">sys</span>
+<span class="kn">import</span> <span class="nn">time</span>
+<span class="kn">from</span> <span class="nn">pinpong.pinpong</span> <span class="kn">import</span><span class="o">*</span>
+<span class="kn">from</span> <span class="nn">pinpong.libs.DFRobot_BUZZER</span> <span class="kn">import</span><span class="o">*</span>
+<span class="kn">from</span> <span class="nn">pinpong.libs.DFRobot_HCSR04</span> <span class="kn">import</span><span class="o">*</span>
+
+<span class="n">board</span> <span class="o">=</span> <span class="n">PinPong</span><span class="p">(</span><span class="s2">&quot;uno&quot;</span><span class="p">,</span><span class="s2">&quot;com5&quot;</span><span class="p">)</span>
+<span class="n">board</span><span class="o">.</span><span class="n">connect</span><span class="p">()</span>
+
+<span class="n">TRIGER_PIN</span> <span class="o">=</span> <span class="n">Pin</span><span class="o">.</span><span class="n">D7</span>
+<span class="n">ECHO_PIN</span> <span class="o">=</span> <span class="n">Pin</span><span class="o">.</span><span class="n">D8</span>
+<span class="n">BUZZERR_PIN</span> <span class="o">=</span> <span class="n">Pin</span><span class="o">.</span><span class="n">D4</span>
+
+<span class="n">sonar</span> <span class="o">=</span> <span class="n">DFRobot_HCSR04</span><span class="p">(</span><span class="n">board</span><span class="p">,</span><span class="n">Pin</span><span class="p">(</span><span class="n">board</span><span class="p">,</span><span class="n">TRIGER_PIN</span><span class="p">),</span><span class="n">Pin</span><span class="p">(</span><span class="n">board</span><span class="p">,</span><span class="n">ECHO_PIN</span><span class="p">))</span>
+<span class="n">buzzer</span> <span class="o">=</span> <span class="n">DFRobot_BUZZER</span><span class="p">(</span><span class="n">board</span><span class="p">,</span><span class="n">Pin</span><span class="p">(</span><span class="n">board</span><span class="p">,</span><span class="n">BUZZERR_PIN</span><span class="p">))</span>
+<span class="n">buzzer</span><span class="o">.</span><span class="n">freq</span><span class="p">(</span><span class="mi">200</span><span class="p">)</span>
+<span class="n">buzzer</span><span class="o">.</span><span class="n">off</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>3、加入逻辑判断部分。</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+    <span class="n">dis</span> <span class="o">=</span> <span class="n">sonar</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
+    <span class="nb">print</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">dis</span><span class="p">))</span>
+
+    <span class="k">if</span> <span class="n">dis</span> <span class="o">&lt;</span> <span class="mi">50</span><span class="p">:</span>
+        <span class="n">buzzer</span><span class="o">.</span><span class="n">on</span><span class="p">()</span>
+        <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">buzzer</span><span class="o">.</span><span class="n">off</span><span class="p">()</span>
+
+    <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>4、运行代码，当超声波传感器监测到距离小于50时，蜂鸣器会报警提示距离桌面太近。</p>
+<img alt="../../_images/0531.png" src="../../_images/0531.png" />
+</div>
+</div>
+</div>
+<div class="section" id="id13">
+<h2>三、代码分析<a class="headerlink" href="#id13" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">sys</span>
+<span class="kn">import</span> <span class="nn">time</span>
+<span class="kn">from</span> <span class="nn">pinpong.pinpong</span> <span class="kn">import</span><span class="o">*</span>
+<span class="kn">from</span> <span class="nn">pinpong.libs.DFRobot_BUZZER</span> <span class="kn">import</span><span class="o">*</span>
+<span class="kn">from</span> <span class="nn">pinpong.libs.DFRobot_HCSR04</span> <span class="kn">import</span><span class="o">*</span>  <span class="c1">#导入必要的库函数</span>
+
+<span class="n">board</span> <span class="o">=</span> <span class="n">PinPong</span><span class="p">(</span><span class="s2">&quot;uno&quot;</span><span class="p">,</span><span class="s2">&quot;com5&quot;</span><span class="p">)</span>
+<span class="n">board</span><span class="o">.</span><span class="n">connect</span><span class="p">()</span>                   <span class="c1">#初始化Aduino</span>
+
+<span class="n">TRIGER_PIN</span> <span class="o">=</span> <span class="n">Pin</span><span class="o">.</span><span class="n">D7</span>
+<span class="n">ECHO_PIN</span> <span class="o">=</span> <span class="n">Pin</span><span class="o">.</span><span class="n">D8</span>
+<span class="n">BUZZERR_PIN</span> <span class="o">=</span> <span class="n">Pin</span><span class="o">.</span><span class="n">D4</span>   <span class="c1">#初始化模块引脚</span>
+
+<span class="n">sonar</span> <span class="o">=</span> <span class="n">DFRobot_HCSR04</span><span class="p">(</span><span class="n">board</span><span class="p">,</span><span class="n">Pin</span><span class="p">(</span><span class="n">board</span><span class="p">,</span><span class="n">TRIGER_PIN</span><span class="p">),</span><span class="n">Pin</span><span class="p">(</span><span class="n">board</span><span class="p">,</span><span class="n">ECHO_PIN</span><span class="p">))</span><span class="c1">#定义超声波传感器</span>
+<span class="n">buzzer</span> <span class="o">=</span> <span class="n">DFRobot_BUZZER</span><span class="p">(</span><span class="n">board</span><span class="p">,</span><span class="n">Pin</span><span class="p">(</span><span class="n">board</span><span class="p">,</span><span class="n">BUZZERR_PIN</span><span class="p">))</span> <span class="c1">#定义蜂鸣器模块</span>
+<span class="n">buzzer</span><span class="o">.</span><span class="n">freq</span><span class="p">(</span><span class="mi">200</span><span class="p">)</span> <span class="c1">#初始化蜂鸣器频率</span>
+<span class="n">buzzer</span><span class="o">.</span><span class="n">off</span><span class="p">()</span>
+
+<span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+    <span class="n">dis</span> <span class="o">=</span> <span class="n">sonar</span><span class="o">.</span><span class="n">read</span><span class="p">()</span> <span class="c1">#读取超声波传感器距离</span>
+    <span class="nb">print</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">dis</span><span class="p">))</span>
+
+    <span class="k">if</span> <span class="n">dis</span> <span class="o">&lt;</span> <span class="mi">50</span><span class="p">:</span>
+        <span class="n">buzzer</span><span class="o">.</span><span class="n">on</span><span class="p">()</span>
+        <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">buzzer</span><span class="o">.</span><span class="n">off</span><span class="p">()</span>
+
+    <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="id14">
+<h2>四、硬件分析<a class="headerlink" href="#id14" title="Permalink to this headline">¶</a></h2>
+<p>1.认识超声波传感器</p>
+<p>目前主流的测距传感器有超声波测距传感器，红外线测距传感器，激光测距传感器和雷达传感器。其中，超声波传感器适用于大幅平面静止测距。普通超声波传感器测距范围约2cm~450cm。</p>
+<p>我们可以很清楚的看到实物超声波传感器上有 4 个角：VCC—5V 电源脚, Trig—出发控制端，Echo—接收端，GND—地段。图片中双探头传感器中，一个用来发送超声波，一个用来接收超声波。中间的单头超声波传感器即可以发送也可以接收超声波。这个传感器是我们接触的第一个四个引脚的传感器，使用的接线也比较特殊，后面的硬件连接需要做特殊处理。</p>
+<p>超声波传感器测量距离的过程，超声波发射器向某一方向发射超声波，同时开始计时；超声波在空气中传播，一旦碰到障碍物立即折返；超声波接收器接收到反射波，同时停止计时。那么距离就可以通过时间差来计算出来。</p>
+<img alt="../../_images/urm.jpg" src="../../_images/urm.jpg" />
+<p>2.认识蜂鸣器</p>
+<p>首先，我们对喇叭应该非常熟悉，常见的耳机就是两个小喇叭，还有收音机，MP3，PM4播放器，电视机音响的发生原件都是喇叭。喇叭也叫做扬声器，是电声转换期间，它可以把模拟电信号转换为声音信号，属于宽频率发声器件。</p>
+<p>而蜂鸣器是一体化的电子讯响器，可以在不同驱动波形下发出单调的声音，属于窄频率发声器件。我们可以通过改变频率设置蜂鸣器发声音高。</p>
+<p>从外在表现看，喇叭和蜂鸣器最大区别是喇叭可以发出各种声音，而蜂鸣器只能发出几种单调的声音。从内在发声原理来看,蜂鸣器是利用压电陶瓷将电信号转化为机械振动信号；扬声器是利用电磁铁将电信号转化为机械振动信号。</p>
+<img alt="../../_images/buzzer.jpg" src="../../_images/buzzer.jpg" />
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="噪声检测仪.html" class="btn btn-neutral float-right" title="项目6 噪声检测仪" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="智能节能灯.html" class="btn btn-neutral float-left" title="项目4 智能节能灯" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2020, DFRobot
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

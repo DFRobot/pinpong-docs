@@ -1,0 +1,317 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="zh-cn" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="zh-cn" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>进阶教程 &mdash; pinpong 0.1 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/doctools.js"></script>
+        <script src="../../_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="项目前置知识" href="项目准备.html" />
+    <link rel="prev" title="更新pinpong库" href="../安装教程/安装-更新.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../index.html" class="icon icon-home"> pinpong
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">pinpong介绍</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../0.pinpong介绍/简介.html">简介</a></li>
+</ul>
+<p class="caption"><span class="caption-text">pinpong教程</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../安装教程/index.html">安装教程</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">进阶教程</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="项目准备.html">项目前置知识</a></li>
+<li class="toctree-l2"><a class="reference internal" href="LED闪烁.html">项目1 LED闪烁</a></li>
+<li class="toctree-l2"><a class="reference internal" href="神奇的按键.html">项目2 神奇的按键</a></li>
+<li class="toctree-l2"><a class="reference internal" href="调光台灯.html">项目3 调光台灯</a></li>
+<li class="toctree-l2"><a class="reference internal" href="智能节能灯.html">项目4 智能节能灯</a></li>
+<li class="toctree-l2"><a class="reference internal" href="近视警报器.html">项目5 近视警示器</a></li>
+<li class="toctree-l2"><a class="reference internal" href="噪声检测仪.html">项目6 噪声检测仪</a></li>
+<li class="toctree-l2"><a class="reference internal" href="模拟交通灯.html">项目7 模拟交通灯</a></li>
+<li class="toctree-l2"><a class="reference internal" href="桌面气象站.html">项目8 桌面气象站</a></li>
+<li class="toctree-l2"><a class="reference internal" href="游园人数统计.html">项目9 游园人数统计</a></li>
+<li class="toctree-l2"><a class="reference internal" href="定时浇花装置.html">项目10 定时浇花装置</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../高级教程/index.html">高级教程</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../经典案例/index.html">经典案例</a></li>
+</ul>
+<p class="caption"><span class="caption-text">pinpong示例</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../2.pinpong示例/index1.html">基础库示例</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../2.pinpong示例/index2.html">常用库示例</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../2.pinpong示例/index3.html">扩展库示例</a></li>
+</ul>
+<p class="caption"><span class="caption-text">pinpong更新记录</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../4.pinpong更新记录/index.html">更新记录</a></li>
+</ul>
+<p class="caption"><span class="caption-text">FAQ常见问题</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../5.FAQ常见问题/index.html">常见问题</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">pinpong</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html">Docs</a> &raquo;</li>
+        
+      <li>进阶教程</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../../_sources/1.pinpong教程/进阶教程/index.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="id1">
+<h1>进阶教程<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h1>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="项目准备.html">项目前置知识</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="项目准备.html#id2">概述</a></li>
+<li class="toctree-l2"><a class="reference internal" href="项目准备.html#arduino">1.什么是Arduino？</a></li>
+<li class="toctree-l2"><a class="reference internal" href="项目准备.html#python">2.什么是Python？</a></li>
+<li class="toctree-l2"><a class="reference internal" href="项目准备.html#id3">3.如何编辑Python代码？</a></li>
+<li class="toctree-l2"><a class="reference internal" href="项目准备.html#pinpong">4.什么是pinpong库？</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="LED闪烁.html">项目1 LED闪烁</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="LED闪烁.html#id1">一、概述</a></li>
+<li class="toctree-l2"><a class="reference internal" href="LED闪烁.html#id2">二、项目实施</a></li>
+<li class="toctree-l2"><a class="reference internal" href="LED闪烁.html#id10">三、代码分析</a></li>
+<li class="toctree-l2"><a class="reference internal" href="LED闪烁.html#id11">四、硬件分析</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="神奇的按键.html">项目2 神奇的按键</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="神奇的按键.html#id2">一、概述</a></li>
+<li class="toctree-l2"><a class="reference internal" href="神奇的按键.html#id3">二、项目实施</a></li>
+<li class="toctree-l2"><a class="reference internal" href="神奇的按键.html#id10">三、代码分析</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="调光台灯.html">项目3 调光台灯</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="调光台灯.html#id2">一、概述</a></li>
+<li class="toctree-l2"><a class="reference internal" href="调光台灯.html#id3">二、项目实施</a></li>
+<li class="toctree-l2"><a class="reference internal" href="调光台灯.html#id10">三、代码分析</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="智能节能灯.html">项目4 智能节能灯</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="智能节能灯.html#id2">一、概述</a></li>
+<li class="toctree-l2"><a class="reference internal" href="智能节能灯.html#id3">二、项目实施</a></li>
+<li class="toctree-l2"><a class="reference internal" href="智能节能灯.html#id10">三、代码分析</a></li>
+<li class="toctree-l2"><a class="reference internal" href="智能节能灯.html#id11">四、硬件分析</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="近视警报器.html">项目5 近视警示器</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="近视警报器.html#id2">一、概述</a></li>
+<li class="toctree-l2"><a class="reference internal" href="近视警报器.html#id3">二、项目实施</a></li>
+<li class="toctree-l2"><a class="reference internal" href="近视警报器.html#id13">三、代码分析</a></li>
+<li class="toctree-l2"><a class="reference internal" href="近视警报器.html#id14">四、硬件分析</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="噪声检测仪.html">项目6 噪声检测仪</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="噪声检测仪.html#id2">一、概述</a></li>
+<li class="toctree-l2"><a class="reference internal" href="噪声检测仪.html#id3">二、项目实施</a></li>
+<li class="toctree-l2"><a class="reference internal" href="噪声检测仪.html#id10">三、代码分析</a></li>
+<li class="toctree-l2"><a class="reference internal" href="噪声检测仪.html#id11">四、硬件分析</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="模拟交通灯.html">项目7 模拟交通灯</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="模拟交通灯.html#id2">一、概述</a></li>
+<li class="toctree-l2"><a class="reference internal" href="模拟交通灯.html#id3">二、项目实施</a></li>
+<li class="toctree-l2"><a class="reference internal" href="模拟交通灯.html#id8">三、代码分析</a></li>
+<li class="toctree-l2"><a class="reference internal" href="模拟交通灯.html#id9">四、硬件分析</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="桌面气象站.html">项目8 桌面气象站</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="桌面气象站.html#id2">一、概述</a></li>
+<li class="toctree-l2"><a class="reference internal" href="桌面气象站.html#id3">二、项目实施</a></li>
+<li class="toctree-l2"><a class="reference internal" href="桌面气象站.html#id10">三、代码分析</a></li>
+<li class="toctree-l2"><a class="reference internal" href="桌面气象站.html#id11">四、硬件分析</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="游园人数统计.html">项目9 游园人数统计</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="游园人数统计.html#id2">一、概述</a></li>
+<li class="toctree-l2"><a class="reference internal" href="游园人数统计.html#id3">二、项目实施</a></li>
+<li class="toctree-l2"><a class="reference internal" href="游园人数统计.html#id10">三、代码分析</a></li>
+<li class="toctree-l2"><a class="reference internal" href="游园人数统计.html#id11">四、硬件分析</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="定时浇花装置.html">项目10 定时浇花装置</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="定时浇花装置.html#id2">一、概述</a></li>
+<li class="toctree-l2"><a class="reference internal" href="定时浇花装置.html#id3">二、项目实施</a></li>
+<li class="toctree-l2"><a class="reference internal" href="定时浇花装置.html#id10">三、代码分析</a></li>
+<li class="toctree-l2"><a class="reference internal" href="定时浇花装置.html#id11">四、硬件分析</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="项目准备.html" class="btn btn-neutral float-right" title="项目前置知识" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="../安装教程/安装-更新.html" class="btn btn-neutral float-left" title="更新pinpong库" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2020, DFRobot
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

@@ -1,0 +1,220 @@
+项目7 模拟交通灯
+==================
+
+----------------
+一、概述
+----------------
+
+交通灯我们经常能在路口上见到，已经习以为常，但是你知道它是如何工作的，如何实现交通灯的功能呢？接下来跟着我们来学习一下吧。
+
+.. image::  images/7th.png
+
+----------------
+二、项目实施
+----------------
+
+（1）驱动LCD显示屏
+---------------------
+
+`````````````
+硬件准备：  
+`````````````
+
+主控：Arduino UNO、IO 传感器扩展板 V7.1
+
+模块：1602LCD显示屏
+
+连接线：TypeAtoB方口USB连接线
+
+
+.. image::  images/0711.png
+
+* 将1602LCD显示屏接入IIC接口
+
+
+
+````````````
+程序编写：
+````````````
+
+1、打开示例程序lcd1602.py，运行程序。（关于1602的示例程序有两个，一个是lcd1602.py一个是rgb1602.py,本项目使用的是单色背光的1062模块，所以使用lcd1602.py。
+
+.. image::  images/0712.png
+
+.. image::  images/0713.png
+
+运行效果
+
+显示屏上第一行显示hello world，第二行显示1234，在屏幕上滚动播放。
+
+2、如果我们想要修改屏幕上的内容，还有文字显示的位置，我们可以根据内容进行调整。
+
+.. code-block:: python
+
+ #实验效果：I2C LCD1602控制
+ #接线：使用windows或linux电脑连接一块arduino主控板，LCD1602显示屏接到I2C口SCL及SDA
+ import time
+ from pinpong.pinpong import PinPong
+ from pinpong.libs.lcd1602_i2c import LCD1602_I2C #从libs中导入lcd1602_i2c库
+
+ board = PinPong("uno")  #初始化，选择板型和端口号，不输入则留空进行自动识别
+
+ lcd = LCD1602_I2C(board, 0x20) #初始化LCD的I2C地址
+
+ print("I2C LCD1602 TEST...")
+ lcd.backlight(True)  #打开背光
+ lcd.clear()   #清屏
+ lcd.set_cursor(2,0)  #设置光标位置
+ lcd.print("Hello PinPong") #显示 "Hello PinPong",1602屏像素点少，不能显示汉字 
+
+ lcd.set_cursor(6,1)  #设置光标位置
+ lcd.print(6666) #显示数字6666 
+
+ while True:
+   time.sleep(1)
+   lcd.scroll_left() #滚动显示
+
+
+
+
+（2）加入LED和倒计时
+--------------------------
+
+大家可能仔细回顾一下交通灯的灯光切换方式，在红灯时，倒计时结束会变为绿灯，当绿灯倒计时结束时会先切到黄灯几秒后再切换到红灯亮起，依据这个规律，我们让LCD显示倒计时秒数。
+
+
+`````````````
+硬件准备：  
+`````````````
+
+主控：Arduino UNO、IO 传感器扩展板 V7.1
+
+模块：1602LCD显示屏、红色\黄色\绿色LED模块
+
+连接线：TypeAtoB方口USB连接线
+
+
+.. image::  images/0721.png
+
+
+* 将1602LCD显示屏接入IIC接口
+
+* 将红色LED灯模块接D13数字引脚、绿色LED灯模块接D11数字引脚、黄色LED灯模块接D7数字引脚
+
+
+````````````
+程序编写：
+````````````
+
+1、导入必要库和模块，参考之前使用过LED灯的案例加上本次使用的LCD屏所需的部分。
+
+.. code-block:: python
+
+ import time
+ from pinpong.pinpong import PinPong
+ from pinpong.pinpong import PinPong,Pin
+ from pinpong.libs.lcd1602_i2c import LCD1602_I2C 
+
+
+
+
+2、然后对需要用到的功能进行初始化设置。
+
+.. code-block:: python
+
+ board = PinPong("uno")  
+ ledR = Pin(board, Pin.D13, Pin.OUT) 
+ ledG = Pin(board, Pin.D11, Pin.OUT) 
+ ledY = Pin(board, Pin.D7, Pin.OUT) 
+ lcd = LCD1602_I2C(board, 0x20) 
+ lcd.backlight(True)  
+
+
+3、设置一段红灯的倒计时功能，另外两种灯用相同的方法设置。
+
+.. code-block:: python
+
+  for i in range(30,-1,-1): #设置倒计时的数值
+     lcd.set_cursor(7,1)  #设置光标位置
+     lcd.print(i)         #让LCD显示倒计时数值
+     ledR.value(1)
+     ledG.value(0)
+     ledY.value(0)
+     time.sleep(1)
+     lcd.clear()
+
+----------------
+三、代码分析
+----------------
+
+.. code-block:: python
+
+ import time
+ from pinpong.pinpong import PinPong
+ from pinpong.pinpong import PinPong,Pin
+ from pinpong.libs.lcd1602_i2c import LCD1602_I2C #从libs中导入lcd1602_i2c库
+
+ board = PinPong("uno")  #初始化，选择板型和端口号，不输入则留空进行自动识别
+ ledR = Pin(board, Pin.D13, Pin.OUT) #引脚初始化为电平输出
+ ledG = Pin(board, Pin.D11, Pin.OUT) #引脚初始化为电平输出
+ ledY = Pin(board, Pin.D7, Pin.OUT) #引脚初始化为电平输出
+ lcd = LCD1602_I2C(board, 0x20) #初始化LCD的I2C地址
+ lcd.backlight(True)  #打开背光
+
+ while True:
+   for i in range(30,-1,-1): #设置倒计时的数值
+     lcd.set_cursor(7,1)  #设置光标位置
+     lcd.print(i)         #让LCD显示倒计时数值
+     ledR.value(1)
+     ledG.value(0)
+     ledY.value(0)
+     time.sleep(1)
+     lcd.clear()
+   for j in range(30,-1,-1):
+     lcd.set_cursor(7,1)  
+     lcd.print(j)
+     ledG.value(1)
+     ledR.value(0)
+     ledY.value(0)
+     time.sleep(1)
+     lcd.clear()
+   for y in range(5,-1,-1):
+     lcd.set_cursor(7,1)  
+     lcd.print(y)
+     ledG.value(0)
+     ledR.value(0)
+     ledY.value(1)
+     time.sleep(1)
+     lcd.clear()
+
+
+for i in range（）的作用：
+
+range（）是一个函数，for i in range（）就是给 i 赋值，比如：
+
+for i in range（30）：
+
+
+就是把0~30依次赋值给i，在程序中加入的：
+
+
+for i in range（30，-1，-1）：
+
+
+
+是将0~30的数值顺序倒序，按30~0的顺序赋值给i。
+
+
+
+----------------
+四、硬件分析
+----------------
+
+什么LCD1602？
+
+LCD1602液晶显示器是广泛使用的一种字符型液晶显示模块。1602的意思是显示屏一行最多可以显示16个字符，一共有2行。
+
+我们使用的是已经集成了控制驱动电路的成品模，通过iic接口与主控板连接。
+
+.. image::  images/0730.jpg
+

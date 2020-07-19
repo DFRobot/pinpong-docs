@@ -1,0 +1,337 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="zh-cn" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="zh-cn" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>项目前置知识 &mdash; pinpong 0.1 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/doctools.js"></script>
+        <script src="../../_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="项目1 LED闪烁" href="LED闪烁.html" />
+    <link rel="prev" title="进阶教程" href="index.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../index.html" class="icon icon-home"> pinpong
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">pinpong介绍</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../0.pinpong介绍/简介.html">简介</a></li>
+</ul>
+<p class="caption"><span class="caption-text">pinpong教程</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../安装教程/index.html">安装教程</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">进阶教程</a><ul class="current">
+<li class="toctree-l2 current"><a class="current reference internal" href="#">项目前置知识</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id2">概述</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#arduino">1.什么是Arduino？</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#arduino-uno">1.1认识Arduino UNO</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#python">2.什么是Python？</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id3">3.如何编辑Python代码？</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id4">3.1如何安装Python</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id6">3.2如何编辑Python代码？</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id7">3.2如何编辑Python代码？</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#pinpong">4.什么是pinpong库？</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="LED闪烁.html">项目1 LED闪烁</a></li>
+<li class="toctree-l2"><a class="reference internal" href="神奇的按键.html">项目2 神奇的按键</a></li>
+<li class="toctree-l2"><a class="reference internal" href="调光台灯.html">项目3 调光台灯</a></li>
+<li class="toctree-l2"><a class="reference internal" href="智能节能灯.html">项目4 智能节能灯</a></li>
+<li class="toctree-l2"><a class="reference internal" href="近视警报器.html">项目5 近视警示器</a></li>
+<li class="toctree-l2"><a class="reference internal" href="噪声检测仪.html">项目6 噪声检测仪</a></li>
+<li class="toctree-l2"><a class="reference internal" href="模拟交通灯.html">项目7 模拟交通灯</a></li>
+<li class="toctree-l2"><a class="reference internal" href="桌面气象站.html">项目8 桌面气象站</a></li>
+<li class="toctree-l2"><a class="reference internal" href="游园人数统计.html">项目9 游园人数统计</a></li>
+<li class="toctree-l2"><a class="reference internal" href="定时浇花装置.html">项目10 定时浇花装置</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../高级教程/index.html">高级教程</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../经典案例/index.html">经典案例</a></li>
+</ul>
+<p class="caption"><span class="caption-text">pinpong示例</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../2.pinpong示例/index1.html">基础库示例</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../2.pinpong示例/index2.html">常用库示例</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../2.pinpong示例/index3.html">扩展库示例</a></li>
+</ul>
+<p class="caption"><span class="caption-text">pinpong更新记录</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../4.pinpong更新记录/index.html">更新记录</a></li>
+</ul>
+<p class="caption"><span class="caption-text">FAQ常见问题</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../5.FAQ常见问题/index.html">常见问题</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">pinpong</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="index.html">进阶教程</a> &raquo;</li>
+        
+      <li>项目前置知识</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../../_sources/1.pinpong教程/进阶教程/项目准备.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="id1">
+<h1>项目前置知识<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="id2">
+<h2>概述<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
+<p>本系列教程是基于win10操作系统下，使用Python3通过pinpong库来控制Arduino UNO板来实现项目功能，在本节中我们将了解以下内容：</p>
+<p>1、什么是Arduino？</p>
+<p>2、什么是Python？</p>
+<p>3、如何编辑Python代码？</p>
+<p>4、什么是pinpong库？</p>
+</div>
+<div class="section" id="arduino">
+<h2>1.什么是Arduino？<a class="headerlink" href="#arduino" title="Permalink to this headline">¶</a></h2>
+<p>Arduino是一个开放源码电子原型平台，拥有灵活、易用的硬件和软件。Arduino专为设计师，工艺美术人员，业余 爱好者，以及对开发互动装置或互动式开发环境感兴趣的人而设的。</p>
+<p>Arduino可以接收来自各种传感器的输入信号从而检测出运行环境，并通过控制光源，电机以及其他驱动器来影响 其周围环境。板上的微控制器编程使用Arduino编程语言（基于Wiring）和Arduino开发环境（以Processing为基 础）。Arduino可以独立运行，也可以与计算机上运行的软件（例如，Flash，Processing，MaxMSP）进行通 信。Arduino开发 IDE 接口基于开放源代码，可以让您免费下载使用开发出更多令人惊艳的互动作品。</p>
+<p>Arduino是人们连接各种任务的粘合剂。要给Arduino下一个最准确的定义，最好用一些实例来描述。</p>
+<p>◆ 您想当咖啡煮好时，咖啡壶就发出“吱吱”声提醒您吗？</p>
+<p>◆ 您想当邮箱有新邮件时，电话会发出警报通知您吗？</p>
+<p>◆ 想要一件闪闪发光的绒毛玩具吗？</p>
+<p>◆ 想要一款具备语音和酒水配送功能的X教授蒸汽朋克风格轮椅吗？</p>
+<p>◆ 想要一套按下快捷键就可以进行实验测试蜂音器吗？</p>
+<p>◆ 想为您的儿子自制一个《银河战士》手臂炮吗？</p>
+<p>◆ 想自制一个心率监测器，将每次骑脚踏车的记录存进存储卡吗？</p>
+<p>◆ 想过自制一个能在地面上绘图，能在雪中驰骋的机器人吗？</p>
+<p>Arduino都可以为您实现。</p>
+<div class="section" id="arduino-uno">
+<h3>1.1认识Arduino UNO<a class="headerlink" href="#arduino-uno" title="Permalink to this headline">¶</a></h3>
+<p>Arduino系列有众多的型号，其中最为经典的就是Arduino UNO了。在后续项目中我们也将以Arduino UNO为主。</p>
+<p>先来简单的看下Arduino UNO。下图中有标识的部分为常用部分。图中标出的数字口和模拟口，即为常说的I/O。数字口有0~13，模拟口有0~5。</p>
+<p>除了最重要的I/O口外，还有电源部分。UNO可以通过两种方式供电方式，一种通过USB供电，另一种是通过外接 6~12V的DC电源。除此之外，还有4个LED灯和复位按键，稍微说下4个LED。ON是电源指示灯，通电就会亮了。L是接在数字口13上的一个LED，在下节的项目中会进行教学的。TX、RX是串口通讯指示灯，比如我们在下载程序的过程中，这两个灯就会不停闪烁。</p>
+<img alt="../../_images/uno引脚.png" src="../../_images/uno引脚.png" />
+</div>
+</div>
+<div class="section" id="python">
+<h2>2.什么是Python？<a class="headerlink" href="#python" title="Permalink to this headline">¶</a></h2>
+<p>Python是一种跨平台的计算机程序设计语言。 是一个高层次的结合了解释性、编译性、互动性和面向对象的脚本语言。最初被设计用于编写自动化脚本(shell)，随着版本的不断更新和语言新功能的添加，越多被用于独立的、大型项目的开发。</p>
+<p>Python是一种解释型脚本语言，可以应用于以下领域：</p>
+<p>◆Web 和 Internet开发</p>
+<p>◆科学计算和统计</p>
+<p>◆人工智能</p>
+<p>◆桌面界面开发</p>
+<p>◆软件开发</p>
+<p>◆后端开发</p>
+<p>◆网络爬虫</p>
+</div>
+<div class="section" id="id3">
+<h2>3.如何编辑Python代码？<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h2>
+<p>可以用很多方法来编辑Python代码，甚至你可以使用文本编辑器编辑代码。在项目中我们将主要使用Python安装后自带的IDLE来编辑代码。</p>
+<div class="section" id="id4">
+<h3>3.1如何安装Python<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h3>
+<p>1、首先打开Python的下载链接（ <a class="reference external" href="https://www.python.org/downloads/windows/">Python下载</a> ）找到【Download Windows x86-64 executable installer】下载Python安装包，项目中使用到的Python版本为3.7。选择适合的版本下载安装即可。</p>
+<p>2、安装Python，注意在安装时勾选add Python 3.7 to path。（如果安装时未勾选，可以搜索如何在windows系统下添加python环境变量来补救）</p>
+<img alt="../../_images/addpath1.png" src="../../_images/addpath1.png" />
+</div>
+<div class="section" id="id6">
+<h3>3.2如何编辑Python代码？<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h3>
+<p>安装好Python后，我们就可以在开始菜单中找到Python了，点击打开IDLE。</p>
+<img alt="../../_images/IDLE00.png" src="../../_images/IDLE00.png" />
+<p>输入 print(‘hello world’) 摁下回车，查看结果。</p>
+<img alt="../../_images/idle000.png" src="../../_images/idle000.png" />
+</div>
+<div class="section" id="id7">
+<h3>3.2如何编辑Python代码？<a class="headerlink" href="#id7" title="Permalink to this headline">¶</a></h3>
+<p>1、打开Python IDLE窗口如图所示，我们可以看到窗口，这是python shell窗口。</p>
+<img alt="../../_images/IDLE01.png" src="../../_images/IDLE01.png" />
+<p>前面我们已经在IDLE中运行过简单语句了，但是在实际开发中，通常不能只包含一行代码，当需要编写多行代码时，就需要单独创建一个文件保存这些代码，在全部编写完成后一起执行，这里就需要新建一个文档</p>
+<p>2、在 IDLE 主窗口的菜单栏上，选择“File -&gt; New File”菜单项，将打开一个新窗口，在该窗口中，可以直接编写 Python 代码。
+在输入一行代码后再按下 &lt;Enter&gt; 键，将自动换到下一行，等待继续输入</p>
+<img alt="../../_images/IDLE02.png" src="../../_images/IDLE02.png" />
+<p>3、在代码区输入代码，我们输入hello world的指令</p>
+<img alt="../../_images/IDLE03.png" src="../../_images/IDLE03.png" />
+<p>4、保存代码，运行程序。如果是带*号的未保存状态执行运行功能的话，软件也会提示你保存后才可以运行。</p>
+<img alt="../../_images/IDLE04.png" src="../../_images/IDLE04.png" />
+<p>5、运行成功，运行结果还是会返回python shell窗口反馈结果。</p>
+<img alt="../../_images/IDLE05.png" src="../../_images/IDLE05.png" />
+<p>IDLE的使用可以参考官方文档： <a class="reference external" href="https://docs.python.org/zh-cn/3/library/idle.html">官方文档</a></p>
+</div>
+</div>
+<div class="section" id="pinpong">
+<h2>4.什么是pinpong库？<a class="headerlink" href="#pinpong" title="Permalink to this headline">¶</a></h2>
+<p>pinpong库是有DFRobot公司推出的一款用于连通Python与Arduino的库函数，基于Firmata协议并兼容micropython语法。</p>
+<p>Firmata是一个PC与MCU（Microcontroller Unit的缩写，即微控制单元，也称为单片机）通讯的一个常用协议。其遵旨是能与任何主机PC软件包兼容。到目前为止，已经得到不少语言的支持（包括Python），这样可方便地将对协议的支持加入软件系统中。Firmata起初是针对于PC与Arduino通讯的固件(Firmware)，其目标是让开发者可以通过PC软件完全地控件Arduino。</p>
+<p>使用pinpong库可以结合Python丰富的扩展库资源来驱动Arduino。</p>
+<p>附：
+pinpong库安装教程：<a class="reference external" href="https://pinpong.readthedocs.io/zh_CN/latest/1.pinpong%E6%95%99%E7%A8%8B/%E5%AE%89%E8%A3%85%E6%95%99%E7%A8%8B/index.html">点击打开</a></p>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="LED闪烁.html" class="btn btn-neutral float-right" title="项目1 LED闪烁" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="index.html" class="btn btn-neutral float-left" title="进阶教程" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2020, DFRobot
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

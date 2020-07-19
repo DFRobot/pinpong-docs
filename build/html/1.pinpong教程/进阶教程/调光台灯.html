@@ -1,0 +1,340 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="zh-cn" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="zh-cn" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>项目3 调光台灯 &mdash; pinpong 0.1 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/doctools.js"></script>
+        <script src="../../_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="项目4 智能节能灯" href="智能节能灯.html" />
+    <link rel="prev" title="项目2 神奇的按键" href="神奇的按键.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../index.html" class="icon icon-home"> pinpong
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">pinpong介绍</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../0.pinpong介绍/简介.html">简介</a></li>
+</ul>
+<p class="caption"><span class="caption-text">pinpong教程</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../安装教程/index.html">安装教程</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">进阶教程</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="项目准备.html">项目前置知识</a></li>
+<li class="toctree-l2"><a class="reference internal" href="LED闪烁.html">项目1 LED闪烁</a></li>
+<li class="toctree-l2"><a class="reference internal" href="神奇的按键.html">项目2 神奇的按键</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">项目3 调光台灯</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id2">一、概述</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id3">二、项目实施</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id4">（1）渐变灯光</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id7">（2）旋钮调光</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#id10">三、代码分析</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="智能节能灯.html">项目4 智能节能灯</a></li>
+<li class="toctree-l2"><a class="reference internal" href="近视警报器.html">项目5 近视警示器</a></li>
+<li class="toctree-l2"><a class="reference internal" href="噪声检测仪.html">项目6 噪声检测仪</a></li>
+<li class="toctree-l2"><a class="reference internal" href="模拟交通灯.html">项目7 模拟交通灯</a></li>
+<li class="toctree-l2"><a class="reference internal" href="桌面气象站.html">项目8 桌面气象站</a></li>
+<li class="toctree-l2"><a class="reference internal" href="游园人数统计.html">项目9 游园人数统计</a></li>
+<li class="toctree-l2"><a class="reference internal" href="定时浇花装置.html">项目10 定时浇花装置</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../高级教程/index.html">高级教程</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../经典案例/index.html">经典案例</a></li>
+</ul>
+<p class="caption"><span class="caption-text">pinpong示例</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../2.pinpong示例/index1.html">基础库示例</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../2.pinpong示例/index2.html">常用库示例</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../2.pinpong示例/index3.html">扩展库示例</a></li>
+</ul>
+<p class="caption"><span class="caption-text">pinpong更新记录</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../4.pinpong更新记录/index.html">更新记录</a></li>
+</ul>
+<p class="caption"><span class="caption-text">FAQ常见问题</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../5.FAQ常见问题/index.html">常见问题</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">pinpong</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="index.html">进阶教程</a> &raquo;</li>
+        
+      <li>项目3 调光台灯</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../../_sources/1.pinpong教程/进阶教程/调光台灯.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="id1">
+<h1>项目3 调光台灯<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="id2">
+<h2>一、概述<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
+<p>在上节课中我们学会了如何点亮并控制LED灯，那LED灯的亮度我们可以调节吗？如果输出的值不是数字量，而是模拟量，是不是就可以实现通过数值来精确控制灯光亮度了。</p>
+<p>在我们之前的控制中使用的是按钮，按钮只有两个状态，是没办法输出模拟值的，所以本项目我们就需要使用到旋钮来作为灯光亮度的输入。</p>
+<img alt="../../_images/3rd.png" src="../../_images/3rd.png" />
+</div>
+<div class="section" id="id3">
+<h2>二、项目实施<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id4">
+<h3>（1）渐变灯光<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id5">
+<h4>硬件准备：<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h4>
+<p>主控：Arduino UNO、IO 传感器扩展板 V7.1</p>
+<p>模块：LED发光模块</p>
+<p>连接线：TypeAtoB方口USB连接线</p>
+<img alt="../../_images/0311.png" src="../../_images/0311.png" />
+<ul class="simple">
+<li><p>将LED发光模块接入6号数字引脚</p></li>
+</ul>
+</div>
+<div class="section" id="id6">
+<h4>程序编写：<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h4>
+<p>1、在示例程序中找到pwm.py，并用IDLE打开。</p>
+<img alt="../../_images/0312.png" src="../../_images/0312.png" />
+<p>2、摁下F5运行程序，查看效果。LED灯会逐渐变亮，当到最亮时熄灭再慢慢变亮，循环变化。</p>
+<img alt="../../_images/0313.png" src="../../_images/0313.png" />
+<p>注意：在程序运行时不可以拔掉与Arduino连接的USB线，且不能关闭新弹出的Python shell运行窗口，如果拔线或者关闭运行窗口，程序功能就会停止执行。</p>
+</div>
+</div>
+<div class="section" id="id7">
+<h3>（2）旋钮调光<a class="headerlink" href="#id7" title="Permalink to this headline">¶</a></h3>
+<p>在上步完成的功能中,我们旋钮来精确的控制LED灯的亮度。</p>
+<div class="section" id="id8">
+<h4>硬件准备：<a class="headerlink" href="#id8" title="Permalink to this headline">¶</a></h4>
+<p>主控：Arduino UNO、IO 传感器扩展板 V7.1</p>
+<p>模块：LED发光模块、旋钮模块</p>
+<p>连接线：TypeAtoB方口USB连接线</p>
+<p>硬件连接图：</p>
+<img alt="../../_images/0321.png" src="../../_images/0321.png" />
+<ul class="simple">
+<li><p>将LED发光模块接入6号数字引脚，将旋钮模块接入A0模拟引脚</p></li>
+</ul>
+</div>
+<div class="section" id="id9">
+<h4>程序编写：<a class="headerlink" href="#id9" title="Permalink to this headline">¶</a></h4>
+<p>1、导入必要的包和初始化设置。</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">time</span>
+<span class="kn">from</span> <span class="nn">pinpong.pinpong</span> <span class="kn">import</span> <span class="n">PinPong</span><span class="p">,</span><span class="n">PWM</span><span class="p">,</span><span class="n">Pin</span><span class="p">,</span><span class="n">ADC</span>
+
+<span class="n">board</span> <span class="o">=</span> <span class="n">PinPong</span><span class="p">(</span><span class="s2">&quot;uno&quot;</span><span class="p">)</span> <span class="c1">#初始化，选择板型和端口号，不输入则留空进行自动识别</span>
+
+<span class="n">pwm0</span> <span class="o">=</span> <span class="n">PWM</span><span class="p">(</span><span class="n">board</span><span class="p">,</span><span class="n">Pin</span><span class="p">(</span><span class="n">board</span><span class="p">,</span><span class="n">Pin</span><span class="o">.</span><span class="n">D6</span><span class="p">))</span>
+<span class="n">adc0</span> <span class="o">=</span> <span class="n">ADC</span><span class="p">(</span><span class="n">board</span><span class="p">,</span><span class="n">Pin</span><span class="p">(</span><span class="n">board</span><span class="p">,</span> <span class="n">Pin</span><span class="o">.</span><span class="n">A0</span><span class="p">))</span> <span class="c1">#将Pin传入ADC中实现模拟输入</span>
+</pre></div>
+</div>
+<p>2、2、我们需要将旋钮输出的模拟值转换为LED灯亮度的PWM值，为了得到整数这里用了整型功能int。</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">v</span> <span class="o">=</span> <span class="n">adc0</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
+<span class="n">L</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">v</span> <span class="o">*</span> <span class="mi">255</span><span class="o">/</span><span class="mi">1024</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>3、3、接着让LED灯根据我们转换过的数值亮起。</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">pwm0</span><span class="o">.</span><span class="n">duty</span><span class="p">(</span><span class="n">L</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>4、运行代码，旋转旋钮LED灯会慢慢亮起和熄灭。</p>
+<img alt="../../_images/0322.png" src="../../_images/0322.png" />
+</div>
+</div>
+</div>
+<div class="section" id="id10">
+<h2>三、代码分析<a class="headerlink" href="#id10" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">time</span>
+<span class="kn">from</span> <span class="nn">pinpong.pinpong</span> <span class="kn">import</span> <span class="n">PinPong</span><span class="p">,</span><span class="n">PWM</span><span class="p">,</span><span class="n">Pin</span><span class="p">,</span><span class="n">ADC</span>
+
+<span class="n">board</span> <span class="o">=</span> <span class="n">PinPong</span><span class="p">(</span><span class="s2">&quot;uno&quot;</span><span class="p">)</span> <span class="c1">#初始化，选择板型和端口号，不输入则留空进行自动识别</span>
+
+<span class="n">pwm0</span> <span class="o">=</span> <span class="n">PWM</span><span class="p">(</span><span class="n">board</span><span class="p">,</span><span class="n">Pin</span><span class="p">(</span><span class="n">board</span><span class="p">,</span><span class="n">Pin</span><span class="o">.</span><span class="n">D6</span><span class="p">))</span>
+<span class="n">adc0</span> <span class="o">=</span> <span class="n">ADC</span><span class="p">(</span><span class="n">board</span><span class="p">,</span><span class="n">Pin</span><span class="p">(</span><span class="n">board</span><span class="p">,</span> <span class="n">Pin</span><span class="o">.</span><span class="n">A0</span><span class="p">))</span> <span class="c1">#将Pin传入ADC中实现模拟输入</span>
+
+<span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+    <span class="n">v</span> <span class="o">=</span> <span class="n">adc0</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
+    <span class="n">L</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">v</span> <span class="o">*</span> <span class="mi">255</span><span class="o">/</span><span class="mi">1024</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">L</span><span class="p">)</span>
+    <span class="n">pwm0</span><span class="o">.</span><span class="n">duty</span><span class="p">(</span><span class="n">L</span><span class="p">)</span>
+    <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mf">0.05</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>数据类型-整数类型</p>
+<p>在我们做运算的时候，传感器读取到的数值经过*255/1024运算的结果往往不会是一个整数，常常会带着长长的小数尾数。我们试着不加int整形得到的结果如下：</p>
+<img alt="../../_images/0630.png" src="../../_images/0630.png" />
+<p>这样的数值我们是无法直接使用的，所以就需要使用到整形int将数据取整。</p>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="智能节能灯.html" class="btn btn-neutral float-right" title="项目4 智能节能灯" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="神奇的按键.html" class="btn btn-neutral float-left" title="项目2 神奇的按键" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2020, DFRobot
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

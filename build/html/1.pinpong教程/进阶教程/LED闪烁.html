@@ -1,0 +1,353 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="zh-cn" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="zh-cn" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>项目1 LED闪烁 &mdash; pinpong 0.1 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/doctools.js"></script>
+        <script src="../../_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="项目2 神奇的按键" href="神奇的按键.html" />
+    <link rel="prev" title="项目前置知识" href="项目准备.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../index.html" class="icon icon-home"> pinpong
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">pinpong介绍</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../0.pinpong介绍/简介.html">简介</a></li>
+</ul>
+<p class="caption"><span class="caption-text">pinpong教程</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../安装教程/index.html">安装教程</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">进阶教程</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="项目准备.html">项目前置知识</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">项目1 LED闪烁</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id1">一、概述</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id2">二、项目实施</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id3">（1）点亮板载LED灯</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id7">（2）点亮外接LED灯</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#id10">三、代码分析</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id11">四、硬件分析</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="神奇的按键.html">项目2 神奇的按键</a></li>
+<li class="toctree-l2"><a class="reference internal" href="调光台灯.html">项目3 调光台灯</a></li>
+<li class="toctree-l2"><a class="reference internal" href="智能节能灯.html">项目4 智能节能灯</a></li>
+<li class="toctree-l2"><a class="reference internal" href="近视警报器.html">项目5 近视警示器</a></li>
+<li class="toctree-l2"><a class="reference internal" href="噪声检测仪.html">项目6 噪声检测仪</a></li>
+<li class="toctree-l2"><a class="reference internal" href="模拟交通灯.html">项目7 模拟交通灯</a></li>
+<li class="toctree-l2"><a class="reference internal" href="桌面气象站.html">项目8 桌面气象站</a></li>
+<li class="toctree-l2"><a class="reference internal" href="游园人数统计.html">项目9 游园人数统计</a></li>
+<li class="toctree-l2"><a class="reference internal" href="定时浇花装置.html">项目10 定时浇花装置</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../高级教程/index.html">高级教程</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../经典案例/index.html">经典案例</a></li>
+</ul>
+<p class="caption"><span class="caption-text">pinpong示例</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../2.pinpong示例/index1.html">基础库示例</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../2.pinpong示例/index2.html">常用库示例</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../2.pinpong示例/index3.html">扩展库示例</a></li>
+</ul>
+<p class="caption"><span class="caption-text">pinpong更新记录</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../4.pinpong更新记录/index.html">更新记录</a></li>
+</ul>
+<p class="caption"><span class="caption-text">FAQ常见问题</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../5.FAQ常见问题/index.html">常见问题</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">pinpong</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="index.html">进阶教程</a> &raquo;</li>
+        
+      <li>项目1 LED闪烁</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../../_sources/1.pinpong教程/进阶教程/LED闪烁.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="led">
+<h1>项目1 LED闪烁<a class="headerlink" href="#led" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="id1">
+<h2>一、概述<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
+<p>Hello World是所有编程语言学习的第一课，但是在单片机学习中，我们的Hello World叫做Blink。Blink是什么意思呢？闪烁。其实Blink就是点亮单片机上的板载LED灯，并让它闪烁的一个程序。</p>
+<img alt="../../_images/LED.png" src="../../_images/LED.png" />
+</div>
+<div class="section" id="id2">
+<h2>二、项目实施<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id3">
+<h3>（1）点亮板载LED灯<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id4">
+<h4>硬件准备：<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h4>
+<p>主控：Arduino UNO</p>
+<p>连接线：TypeAtoB方口USB连接线</p>
+<img alt="../../_images/UNOR3.png" src="../../_images/UNOR3.png" />
+</div>
+<div class="section" id="id5">
+<h4>软件准备：<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h4>
+<p>项目使用操作系统为Win10，Python版本为3.7，编译器使用原生Python IDLE，使用pinpong库驱动</p>
+<p>1、找到Python3安装目录下的pinpong库文件夹。</p>
+<p>运行Python3，输入：</p>
+<p>import os</p>
+<p>print（os.path)</p>
+<img alt="../../_images/找地址01.png" src="../../_images/找地址01.png" />
+<p>打开任意一个文件夹，将路径复制进去，找到../site-packages/pinpong/examples,可以找到pinpong的示例程序。</p>
+<img alt="../../_images/找地址02.png" src="../../_images/找地址02.png" />
+<p>2、打开【examples】文件夹，找到blink.py示例程序，右键选择Edit with IDLE→Edit with IDLE3.7 即可使用IDLE打开Python程序编辑内容。</p>
+<img alt="../../_images/blink.png" src="../../_images/blink.png" />
+</div>
+<div class="section" id="id6">
+<h4>程序编写：<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h4>
+<p>1、在上步打开的blink.py示例程序中，可以自动识别Arduino UNO接在电脑上的端口号。当电脑上同类主板接入多个时也可以单独针对需要控制的主控板设置端口号，如果只有一块主板连接建议使用自动识别功能。</p>
+<img alt="../../_images/blink.png" src="../../_images/blink.png" />
+<p>注：第一次使用pinpong库会自动给Arduino主板烧录Firmata固件。所以不需要专门给Arduino上传固件。</p>
+<p>2、摁下F5运行程序，会提示保存程序，点击确定保存即可。运行成功后会弹出一个新的窗口，等待程序运行如图所示即为成功。查看效果。Arduino Uno上的板载LED会按照亮1秒，熄灭1秒的规律闪烁。</p>
+<img alt="../../_images/blink03.png" src="../../_images/blink03.png" />
+<p>（如果此步执行没有成功可以查看文末常见问题）</p>
+<p>注意：在程序运行时不可以拔掉与Arduino连接的USB线，且不能关闭新弹出的Python shell运行窗口，如果拔线或者关闭运行窗口，程序功能就会停止执行。</p>
+<p>运行效果</p>
+<img alt="../../_images/arduinoL.png" src="../../_images/arduinoL.png" />
+<p>红圈中的LED灯会按照亮1秒，熄灭1秒的规律闪烁。</p>
+<p>3、如果我们想要修改小灯闪烁的频率，应该怎么修改程序？只需要修改代码中延时部分的时长即可。如图所示修改后的效果为小灯点亮2秒，熄灭1秒。</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">time</span>
+<span class="kn">from</span> <span class="nn">pinpong.pinpong</span> <span class="kn">import</span> <span class="o">*</span>   <span class="c1">#导入必要库</span>
+
+<span class="n">board</span> <span class="o">=</span> <span class="n">PinPong</span><span class="p">(</span><span class="s2">&quot;uno&quot;</span><span class="p">)</span>   <span class="c1">#初始化，选择板型和端口号，不输入则留空进行自动识别</span>
+<span class="n">led</span> <span class="o">=</span> <span class="n">Pin</span><span class="p">(</span><span class="n">board</span><span class="p">,</span> <span class="n">Pin</span><span class="o">.</span><span class="n">D13</span><span class="p">,</span> <span class="n">Pin</span><span class="o">.</span><span class="n">OUT</span><span class="p">)</span>  <span class="c1">#初始化13数字引脚为数字输出</span>
+
+<span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+  <span class="n">led</span><span class="o">.</span><span class="n">value</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>  <span class="c1">#13引脚高电平</span>
+  <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span> <span class="c1">#持续1秒</span>
+  <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;LED on&quot;</span><span class="p">)</span>
+
+  <span class="n">led</span><span class="o">.</span><span class="n">value</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>  <span class="c1">#13引脚低电平</span>
+  <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span> <span class="c1">#持续2秒</span>
+  <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;LED off&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="id7">
+<h3>（2）点亮外接LED灯<a class="headerlink" href="#id7" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id8">
+<h4>硬件准备：<a class="headerlink" href="#id8" title="Permalink to this headline">¶</a></h4>
+<p>主控：Arduino UNO、IO 传感器扩展板 V7.1</p>
+<p>模块：LED发光模块</p>
+<p>连接线：TypeAtoB方口USB连接线</p>
+<p>硬件连接图：</p>
+<img alt="../../_images/01blink.png" src="../../_images/01blink.png" />
+<ul class="simple">
+<li><p>将扩展板接入Arduino Uno主控板上，组装时注意对准后在压入，以防压弯插针。</p></li>
+<li><p>将LED模块接入10号数字引脚。</p></li>
+</ul>
+</div>
+<div class="section" id="id9">
+<h4>程序编写：<a class="headerlink" href="#id9" title="Permalink to this headline">¶</a></h4>
+<p>1、我们在接线的时候将外接LED接到了10号引脚，所以我们需要修改程序才可以点亮这颗外接的小灯。将LED_PIN 对应的引脚修改为10，</p>
+<img alt="../../_images/LEDpin.png" src="../../_images/LEDpin.png" />
+<p>2、如果想要小灯有一个呼吸灯的效果应该如何执行？找到示例程序中的write_analog.py，并用Python IDLE打开。</p>
+<p>3、修改引脚号与端口号，然后运行程序，小灯就会循环执行LED灯渐渐变亮，到最亮时熄灭的命令。</p>
+<p>这是一段代替示例程序的文本（PWM功能施工中）</p>
+</div>
+</div>
+</div>
+<div class="section" id="id10">
+<h2>三、代码分析<a class="headerlink" href="#id10" title="Permalink to this headline">¶</a></h2>
+<p>这是一段代替示例程序的文本（PWM功能施工中）</p>
+<p>数字信号与模拟信号</p>
+<p>你知道什么是数字信号什么是模拟信号吗？让我们先看看数字信号与模拟信号的概念吧。</p>
+<p>资料阅读：</p>
+<blockquote>
+<div><p>数字信号：数字信号指自变量是离散的、因变量也是离散的信号，这种信号的自变量用整数表示，因变量用有限数字中的一个数字来表示。在计算机中，数字信号的大小常用有限位的二进制数表示。</p>
+<img alt="../../_images/digitalpic.png" src="../../_images/digitalpic.png" />
+<p>模拟信号：模拟信号是指用连续变化的物理量表示的信息，其信号的幅度，或频率，或相位随时间作连续变化，或在一段连续的时间间隔内，其代表信息的特征量可以在任意瞬间呈现为任意数值的信号。</p>
+<img alt="../../_images/analogpic.png" src="../../_images/analogpic.png" />
+</div></blockquote>
+<p>光看概念感觉特别抽象，那么我们用生活中的实例来理解，比如我们平时用到的用于开关灯的开关，开和关是两个状态，非开即关。那么对灯来说开和关就是数字信号。再想想家中如果有一个温度计的话，温度变化是一个连续变化的的数值，并不能用某个特殊的状态来表示，温度的变化就是模拟信号。</p>
+<p>在理解了数字信号与模拟信号之后，思考一下，在本项目中控制LED灯亮灭的信号是数字信号还是模拟信号？</p>
+</div>
+<div class="section" id="id11">
+<h2>四、硬件分析<a class="headerlink" href="#id11" title="Permalink to this headline">¶</a></h2>
+<p>不知道同学们有没有注意到，我们在第二个呼吸灯案例的时候，LED灯是接在10号数字引脚上的，但是按照数字信号和模拟信号的概念来看，应该是模拟信号才能实现呼吸灯的效果。这里就需要我们了解一个新的知识点，PWM信号。</p>
+<p>观察我们手中的Arduino UNO主控板的数字引脚上，是不是有些引脚号旁边有*标记（有些板子是波浪号~）这些引脚就是支持PWM信号输出的引脚。</p>
+<p>PWM（Pulse width modulation，中文名脉冲宽度调制），脉冲宽度调制是一种模拟控制方式。在Arduino中pwm是不断的做高低电平切换模拟出一种近似模拟量的输出的效果来实现变化的。但是这里仅仅得到了近似模拟值输出的效果，如果要输出真正的模拟值，还需要在模拟引脚上执行。</p>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="神奇的按键.html" class="btn btn-neutral float-right" title="项目2 神奇的按键" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="项目准备.html" class="btn btn-neutral float-left" title="项目前置知识" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2020, DFRobot
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

@@ -1,0 +1,21 @@
+==============
+更新pinpong库
+==============
+
+pinpong目前处于快速更新迭代中，因此会不定期进行更新，通过如下命令可以进行版本更新：
+
+.. code-block:: bash
+
+        $ pip install -U pinpong 
+
+
+==============
+卸载pinpong库
+==============
+如果pinpong库出现异常情况时，可以尝试使用如下命令卸载pinpong库然后再使用install命令安装：
+
+.. code-block:: bash
+
+        $ pip uninstall pinpong 
+
+
