@@ -135,9 +135,9 @@ IDLE的使用可以参考官方文档： `官方文档 <https://docs.python.org/
 4.什么是pinpong库？
 -------------------
 
-pinpong库是有DFRobot公司推出的一款用于连通Python与Arduino的库函数，基于Firmata协议并兼容micropython语法。
+pinpong库是有DFRobot公司推出的一款用于连通Python与Arduino的库函数，基于Firmata协议并兼容MicroPython语法。
 
-Firmata是一个PC与MCU（Microcontroller Unit的缩写，即微控制单元，也称为单片机）通讯的一个常用协议。其遵旨是能与任何主机PC软件包兼容。到目前为止，已经得到不少语言的支持（包括Python），这样可方便地将对协议的支持加入软件系统中。Firmata起初是针对于PC与Arduino通讯的固件(Firmware)，其目标是让开发者可以通过PC软件完全地控件Arduino。
+Firmata是一个PC与MCU（Microcontroller Unit的缩写，即微控制单元，也称为单片机）通讯的一个常用协议。其宗旨是能与任何主机PC软件包兼容。到目前为止，已经得到不少语言的支持（包括Python），这样可方便地将对协议的支持加入软件系统中。Firmata起初是针对于PC与Arduino通讯的固件(Firmware)，其目标是让开发者可以通过PC软件完全地控件Arduino。
 
 使用pinpong库可以结合Python丰富的扩展库资源来驱动Arduino。
 
