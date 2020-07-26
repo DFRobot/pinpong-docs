@@ -16,7 +16,9 @@ Windows平台安装
 
 .. image::  images/win_install3.jpg
 
+4. 帮助命令。在小黑窗中输入pinpong ，即可输出当前版本信息、官方文档网址、库列表查看、端口号。
 
+.. image::  images/pinpong-cmd-win.png
 
 开始第一个程序
 -----------------

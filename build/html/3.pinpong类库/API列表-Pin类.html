@@ -34,7 +34,9 @@
   <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
     <link rel="index" title="Index" href="../genindex.html" />
-    <link rel="search" title="Search" href="../search.html" /> 
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="PWM类 PWM class" href="API列表-PWM类.html" />
+    <link rel="prev" title="ADC类 ADC class" href="API列表-ADC类.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -81,13 +83,7 @@
               <p class="caption"><span class="caption-text">pinpong介绍</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../0.pinpong介绍/简介.html">简介</a></li>
-</ul>
-<p class="caption"><span class="caption-text">pinpong教程</span></p>
-<ul>
 <li class="toctree-l1"><a class="reference internal" href="../1.pinpong教程/安装教程/index.html">安装教程</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../1.pinpong教程/进阶教程/index.html">进阶教程</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../1.pinpong教程/高级教程/index.html">高级教程</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../1.pinpong教程/经典案例/index.html">经典案例</a></li>
 </ul>
 <p class="caption"><span class="caption-text">pinpong示例</span></p>
 <ul>
@@ -95,9 +91,27 @@
 <li class="toctree-l1"><a class="reference internal" href="../2.pinpong示例/index2.html">常用库示例</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../2.pinpong示例/index3.html">扩展库示例</a></li>
 </ul>
+<p class="caption"><span class="caption-text">pinpong教程</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../1.pinpong教程/进阶教程/index.html">进阶教程</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../1.pinpong教程/高级教程/index.html">高级教程</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../1.pinpong教程/经典案例/index.html">经典案例</a></li>
+</ul>
+<p class="caption"><span class="caption-text">pinpong类库</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="API列表-ADC类.html">ADC类 ADC class</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Pin类 Pin class</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#constants">常量 constants</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#constructor">构造器 constructor</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#method">方法 method</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="API列表-PWM类.html">PWM类 PWM class</a></li>
+</ul>
 <p class="caption"><span class="caption-text">pinpong更新记录</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../4.pinpong更新记录/index.html">更新记录</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../4.pinpong更新记录/index.html">开发计划</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../4.pinpong更新记录/index.html#id2">更新记录</a></li>
 </ul>
 <p class="caption"><span class="caption-text">FAQ常见问题</span></p>
 <ul>
@@ -176,7 +190,7 @@
 <p>创建和初始化一个引脚。</p>
 <p>pin = Pin(board, vpin, mode)</p>
 <ul class="simple">
-<li><p>board: 通过pinpong类创建的板子的对象。</p></li>
+<li><p>board: 通过pinpong类创建的板子的对象,默认板子可以省略此参数。</p></li>
 <li><p>vpin: 板子上所用到的引脚号。(数字引脚1-Pin.D1, 模拟引脚1-PinA1)</p></li>
 <li><p>mode: 定义引脚的输出，输出。Pin.IN， Pin.OUT (定义模拟量引脚时省略，默认输入)</p></li>
 </ul>
@@ -222,6 +236,15 @@ pin.value(1) //引脚pin输出高电平
            
           </div>
           <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="API列表-PWM类.html" class="btn btn-neutral float-right" title="PWM类 PWM class" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="API列表-ADC类.html" class="btn btn-neutral float-left" title="ADC类 ADC class" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
   
 
   <hr/>

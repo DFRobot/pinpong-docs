@@ -83,13 +83,7 @@
               <p class="caption"><span class="caption-text">pinpong介绍</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../0.pinpong介绍/简介.html">简介</a></li>
-</ul>
-<p class="caption"><span class="caption-text">pinpong教程</span></p>
-<ul>
 <li class="toctree-l1"><a class="reference internal" href="../1.pinpong教程/安装教程/index.html">安装教程</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../1.pinpong教程/进阶教程/index.html">进阶教程</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../1.pinpong教程/高级教程/index.html">高级教程</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../1.pinpong教程/经典案例/index.html">经典案例</a></li>
 </ul>
 <p class="caption"><span class="caption-text">pinpong示例</span></p>
 <ul class="current">
@@ -106,9 +100,16 @@
 </li>
 <li class="toctree-l1"><a class="reference internal" href="index3.html">扩展库示例</a></li>
 </ul>
+<p class="caption"><span class="caption-text">pinpong教程</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../1.pinpong教程/进阶教程/index.html">进阶教程</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../1.pinpong教程/高级教程/index.html">高级教程</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../1.pinpong教程/经典案例/index.html">经典案例</a></li>
+</ul>
 <p class="caption"><span class="caption-text">pinpong更新记录</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../4.pinpong更新记录/index.html">更新记录</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../4.pinpong更新记录/index.html">开发计划</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../4.pinpong更新记录/index.html#id2">更新记录</a></li>
 </ul>
 <p class="caption"><span class="caption-text">FAQ常见问题</span></p>
 <ul>
@@ -184,19 +185,19 @@
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># -*- coding: UTF-8 -*-</span>
 <span class="c1">#实验效果：控制WS2812单线RGB LED灯</span>
 <span class="c1">#接线：使用windows或linux电脑连接一块arduino主控板，ws2812灯接到D9口</span>
+
 <span class="kn">import</span> <span class="nn">time</span>
-<span class="kn">from</span> <span class="nn">pinpong.pinpong</span> <span class="kn">import</span> <span class="n">PinPong</span><span class="p">,</span><span class="n">Pin</span>
-<span class="kn">from</span> <span class="nn">pinpong.libs.neopixel</span> <span class="kn">import</span> <span class="n">NeoPixel</span> <span class="c1">#从libs中导入neopixel库</span>
+<span class="kn">from</span> <span class="nn">pinpong.board</span> <span class="kn">import</span> <span class="n">Board</span><span class="p">,</span><span class="n">Pin</span><span class="p">,</span><span class="n">NeoPixel</span> <span class="c1">#导入neopixel类</span>
 
+<span class="n">Board</span><span class="p">(</span><span class="s2">&quot;uno&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">begin</span><span class="p">()</span>               <span class="c1">#初始化，选择板型(uno、leonardo、xugu)和端口号，不输入端口号则进行自动识别</span>
+<span class="c1">#Board(&quot;uno&quot;,&quot;COM36&quot;).begin()      #windows下指定端口初始化</span>
+<span class="c1">#Board(&quot;uno&quot;,&quot;/dev/ttyACM0&quot;).begin() #linux下指定端口初始化</span>
+<span class="c1">#Board(&quot;uno&quot;,&quot;/dev/cu.usbmodem14101&quot;).begin()   #mac下指定端口初始化</span>
 
-<span class="n">NEOPIXEL_PIN</span> <span class="o">=</span> <span class="n">Pin</span><span class="o">.</span><span class="n">D9</span>
+<span class="n">NEOPIXEL_PIN</span> <span class="o">=</span> <span class="n">Pin</span><span class="p">(</span><span class="n">Pin</span><span class="o">.</span><span class="n">D9</span><span class="p">)</span>
 <span class="n">PIXELS_NUM</span> <span class="o">=</span> <span class="mi">4</span> <span class="c1">#灯数</span>
 
-<span class="n">board</span> <span class="o">=</span> <span class="n">PinPong</span><span class="p">(</span><span class="s2">&quot;uno&quot;</span><span class="p">)</span>  <span class="c1">#初始化，选择板型和端口号，不输入则留空进行自动识别</span>
-<span class="c1">#board = PinPong(&quot;uno&quot;,&quot;COM36&quot;)  #windows下指定端口初始化</span>
-<span class="c1">#board = PinPong(&quot;uno&quot;,&quot;/dev/ttyS1&quot;)   #linux下指定端口初始化</span>
-
-<span class="n">np</span> <span class="o">=</span> <span class="n">NeoPixel</span><span class="p">(</span><span class="n">board</span><span class="p">,</span> <span class="n">Pin</span><span class="p">(</span><span class="n">board</span><span class="p">,</span><span class="n">NEOPIXEL_PIN</span><span class="p">),</span><span class="n">PIXELS_NUM</span><span class="p">)</span>
+<span class="n">np</span> <span class="o">=</span> <span class="n">NeoPixel</span><span class="p">(</span><span class="n">NEOPIXEL_PIN</span><span class="p">,</span><span class="n">PIXELS_NUM</span><span class="p">)</span>
 
 <span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
     <span class="n">np</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">255</span> <span class="p">,</span><span class="mi">0</span><span class="p">)</span> <span class="c1">#设置第一个灯RGB亮度</span>

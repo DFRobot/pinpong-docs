@@ -82,19 +82,26 @@
               <p class="caption"><span class="caption-text">pinpong介绍</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="0.pinpong介绍/简介.html">简介</a></li>
-</ul>
-<p class="caption"><span class="caption-text">pinpong教程</span></p>
-<ul>
 <li class="toctree-l1"><a class="reference internal" href="1.pinpong教程/安装教程/index.html">安装教程</a></li>
-<li class="toctree-l1"><a class="reference internal" href="1.pinpong教程/进阶教程/index.html">进阶教程</a></li>
-<li class="toctree-l1"><a class="reference internal" href="1.pinpong教程/高级教程/index.html">高级教程</a></li>
-<li class="toctree-l1"><a class="reference internal" href="1.pinpong教程/经典案例/index.html">经典案例</a></li>
 </ul>
 <p class="caption"><span class="caption-text">pinpong示例</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="2.pinpong示例/index1.html">基础库示例</a></li>
 <li class="toctree-l1"><a class="reference internal" href="2.pinpong示例/index2.html">常用库示例</a></li>
 <li class="toctree-l1"><a class="reference internal" href="2.pinpong示例/index3.html">扩展库示例</a></li>
+</ul>
+<p class="caption"><span class="caption-text">pinpong教程</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="1.pinpong教程/进阶教程/index.html">进阶教程</a></li>
+<li class="toctree-l1"><a class="reference internal" href="1.pinpong教程/高级教程/index.html">高级教程</a></li>
+<li class="toctree-l1"><a class="reference internal" href="1.pinpong教程/经典案例/index.html">经典案例</a></li>
+</ul>
+<p class="caption"><span class="caption-text">pinpong类库</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="3.pinpong类库/API列表-Board类.html">PinPong类 Board class</a></li>
+<li class="toctree-l1"><a class="reference internal" href="3.pinpong类库/API列表-Pin类.html">Pin类 Pin class</a></li>
+<li class="toctree-l1"><a class="reference internal" href="3.pinpong类库/API列表-ADC类.html">ADC类 ADC class</a></li>
+<li class="toctree-l1"><a class="reference internal" href="3.pinpong类库/API列表-PWM类.html">PWM类 PWM class</a></li>
 </ul>
 <p class="caption"><span class="caption-text">pinpong更新记录</span></p>
 <ul>
@@ -170,18 +177,24 @@
             
   <div class="section" id="pinpong-python">
 <h1>欢迎访问 pinpong python库教程文档!<a class="headerlink" href="#pinpong-python" title="Permalink to this headline">¶</a></h1>
-<p>PinPong库是一套控制开源硬件主控板的Pyhton库，基于Firmata协议并兼容MicroPython语法。</p>
-<p>借助于PinPong库，直接用Python代码就能给各种常见的开源硬件编程。其原理是给开源硬件烧录一个特定的固件，使开源硬件可以通过串口与电脑通讯，执行各种命令。</p>
-<p>PinPong库的名称由“Pin”和“Pong”组成，“Pin”指引脚，“PinPong”为“乒乓球”的谐音，指信号的往复。</p>
+<p>pinpong库是一套控制开源硬件主控板的Pyhton库，基于Firmata协议并兼容MicroPython语法，5分钟即可让你上手使用Python控制Arduino。</p>
+<p>借助于pinpong库，直接用Python代码就能给各种常见的开源硬件编程。其原理是给开源硬件烧录一个特定的固件，使开源硬件可以通过串口与电脑通讯，执行各种命令。</p>
+<p>pinpong库的名称由“Pin”和“Pong”组成，“Pin”指引脚，“PinPong”为“乒乓球”的谐音，指信号的往复。</p>
+<p>pinpong库的设计，是为了让开发者在开发过程中不用被繁杂的硬件型号束缚，而将重点转移到软件的实现。哪怕程序编写初期用Arduino开发，部署时改成了掌控板，只要修改一下硬件的参数就能正常运行，实现了“一次编写处处运行”。</p>
+<div class="admonition attention">
+<p class="admonition-title">Attention</p>
+<p>当前pinpong库正在快速更新中，已支持Arduino系列uno、leonardo、mega2560，其他主控板将逐步支持。</p>
+</div>
+<p>本文档推荐阅读流程：</p>
+<ol class="arabic simple">
+<li><p>查看安装教程进行准备</p></li>
+<li><p>查看示例快速上手测试</p></li>
+<li><p>查看教程进行系统学习</p></li>
+</ol>
 <div class="toctree-wrapper compound">
 <p class="caption"><span class="caption-text">pinpong介绍</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="0.pinpong介绍/简介.html">简介</a></li>
-</ul>
-</div>
-<div class="toctree-wrapper compound">
-<p class="caption"><span class="caption-text">pinpong教程</span></p>
-<ul>
 <li class="toctree-l1"><a class="reference internal" href="1.pinpong教程/安装教程/index.html">安装教程</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="1.pinpong教程/安装教程/安装-win.html">Windows平台安装</a></li>
 <li class="toctree-l2"><a class="reference internal" href="1.pinpong教程/安装教程/安装-linux.html">Linux 平台安装</a></li>
@@ -190,6 +203,41 @@
 <li class="toctree-l2"><a class="reference internal" href="1.pinpong教程/安装教程/安装-更新.html#id1">卸载pinpong库</a></li>
 </ul>
 </li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<p class="caption"><span class="caption-text">pinpong示例</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="2.pinpong示例/index1.html">基础库示例</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="2.pinpong示例/示例程序-blink.html">1-01-blink:数字输出</a></li>
+<li class="toctree-l2"><a class="reference internal" href="2.pinpong示例/示例程序-button.html">1-02-button:数字输入</a></li>
+<li class="toctree-l2"><a class="reference internal" href="2.pinpong示例/示例程序-adc.html">1-03-adc:模拟输入</a></li>
+<li class="toctree-l2"><a class="reference internal" href="2.pinpong示例/示例程序-pwm.html">1-04-PWM:模拟输出</a></li>
+<li class="toctree-l2"><a class="reference internal" href="2.pinpong示例/示例程序-irq.html">1-05-irq:引脚中断</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="2.pinpong示例/index2.html">常用库示例</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="2.pinpong示例/示例程序-servo.html">2-02-servo:舵机</a></li>
+<li class="toctree-l2"><a class="reference internal" href="2.pinpong示例/示例程序-tone.html">2-01-tone:蜂鸣器</a></li>
+<li class="toctree-l2"><a class="reference internal" href="2.pinpong示例/示例程序-hcr04.html">2-03-sr04_urm10:超声波传感器</a></li>
+<li class="toctree-l2"><a class="reference internal" href="2.pinpong示例/示例程序-dht.html">2-04-dht:温湿度传感器</a></li>
+<li class="toctree-l2"><a class="reference internal" href="2.pinpong示例/示例程序-neopixel.html">2-07-neopixel:WS2812灯带</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="2.pinpong示例/index3.html">扩展库示例</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="2.pinpong示例/示例程序-lcd1602.html">2-05-lcd1602:1602显示屏</a></li>
+<li class="toctree-l2"><a class="reference internal" href="2.pinpong示例/示例程序-oled12864.html">2-06-oled12864:oled显示屏</a></li>
+<li class="toctree-l2"><a class="reference internal" href="2.pinpong示例/示例程序-tcs34725.html">3-01-tcs34725:颜色识别</a></li>
+<li class="toctree-l2"><a class="reference internal" href="2.pinpong示例/示例程序-urm09.html">3-02-urm09:I2C超声波</a></li>
+<li class="toctree-l2"><a class="reference internal" href="2.pinpong示例/示例程序-rgb1602.html">3-03-rgb1602:彩色1602屏</a></li>
+<li class="toctree-l2"><a class="reference internal" href="2.pinpong示例/示例程序-mlx90614.html">3-04-mlx90614:红外测温</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<p class="caption"><span class="caption-text">pinpong教程</span></p>
+<ul>
 <li class="toctree-l1"><a class="reference internal" href="1.pinpong教程/进阶教程/index.html">进阶教程</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="1.pinpong教程/进阶教程/项目准备.html">项目前置知识</a></li>
 <li class="toctree-l2"><a class="reference internal" href="1.pinpong教程/进阶教程/LED闪烁.html">项目1 LED闪烁</a></li>
@@ -215,31 +263,27 @@
 </ul>
 </div>
 <div class="toctree-wrapper compound">
-<p class="caption"><span class="caption-text">pinpong示例</span></p>
+<p class="caption"><span class="caption-text">pinpong类库</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="2.pinpong示例/index1.html">基础库示例</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="2.pinpong示例/示例程序-blink.html">1-01-blink:数字输出</a></li>
-<li class="toctree-l2"><a class="reference internal" href="2.pinpong示例/示例程序-button.html">1-02-button:数字输入</a></li>
-<li class="toctree-l2"><a class="reference internal" href="2.pinpong示例/示例程序-adc.html">1-03-adc:模拟输入</a></li>
-<li class="toctree-l2"><a class="reference internal" href="2.pinpong示例/示例程序-pwm.html">1-04-PWM:模拟输出</a></li>
-<li class="toctree-l2"><a class="reference internal" href="2.pinpong示例/示例程序-irq.html">1-05-irq:引脚中断</a></li>
+<li class="toctree-l1"><a class="reference internal" href="3.pinpong类库/API列表-Board类.html">PinPong类 Board class</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="3.pinpong类库/API列表-Board类.html#constructor">构造器 constructor</a></li>
+<li class="toctree-l2"><a class="reference internal" href="3.pinpong类库/API列表-Board类.html#method">方法 method</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="2.pinpong示例/index2.html">常用库示例</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="2.pinpong示例/示例程序-tone.html">2-01-tone:蜂鸣器</a></li>
-<li class="toctree-l2"><a class="reference internal" href="2.pinpong示例/示例程序-servo.html">2-02-servo:舵机</a></li>
-<li class="toctree-l2"><a class="reference internal" href="2.pinpong示例/示例程序-hcr04.html">2-03-sr04_urm10:超声波传感器</a></li>
-<li class="toctree-l2"><a class="reference internal" href="2.pinpong示例/示例程序-dht.html">2-04-dht:温湿度传感器</a></li>
-<li class="toctree-l2"><a class="reference internal" href="2.pinpong示例/示例程序-lcd1602.html">2-05-lcd1602:1602显示屏</a></li>
-<li class="toctree-l2"><a class="reference internal" href="2.pinpong示例/示例程序-oled12864.html">2-06-oled12864:oled显示屏</a></li>
-<li class="toctree-l2"><a class="reference internal" href="2.pinpong示例/示例程序-neopixel.html">2-07-neopixel:WS2812灯带</a></li>
+<li class="toctree-l1"><a class="reference internal" href="3.pinpong类库/API列表-Pin类.html">Pin类 Pin class</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="3.pinpong类库/API列表-Pin类.html#constants">常量 constants</a></li>
+<li class="toctree-l2"><a class="reference internal" href="3.pinpong类库/API列表-Pin类.html#constructor">构造器 constructor</a></li>
+<li class="toctree-l2"><a class="reference internal" href="3.pinpong类库/API列表-Pin类.html#method">方法 method</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="2.pinpong示例/index3.html">扩展库示例</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="2.pinpong示例/示例程序-tcs34725.html">3-01-tcs34725:颜色识别</a></li>
-<li class="toctree-l2"><a class="reference internal" href="2.pinpong示例/示例程序-urm09.html">3-02-urm09:I2C超声波</a></li>
-<li class="toctree-l2"><a class="reference internal" href="2.pinpong示例/示例程序-rgb1602.html">3-03-rgb1602:彩色1602屏</a></li>
-<li class="toctree-l2"><a class="reference internal" href="2.pinpong示例/示例程序-mlx90614.html">3-04-mlx90614:红外测温</a></li>
+<li class="toctree-l1"><a class="reference internal" href="3.pinpong类库/API列表-ADC类.html">ADC类 ADC class</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="3.pinpong类库/API列表-ADC类.html#constructor">构造器 constructor</a></li>
+<li class="toctree-l2"><a class="reference internal" href="3.pinpong类库/API列表-ADC类.html#method">方法 method</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="3.pinpong类库/API列表-PWM类.html">PWM类 PWM class</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="3.pinpong类库/API列表-PWM类.html#constructor">构造器 constructor</a></li>
+<li class="toctree-l2"><a class="reference internal" href="3.pinpong类库/API列表-PWM类.html#method">方法 method</a></li>
 </ul>
 </li>
 </ul>
@@ -249,6 +293,7 @@
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="4.pinpong更新记录/index.html">开发计划</a></li>
 <li class="toctree-l1"><a class="reference internal" href="4.pinpong更新记录/index.html#id2">更新记录</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="4.pinpong更新记录/index.html#v0-3-0-20200727">V0.3.0公测版 20200727</a></li>
 <li class="toctree-l2"><a class="reference internal" href="4.pinpong更新记录/index.html#v0-2-2-20200715">V0.2.2公测版 20200715</a></li>
 <li class="toctree-l2"><a class="reference internal" href="4.pinpong更新记录/index.html#v0-2-0-20200625">V0.2.0公测版 20200625</a></li>
 <li class="toctree-l2"><a class="reference internal" href="4.pinpong更新记录/index.html#v0-1-x">V0.1.x内测版</a></li>

@@ -7,13 +7,14 @@
     #实验效果：打印UNO板A0口模拟值
     #接线：使用windows或linux电脑连接一块arduino主控板，主控板A0接一个旋钮模块
     import time
-    from pinpong.pinpong import PinPong,Pin,ADC  #导入ADC类实现模拟输入
+    from pinpong.board import Board,Pin
 
-    board = PinPong("uno")  #初始化，选择板型和端口号，不输入则留空进行自动识别
-    #board = PinPong("uno","COM36")  #windows下指定端口初始化
-    #board = PinPong("uno","/dev/ttyS1")   #linux下指定端口初始化
+    Board("uno").begin()               #初始化，选择板型(uno、leonardo、xugu)和端口号，不输入端口号则进行自动识别
+    #Board("uno","COM36").begin()      #windows下指定端口初始化
+    #Board("uno","/dev/ttyACM0").begin() #linux下指定端口初始化
+    #Board("uno","/dev/cu.usbmodem14101").begin()   #mac下指定端口初始化
 
-    #adc0 = ADC(board,Pin(board, Pin.A0)) #将Pin传入ADC中实现模拟输入  模拟输入方法1
+    #adc0 = ADC(Pin(Pin.A0)) #将Pin传入ADC中实现模拟输入  模拟输入方法1
     adc0 = Pin(Pin.A0, Pin.ANALOG) #引脚初始化为电平输出 模拟输入方法2
 
     while True:

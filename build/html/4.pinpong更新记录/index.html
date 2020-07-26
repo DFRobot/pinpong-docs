@@ -36,7 +36,7 @@
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="常见问题" href="../5.FAQ常见问题/index.html" />
-    <link rel="prev" title="3-04-mlx90614:红外测温" href="../2.pinpong示例/示例程序-mlx90614.html" /> 
+    <link rel="prev" title="PWM类 PWM class" href="../3.pinpong类库/API列表-PWM类.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -83,13 +83,7 @@
               <p class="caption"><span class="caption-text">pinpong介绍</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../0.pinpong介绍/简介.html">简介</a></li>
-</ul>
-<p class="caption"><span class="caption-text">pinpong教程</span></p>
-<ul>
 <li class="toctree-l1"><a class="reference internal" href="../1.pinpong教程/安装教程/index.html">安装教程</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../1.pinpong教程/进阶教程/index.html">进阶教程</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../1.pinpong教程/高级教程/index.html">高级教程</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../1.pinpong教程/经典案例/index.html">经典案例</a></li>
 </ul>
 <p class="caption"><span class="caption-text">pinpong示例</span></p>
 <ul>
@@ -97,10 +91,24 @@
 <li class="toctree-l1"><a class="reference internal" href="../2.pinpong示例/index2.html">常用库示例</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../2.pinpong示例/index3.html">扩展库示例</a></li>
 </ul>
+<p class="caption"><span class="caption-text">pinpong教程</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../1.pinpong教程/进阶教程/index.html">进阶教程</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../1.pinpong教程/高级教程/index.html">高级教程</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../1.pinpong教程/经典案例/index.html">经典案例</a></li>
+</ul>
+<p class="caption"><span class="caption-text">pinpong类库</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../3.pinpong类库/API列表-Board类.html">PinPong类 Board class</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../3.pinpong类库/API列表-Pin类.html">Pin类 Pin class</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../3.pinpong类库/API列表-ADC类.html">ADC类 ADC class</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../3.pinpong类库/API列表-PWM类.html">PWM类 PWM class</a></li>
+</ul>
 <p class="caption"><span class="caption-text">pinpong更新记录</span></p>
 <ul class="current">
 <li class="toctree-l1 current"><a class="current reference internal" href="#">开发计划</a></li>
 <li class="toctree-l1"><a class="reference internal" href="#id2">更新记录</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#v0-3-0-20200727">V0.3.0公测版 20200727</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#v0-2-2-20200715">V0.2.2公测版 20200715</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#v0-2-0-20200625">V0.2.0公测版 20200625</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#v0-1-x">V0.1.x内测版</a></li>
@@ -180,12 +188,24 @@
 <li><p>这里将记录一些正在开发或计划开发的内容，如果你有什么建议可至本文档的github留言</p></li>
 </ul>
 <ol class="arabic simple">
-<li><p>虚谷号板载uno板可以无需初始化board而直接控制</p></li>
 <li><p>arduino nano、micro:bit、掌控板支持</p></li>
 </ol>
 </div>
 <div class="section" id="id2">
 <h1>更新记录<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="v0-3-0-20200727">
+<h2>V0.3.0公测版 20200727<a class="headerlink" href="#v0-3-0-20200727" title="Permalink to this headline">¶</a></h2>
+<div class="admonition attention">
+<p class="admonition-title">Attention</p>
+<p>重要版本：API重做最终版本，后续API将不再进行修改，可用于教程编写。</p>
+</div>
+<ol class="arabic simple">
+<li><p>PinPong类名替换为Board类名便于理解</p></li>
+<li><p>初始化方式修改，使用Board及begin()函数</p></li>
+<li><p>增加默认板，无需给所有函数输入board参数</p></li>
+<li><p>将常用库放入Board中，导入更方便</p></li>
+</ol>
+</div>
 <div class="section" id="v0-2-2-20200715">
 <h2>V0.2.2公测版 20200715<a class="headerlink" href="#v0-2-2-20200715" title="Permalink to this headline">¶</a></h2>
 <ol class="arabic simple">
@@ -225,7 +245,7 @@
         <a href="../5.FAQ常见问题/index.html" class="btn btn-neutral float-right" title="常见问题" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="../2.pinpong示例/示例程序-mlx90614.html" class="btn btn-neutral float-left" title="3-04-mlx90614:红外测温" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="../3.pinpong类库/API列表-PWM类.html" class="btn btn-neutral float-left" title="PWM类 PWM class" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   

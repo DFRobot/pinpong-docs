@@ -7,14 +7,15 @@
     #实验效果：读取I2C 超声波传感器（URM09）数值
     #接线：使用windows或linux电脑连接一块arduino主控板，URM09传感器接到I2C口SCL SDA
     import time
-    from pinpong.pinpong import PinPong
+    from pinpong.board import Board
     from pinpong.libs.dfrobot_urm09 import URM09 #从libs中导入URM09库
 
-    board = PinPong("uno")  #初始化，选择板型和端口号，不输入则留空进行自动识别
-    #board = PinPong("uno","COM36")  #windows下指定端口初始化
-    #board = PinPong("uno","/dev/ttyS1")   #linux下指定端口初始化
+    Board("uno").begin()               #初始化，选择板型(uno、leonardo、xugu)和端口号，不输入端口号则进行自动识别
+    #Board("uno","COM36").begin()      #windows下指定端口初始化
+    #Board("uno","/dev/ttyACM0").begin() #linux下指定端口初始化
+    #Board("uno","/dev/cu.usbmodem14101").begin()   #mac下指定端口初始化
 
-    urm = URM09(board,0x11) #初始化传感器，设置I2C地址
+    urm = URM09(i2c_addr=0x11) #初始化传感器，设置I2C地址
     urm.set_mode_range(urm._MEASURE_MODE_AUTOMATIC ,urm._MEASURE_RANG_500) #设置URM09模式为自动检测，最大测量距离500cm
 
     while True:

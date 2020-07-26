@@ -9,7 +9,7 @@ ADC类 ADC class
 
 adc = ADC(board,Pin(board, Pin.A0))
 
-- board: 通过pinpong类创建的板子对象。
+- board: 通过pinpong类创建的板子对象,默认板子可以省略此参数。
 
 - Pin: 通过pin类创建的引脚对象。
 

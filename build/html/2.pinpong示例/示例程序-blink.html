@@ -83,13 +83,7 @@
               <p class="caption"><span class="caption-text">pinpong介绍</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../0.pinpong介绍/简介.html">简介</a></li>
-</ul>
-<p class="caption"><span class="caption-text">pinpong教程</span></p>
-<ul>
 <li class="toctree-l1"><a class="reference internal" href="../1.pinpong教程/安装教程/index.html">安装教程</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../1.pinpong教程/进阶教程/index.html">进阶教程</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../1.pinpong教程/高级教程/index.html">高级教程</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../1.pinpong教程/经典案例/index.html">经典案例</a></li>
 </ul>
 <p class="caption"><span class="caption-text">pinpong示例</span></p>
 <ul class="current">
@@ -104,9 +98,16 @@
 <li class="toctree-l1"><a class="reference internal" href="index2.html">常用库示例</a></li>
 <li class="toctree-l1"><a class="reference internal" href="index3.html">扩展库示例</a></li>
 </ul>
+<p class="caption"><span class="caption-text">pinpong教程</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../1.pinpong教程/进阶教程/index.html">进阶教程</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../1.pinpong教程/高级教程/index.html">高级教程</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../1.pinpong教程/经典案例/index.html">经典案例</a></li>
+</ul>
 <p class="caption"><span class="caption-text">pinpong更新记录</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../4.pinpong更新记录/index.html">更新记录</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../4.pinpong更新记录/index.html">开发计划</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../4.pinpong更新记录/index.html#id2">更新记录</a></li>
 </ul>
 <p class="caption"><span class="caption-text">FAQ常见问题</span></p>
 <ul>
@@ -183,13 +184,14 @@
 <span class="c1">#实验效果：控制arduino UNO板载LED灯一秒闪烁一次</span>
 <span class="c1">#接线：使用windows或linux电脑连接一块arduino主控板</span>
 <span class="kn">import</span> <span class="nn">time</span>
-<span class="kn">from</span> <span class="nn">pinpong.pinpong</span> <span class="kn">import</span> <span class="n">PinPong</span><span class="p">,</span><span class="n">Pin</span>
+<span class="kn">from</span> <span class="nn">pinpong.board</span> <span class="kn">import</span> <span class="n">Board</span><span class="p">,</span><span class="n">Pin</span>
 
-<span class="n">board</span> <span class="o">=</span> <span class="n">PinPong</span><span class="p">(</span><span class="s2">&quot;uno&quot;</span><span class="p">)</span>  <span class="c1">#初始化，选择板型和端口号，端口留空则自动识别端口，适合只有一块uno板</span>
-<span class="c1">#board = PinPong(&quot;uno&quot;,&quot;COM36&quot;)  #windows下外接开发板时指定端口初始化</span>
-<span class="c1">#board = PinPong(&quot;uno&quot;,&quot;/dev/ttyS1&quot;)   #linux下外接开发板时指定端口初始化</span>
+<span class="n">Board</span><span class="p">(</span><span class="s2">&quot;uno&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">begin</span><span class="p">()</span>               <span class="c1">#初始化，选择板型(uno、leonardo、xugu)和端口号，不输入端口号则进行自动识别</span>
+<span class="c1">#Board(&quot;uno&quot;,&quot;COM36&quot;).begin()      #windows下指定端口初始化</span>
+<span class="c1">#Board(&quot;uno&quot;,&quot;/dev/ttyACM0&quot;).begin() #linux下指定端口初始化</span>
+<span class="c1">#Board(&quot;uno&quot;,&quot;/dev/cu.usbmodem14101&quot;).begin()   #mac下指定端口初始化</span>
 
-<span class="n">led</span> <span class="o">=</span> <span class="n">Pin</span><span class="p">(</span><span class="n">board</span><span class="p">,</span> <span class="n">Pin</span><span class="o">.</span><span class="n">D13</span><span class="p">,</span> <span class="n">Pin</span><span class="o">.</span><span class="n">OUT</span><span class="p">)</span> <span class="c1">#引脚初始化为电平输出</span>
+<span class="n">led</span> <span class="o">=</span> <span class="n">Pin</span><span class="p">(</span><span class="n">Pin</span><span class="o">.</span><span class="n">D13</span><span class="p">,</span> <span class="n">Pin</span><span class="o">.</span><span class="n">OUT</span><span class="p">)</span> <span class="c1">#引脚初始化为电平输出</span>
 
 <span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
   <span class="c1">#led.value(1) #输出高电平 方法1</span>

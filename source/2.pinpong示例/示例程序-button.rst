@@ -7,14 +7,15 @@
     #实验效果：使用按钮控制arduino UNO板载亮灭
     #接线：使用windows或linux电脑连接一块arduino主控板，主控板D8接一个按钮模块
     import time
-    from pinpong.pinpong import PinPong,Pin
+    from pinpong.board import Board,Pin
 
-    board = PinPong("uno")  #初始化，选择板型和端口号，不输入则留空进行自动识别
-    #board = PinPong("uno","COM36")  #windows下指定端口初始化
-    #board = PinPong("uno","/dev/ttyS1")   #linux下指定端口初始化
+    Board("uno").begin()               #初始化，选择板型(uno、leonardo、xugu)和端口号，不输入端口号则进行自动识别
+    #Board("uno","COM36").begin()      #windows下指定端口初始化
+    #Board("uno","/dev/ttyACM0").begin() #linux下指定端口初始化
+    #Board("uno","/dev/cu.usbmodem14101").begin()   #mac下指定端口初始化
 
-    btn = Pin(board, Pin.D8, Pin.IN) #引脚初始化为电平输入
-    led = Pin(board, Pin.D13, Pin.OUT)
+    btn = Pin(Pin.D8, Pin.IN) #引脚初始化为电平输入
+    led = Pin(Pin.D13, Pin.OUT)
 
     while True:
       #v = btn.value()  #读取引脚电平方法1

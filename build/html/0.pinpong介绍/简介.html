@@ -83,13 +83,7 @@
               <p class="caption"><span class="caption-text">pinpong介绍</span></p>
 <ul class="current">
 <li class="toctree-l1 current"><a class="current reference internal" href="#">简介</a></li>
-</ul>
-<p class="caption"><span class="caption-text">pinpong教程</span></p>
-<ul>
 <li class="toctree-l1"><a class="reference internal" href="../1.pinpong教程/安装教程/index.html">安装教程</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../1.pinpong教程/进阶教程/index.html">进阶教程</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../1.pinpong教程/高级教程/index.html">高级教程</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../1.pinpong教程/经典案例/index.html">经典案例</a></li>
 </ul>
 <p class="caption"><span class="caption-text">pinpong示例</span></p>
 <ul>
@@ -97,9 +91,23 @@
 <li class="toctree-l1"><a class="reference internal" href="../2.pinpong示例/index2.html">常用库示例</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../2.pinpong示例/index3.html">扩展库示例</a></li>
 </ul>
+<p class="caption"><span class="caption-text">pinpong教程</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../1.pinpong教程/进阶教程/index.html">进阶教程</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../1.pinpong教程/高级教程/index.html">高级教程</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../1.pinpong教程/经典案例/index.html">经典案例</a></li>
+</ul>
+<p class="caption"><span class="caption-text">pinpong类库</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../3.pinpong类库/API列表-Board类.html">PinPong类 Board class</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../3.pinpong类库/API列表-Pin类.html">Pin类 Pin class</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../3.pinpong类库/API列表-ADC类.html">ADC类 ADC class</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../3.pinpong类库/API列表-PWM类.html">PWM类 PWM class</a></li>
+</ul>
 <p class="caption"><span class="caption-text">pinpong更新记录</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../4.pinpong更新记录/index.html">更新记录</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../4.pinpong更新记录/index.html">开发计划</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../4.pinpong更新记录/index.html#id2">更新记录</a></li>
 </ul>
 <p class="caption"><span class="caption-text">FAQ常见问题</span></p>
 <ul>
@@ -170,14 +178,20 @@
             
   <div class="section" id="id1">
 <h1>简介<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h1>
-<p>PinPong库是一套控制开源硬件主控板的Python库，基于Firmata协议并兼容MicroPython语法。</p>
-<p>借助于PinPong库，直接用Python代码就能给各种常见的开源硬件例如Arduino编程。</p>
-<p>其原理是给开源硬件烧录一个特定的固件，使开源硬件可以通过串口与电脑通讯，执行各种命令。</p>
+<p>PinPong库是一套控制开源硬件主控板的Pyhton库，基于Firmata协议并兼容MicroPython语法，5分钟即可让你上手使用Python控制Arduino。</p>
+<p>借助于PinPong库，直接用Python代码就能给各种常见的开源硬件编程。其原理是给开源硬件烧录一个特定的固件，使开源硬件可以通过串口与电脑通讯，执行各种命令。</p>
 <p>PinPong库的名称由“Pin”和“Pong”组成，“Pin”指引脚，“PinPong”为“乒乓球”的谐音，指信号的往复。</p>
+<p>pinpong库的设计，是为了让开发者在开发过程中不用被繁杂的硬件型号束缚，而将重点转移到软件的实现。哪怕程序编写初期用Arduino开发，部署时改成了掌控板，只要修改一下硬件的参数就能正常运行，实现了“一次编写处处运行”。</p>
 <div class="admonition attention">
 <p class="admonition-title">Attention</p>
-<p>当前PinPong库正在快速迭代中，已支持Arduino系列uno、leonardo、mega2560，其他主控板将逐步支持。</p>
+<p>当前PinPong库正在快速更新中，已支持Arduino系列uno、leonardo、mega2560，其他主控板将逐步支持。</p>
 </div>
+<p>本文档推荐阅读流程：</p>
+<ol class="arabic simple">
+<li><p>查看安装教程进行准备</p></li>
+<li><p>查看示例快速上手测试</p></li>
+<li><p>查看教程进行系统学习</p></li>
+</ol>
 </div>
 
 

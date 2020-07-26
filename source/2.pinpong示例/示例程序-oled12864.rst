@@ -6,15 +6,17 @@
     # -*- coding: UTF-8 -*-
     #实验效果：I2C OLED2864屏控制
     #接线：使用windows或linux电脑连接一块arduino主控板，OLED2864显示屏接到I2C口SCL及SDA
+    
     import time
-    from pinpong.pinpong import PinPong
-    from pinpong.libs.dfrobot_ssd1306_i2c import SSD1306_I2C #导入ssd1306库
+    from pinpong.board import Board
+    from pinpong.libs.dfrobot_ssd1306 import SSD1306_I2C #导入ssd1306库
 
-    board = PinPong("uno")  #初始化，选择板型和端口号，不输入则留空进行自动识别
-    #board = PinPong("uno","COM36")  #windows下指定端口初始化
-    #board = PinPong("uno","/dev/ttyS1")   #linux下指定端口初始化
+    Board("uno").begin()               #初始化，选择板型(uno、leonardo、xugu)和端口号，不输入端口号则进行自动识别
+    #Board("uno","COM36").begin()      #windows下指定端口初始化
+    #Board("uno","/dev/ttyACM0").begin() #linux下指定端口初始化
+    #Board("uno","/dev/cu.usbmodem14101").begin()   #mac下指定端口初始化
 
-    oled=SSD1306_I2C(board, 128, 64) #初始化屏幕，传入屏幕像素点数
+    oled=SSD1306_I2C(width=128, height=64) #初始化屏幕，传入屏幕像素点数
 
 
     while True:
