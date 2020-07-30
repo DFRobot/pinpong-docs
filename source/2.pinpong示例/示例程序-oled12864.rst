@@ -30,7 +30,7 @@
         print("0")
         time.sleep(1)
         
-        oled.text(0) #显示数字
+        oled.text("0") #显示数字
         oled.text("Hello PinPong",8,8) #指定位置显示文字
         oled.show()  #显示生效
         time.sleep(2)

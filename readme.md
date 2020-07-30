@@ -9,7 +9,7 @@ PinPong库是一套控制开源硬件主控板的Python库，基于Firmata协议
 PinPong库的名称由“Pin”和“Pong”组成，“Pin”指引脚，“PinPong”为“乒乓球”的谐音，指信号的往复。
 
 # 文档地址
-[https://pinpong.readthedocs.io/]("https://pinpong.readthedocs.io/")
+https://pinpong.readthedocs.io
 
 
 # 安装方法
