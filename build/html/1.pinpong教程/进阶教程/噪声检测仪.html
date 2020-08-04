@@ -94,8 +94,8 @@
 <p class="caption"><span class="caption-text">pinpong教程</span></p>
 <ul class="current">
 <li class="toctree-l1 current"><a class="reference internal" href="index.html">进阶教程</a><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="项目准备.html">项目前置知识</a></li>
-<li class="toctree-l2"><a class="reference internal" href="LED闪烁.html">项目1 LED闪烁</a></li>
+<li class="toctree-l2"><a class="reference internal" href="项目前置知识.html">项目前置知识</a></li>
+<li class="toctree-l2"><a class="reference internal" href="LED闪烁.html">项目1  LED闪烁</a></li>
 <li class="toctree-l2"><a class="reference internal" href="神奇的按键.html">项目2 神奇的按键</a></li>
 <li class="toctree-l2"><a class="reference internal" href="调光台灯.html">项目3 调光台灯</a></li>
 <li class="toctree-l2"><a class="reference internal" href="智能节能灯.html">项目4 智能节能灯</a></li>
@@ -104,11 +104,11 @@
 <li class="toctree-l3"><a class="reference internal" href="#id2">一、概述</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#id3">二、项目实施</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="#id4">（1）驱动舵机</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#id7">（2）用舵机反馈声音数值</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id5">（2）用舵机反馈声音数值</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="#id10">三、代码分析</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#id11">四、硬件分析</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id6">三、代码分析</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id7">四、硬件分析</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="模拟交通灯.html">项目7 模拟交通灯</a></li>
@@ -119,6 +119,13 @@
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../高级教程/index.html">高级教程</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../经典案例/index.html">经典案例</a></li>
+</ul>
+<p class="caption"><span class="caption-text">pinpong类库</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../3.pinpong类库/API列表-Board类.html">PinPong类 Board class</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../3.pinpong类库/API列表-Pin类.html">Pin类 Pin class</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../3.pinpong类库/API列表-ADC类.html">ADC类 ADC class</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../3.pinpong类库/API列表-PWM类.html">PWM类 PWM class</a></li>
 </ul>
 <p class="caption"><span class="caption-text">pinpong更新记录</span></p>
 <ul>
@@ -205,8 +212,7 @@
 <h2>二、项目实施<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="id4">
 <h3>（1）驱动舵机<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h3>
-<div class="section" id="id5">
-<h4>硬件准备：<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h4>
+<p><strong>硬件准备：</strong></p>
 <p>主控：Arduino UNO、IO 传感器扩展板 V7.1</p>
 <p>模块：舵机</p>
 <p>连接线：TypeAtoB方口USB连接线</p>
@@ -214,105 +220,99 @@
 <ul class="simple">
 <li><p>将舵机接入4号数字引脚</p></li>
 </ul>
-</div>
-<div class="section" id="id6">
-<h4>程序编写：<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h4>
-<p>1、在示例程序中找到servo.py，并用IDLE打开，并修改端口号，或删去端口号，使用自动识别。</p>
+<p><strong>程序编写：</strong></p>
+<ol class="arabic simple">
+<li><p>打开pingpong库的官方文档，找到常用库示例中的“舵机”，并用IDLE打开。</p></li>
+</ol>
 <img alt="../../_images/0611.png" src="../../_images/0611.png" />
-<p>2、摁下F5运行程序，查看效果。</p>
+<ol class="arabic simple" start="2">
+<li><p>摁下F5运行程序，察看效果。</p></li>
+</ol>
 <img alt="../../_images/0612.png" src="../../_images/0612.png" />
-<p>运行效果</p>
-<p>舵机会以0度转到90度转到180度，再转回90度转到0度循环。</p>
+<p><strong>运行效果</strong></p>
+<p><strong>舵机会以0度转到90度转到180度，再转回90度转到0度循环。</strong></p>
 <p>注意：在程序运行时不可以拔掉与Arduino连接的USB线，且不能关闭新弹出的Python shell运行窗口，如果拔线或者关闭运行窗口，程序功能就会停止执行。</p>
-<p>3、如果我们想要修改舵机旋转的角度或让舵机按一定速度慢慢旋转，那我们只需要修改角度即可。示例程序为舵机从0度慢慢旋转至120度。</p>
+<ol class="arabic simple" start="3">
+<li><p>如果我们想要修改舵机旋转的角度或让舵机按一定速度慢慢旋转，那我们只需要修改角度即可。示例程序为舵机从0度慢慢旋转至120度。</p></li>
+</ol>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">time</span>
-<span class="kn">from</span> <span class="nn">pinpong.pinpong</span> <span class="kn">import</span> <span class="n">PinPong</span><span class="p">,</span><span class="n">Pin</span>
-<span class="kn">from</span> <span class="nn">pinpong.libs.servo</span> <span class="kn">import</span> <span class="n">Servo</span>
-<span class="n">Servo</span><span class="o">.</span><span class="n">help</span><span class="p">()</span>
+<span class="kn">from</span> <span class="nn">pinpong.board</span> <span class="kn">import</span> <span class="n">Board</span><span class="p">,</span><span class="n">Pin</span><span class="p">,</span><span class="n">Servo</span>
 
-<span class="n">SERVO_PIN</span> <span class="o">=</span> <span class="n">Pin</span><span class="o">.</span><span class="n">D4</span>
+<span class="n">Board</span><span class="p">(</span><span class="s2">&quot;uno&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">begin</span><span class="p">()</span>
 
-<span class="n">board</span> <span class="o">=</span> <span class="n">PinPong</span><span class="p">(</span><span class="s2">&quot;uno&quot;</span><span class="p">)</span>
-<span class="n">servo1</span> <span class="o">=</span> <span class="n">Servo</span><span class="p">(</span><span class="n">board</span><span class="p">,</span> <span class="n">Pin</span><span class="p">(</span><span class="n">board</span><span class="p">,</span><span class="n">SERVO_PIN</span><span class="p">))</span>
+<span class="n">s1</span> <span class="o">=</span> <span class="n">Servo</span><span class="p">(</span><span class="n">Pin</span><span class="p">(</span><span class="n">Pin</span><span class="o">.</span><span class="n">D4</span><span class="p">))</span>
 
 <span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
-  <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">120</span><span class="p">):</span>
-    <span class="n">servo1</span><span class="o">.</span><span class="n">angle</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
-    <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mf">0.1</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">120</span><span class="p">):</span>
+        <span class="n">s1</span><span class="o">.</span><span class="n">write_angle</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+        <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mf">0.1</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
-</div>
-<div class="section" id="id7">
-<h3>（2）用舵机反馈声音数值<a class="headerlink" href="#id7" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id5">
+<h3>（2）用舵机反馈声音数值<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h3>
 <p>大家可能会好奇，舵机是如何实现反馈声音数值的功能。如图所示，我们可以将读取到的数值转换成舵机的角度值，然后用舵柄当作指针来反馈数值。</p>
 <img alt="../../_images/0620.png" src="../../_images/0620.png" />
-<div class="section" id="id8">
-<h4>硬件准备：<a class="headerlink" href="#id8" title="Permalink to this headline">¶</a></h4>
+<p><strong>硬件准备：</strong></p>
 <p>主控：Arduino UNO、IO 传感器扩展板 V7.1</p>
 <p>模块：舵机、声音传感器</p>
 <p>连接线：TypeAtoB方口USB连接线</p>
 <img alt="../../_images/06fin.png" src="../../_images/06fin.png" />
 <ul class="simple">
-<li><p>将舵机接入4号数字引脚，声音传感器接入A0模拟引脚</p></li>
+<li><p>将舵机接入4号数字引脚，声音传感器接入A0模拟引脚。</p></li>
 </ul>
-</div>
-<div class="section" id="id9">
-<h4>程序编写：<a class="headerlink" href="#id9" title="Permalink to this headline">¶</a></h4>
-<p>1、我们在之前的项目中使用过声音传感器，知道如何读取它的数值，但是声音传感器读出的数据是0~1023而我们使用的舵机的旋转角度是0~180度，所以我们需要在程序中对这个数值进行转换。</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">voiceRead</span> <span class="o">=</span> <span class="n">adcInit</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
-<span class="n">servoTurn</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">voiceRead</span> <span class="o">*</span> <span class="mi">180</span><span class="o">/</span><span class="mi">1024</span><span class="p">)</span>
+<p><strong>程序编写</strong></p>
+<ol class="arabic simple">
+<li><p>我们在之前的项目中使用过声音传感器，知道如何读取它的数值，但是声音传感器读出的数据是0~1023而我们使用的舵机的旋转角度是0~180度，所以我们需要在程序中对这个数值进行转换。</p></li>
+</ol>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">vs</span> <span class="o">=</span> <span class="n">Sound</span><span class="o">.</span><span class="n">read_analog</span><span class="p">()</span>
+<span class="n">servoTurn</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">vs</span><span class="o">*</span><span class="mi">180</span><span class="o">/</span><span class="mi">1024</span><span class="p">)</span>
 </pre></div>
 </div>
 <p>在这里加入int，将数值整形，转化为舵机旋转的角度。</p>
-<p>2、在了解了如何将声音传感器读取的数值转换为舵机可旋转的角度值之后，修改程序，示例程序如下。</p>
+<ol class="arabic simple" start="2">
+<li><p>在了解了如何将声音传感器读取的数值转换为舵机可旋转的角度值之后，修改程序，示例程序如下。</p></li>
+</ol>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">time</span>
-<span class="kn">from</span> <span class="nn">pinpong.pinpong</span> <span class="kn">import</span> <span class="o">*</span>
-<span class="kn">from</span> <span class="nn">pinpong.libs.servo</span> <span class="kn">import</span> <span class="n">Servo</span>
+<span class="kn">from</span> <span class="nn">pinpong.board</span> <span class="kn">import</span> <span class="n">Board</span><span class="p">,</span><span class="n">Pin</span><span class="p">,</span><span class="n">Servo</span>
 
-<span class="n">SERVO_PIN</span> <span class="o">=</span> <span class="n">Pin</span><span class="o">.</span><span class="n">D4</span>
+<span class="n">Board</span><span class="p">(</span><span class="s2">&quot;uno&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">begin</span><span class="p">()</span>
 
-<span class="n">board</span> <span class="o">=</span> <span class="n">PinPong</span><span class="p">(</span><span class="s2">&quot;uno&quot;</span><span class="p">)</span>
-
-<span class="n">adcInit</span> <span class="o">=</span> <span class="n">ADC</span><span class="p">(</span><span class="n">board</span><span class="p">,</span><span class="n">Pin</span><span class="p">(</span><span class="n">board</span><span class="p">,</span> <span class="n">Pin</span><span class="o">.</span><span class="n">A0</span><span class="p">))</span>
-<span class="n">servo1</span> <span class="o">=</span> <span class="n">Servo</span><span class="p">(</span><span class="n">board</span><span class="p">,</span> <span class="n">Pin</span><span class="p">(</span><span class="n">board</span><span class="p">,</span><span class="n">SERVO_PIN</span><span class="p">))</span>
+<span class="n">s1</span> <span class="o">=</span> <span class="n">Servo</span><span class="p">(</span><span class="n">Pin</span><span class="p">(</span><span class="n">Pin</span><span class="o">.</span><span class="n">D4</span><span class="p">))</span>
+<span class="n">Sound</span> <span class="o">=</span> <span class="n">Pin</span><span class="p">(</span><span class="n">Pin</span><span class="o">.</span><span class="n">A0</span><span class="p">,</span><span class="n">Pin</span><span class="o">.</span><span class="n">ANALOG</span><span class="p">)</span>
 
 <span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
-    <span class="n">voiceRead</span> <span class="o">=</span> <span class="n">adcInit</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
-    <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mf">0.5</span><span class="p">)</span>
-    <span class="n">servoTurn</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">voiceRead</span> <span class="o">*</span> <span class="mi">180</span><span class="o">/</span><span class="mi">1024</span><span class="p">)</span>
+    <span class="n">vs</span> <span class="o">=</span> <span class="n">Sound</span><span class="o">.</span><span class="n">read_analog</span><span class="p">()</span>
+    <span class="n">servoTurn</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">vs</span><span class="o">*</span><span class="mi">180</span><span class="o">/</span><span class="mi">1024</span><span class="p">)</span>
     <span class="nb">print</span><span class="p">(</span><span class="n">servoTurn</span><span class="p">)</span>
-    <span class="n">servo1</span><span class="o">.</span><span class="n">angle</span><span class="p">(</span><span class="n">servoTurn</span><span class="p">)</span>
+    <span class="n">s1</span><span class="o">.</span><span class="n">write_angle</span><span class="p">(</span><span class="n">servoTurn</span><span class="p">)</span>
+    <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mf">0.5</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="id10">
-<h2>三、代码分析<a class="headerlink" href="#id10" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id6">
+<h2>三、代码分析<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">time</span>
-<span class="kn">from</span> <span class="nn">pinpong.pinpong</span> <span class="kn">import</span> <span class="o">*</span>
-<span class="kn">from</span> <span class="nn">pinpong.libs.servo</span> <span class="kn">import</span> <span class="n">Servo</span>
+<span class="kn">from</span> <span class="nn">pinpong.board</span> <span class="kn">import</span> <span class="n">Board</span><span class="p">,</span><span class="n">Pin</span><span class="p">,</span><span class="n">Servo</span>
 
-<span class="n">SERVO_PIN</span> <span class="o">=</span> <span class="n">Pin</span><span class="o">.</span><span class="n">D4</span>
+<span class="n">Board</span><span class="p">(</span><span class="s2">&quot;uno&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">begin</span><span class="p">()</span>
 
-<span class="n">board</span> <span class="o">=</span> <span class="n">PinPong</span><span class="p">(</span><span class="s2">&quot;uno&quot;</span><span class="p">)</span>
-
-<span class="n">adcInit</span> <span class="o">=</span> <span class="n">ADC</span><span class="p">(</span><span class="n">board</span><span class="p">,</span><span class="n">Pin</span><span class="p">(</span><span class="n">board</span><span class="p">,</span> <span class="n">Pin</span><span class="o">.</span><span class="n">A0</span><span class="p">))</span>    <span class="c1">#初始化声音传感器在A0模拟引脚</span>
-<span class="n">servo1</span> <span class="o">=</span> <span class="n">Servo</span><span class="p">(</span><span class="n">board</span><span class="p">,</span> <span class="n">Pin</span><span class="p">(</span><span class="n">board</span><span class="p">,</span><span class="n">SERVO_PIN</span><span class="p">))</span><span class="c1">#初始化舵机</span>
+<span class="n">s1</span> <span class="o">=</span> <span class="n">Servo</span><span class="p">(</span><span class="n">Pin</span><span class="p">(</span><span class="n">Pin</span><span class="o">.</span><span class="n">D4</span><span class="p">))</span> <span class="c1">#初始化舵机在D4引脚</span>
+<span class="n">Sound</span> <span class="o">=</span> <span class="n">Pin</span><span class="p">(</span><span class="n">Pin</span><span class="o">.</span><span class="n">A0</span><span class="p">,</span><span class="n">Pin</span><span class="o">.</span><span class="n">ANALOG</span><span class="p">)</span><span class="c1">#初始化声音传感器在A0引脚</span>
 
 <span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
-    <span class="n">voiceRead</span> <span class="o">=</span> <span class="n">adcInit</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
-    <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mf">0.5</span><span class="p">)</span>
-    <span class="n">servoTurn</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">voiceRead</span> <span class="o">*</span> <span class="mi">180</span><span class="o">/</span><span class="mi">1024</span><span class="p">)</span> <span class="c1">#转换声音数值为舵机角度</span>
+    <span class="n">vs</span> <span class="o">=</span> <span class="n">Sound</span><span class="o">.</span><span class="n">read_analog</span><span class="p">()</span>
+    <span class="n">servoTurn</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">vs</span><span class="o">*</span><span class="mi">180</span><span class="o">/</span><span class="mi">1024</span><span class="p">)</span><span class="c1">#转换声音数值为舵机角度</span>
     <span class="nb">print</span><span class="p">(</span><span class="n">servoTurn</span><span class="p">)</span>
-    <span class="n">servo1</span><span class="o">.</span><span class="n">angle</span><span class="p">(</span><span class="n">servoTurn</span><span class="p">)</span>
+    <span class="n">s1</span><span class="o">.</span><span class="n">write_angle</span><span class="p">(</span><span class="n">servoTurn</span><span class="p">)</span>
+    <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mf">0.5</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
-<div class="section" id="id11">
-<h2>四、硬件分析<a class="headerlink" href="#id11" title="Permalink to this headline">¶</a></h2>
-<p>什么是舵机？</p>
+<div class="section" id="id7">
+<h2>四、硬件分析<a class="headerlink" href="#id7" title="Permalink to this headline">¶</a></h2>
+<p><strong>什么是舵机？</strong></p>
 <p>舵机是一种可以指定控制位置（角度）的电机，可以通过程序来指定控制舵机旋转的角度。我们最常用的舵机大多最大旋转角度是0°~180°，也有90°或者其他角度的。也有比较特殊的360°舵机，但是360°舵机不能够控制其旋转到指定的角度。本项目中我们使用的是180°舵机。</p>
 <img alt="../../_images/servopic.png" src="../../_images/servopic.png" />
 </div>

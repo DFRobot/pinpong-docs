@@ -35,7 +35,7 @@
   <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="项目前置知识" href="项目准备.html" />
+    <link rel="next" title="项目前置知识" href="项目前置知识.html" />
     <link rel="prev" title="3-04-mlx90614:红外测温" href="../../2.pinpong示例/示例程序-mlx90614.html" /> 
 </head>
 
@@ -94,8 +94,8 @@
 <p class="caption"><span class="caption-text">pinpong教程</span></p>
 <ul class="current">
 <li class="toctree-l1 current"><a class="current reference internal" href="#">进阶教程</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="项目准备.html">项目前置知识</a></li>
-<li class="toctree-l2"><a class="reference internal" href="LED闪烁.html">项目1 LED闪烁</a></li>
+<li class="toctree-l2"><a class="reference internal" href="项目前置知识.html">项目前置知识</a></li>
+<li class="toctree-l2"><a class="reference internal" href="LED闪烁.html">项目1  LED闪烁</a></li>
 <li class="toctree-l2"><a class="reference internal" href="神奇的按键.html">项目2 神奇的按键</a></li>
 <li class="toctree-l2"><a class="reference internal" href="调光台灯.html">项目3 调光台灯</a></li>
 <li class="toctree-l2"><a class="reference internal" href="智能节能灯.html">项目4 智能节能灯</a></li>
@@ -191,86 +191,80 @@
             
   <div class="section" id="id1">
 <h1>进阶教程<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h1>
-<div class="admonition attention">
-<p class="admonition-title">Attention</p>
-<p>由于pinpong库最新0.3.x及以上版本更新了初始化相关部分的API，因此此教程会出现错误，正在迭代中，请参考PinPong示例部分代码使用。</p>
-</div>
 <div class="toctree-wrapper compound">
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="项目准备.html">项目前置知识</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="项目准备.html#id2">概述</a></li>
-<li class="toctree-l2"><a class="reference internal" href="项目准备.html#arduino">1.什么是Arduino？</a></li>
-<li class="toctree-l2"><a class="reference internal" href="项目准备.html#python">2.什么是Python？</a></li>
-<li class="toctree-l2"><a class="reference internal" href="项目准备.html#id3">3.如何编辑Python代码？</a></li>
-<li class="toctree-l2"><a class="reference internal" href="项目准备.html#pinpong">4.什么是pinpong库？</a></li>
+<li class="toctree-l1"><a class="reference internal" href="项目前置知识.html">项目前置知识</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="项目前置知识.html#id2">概述</a></li>
+<li class="toctree-l2"><a class="reference internal" href="项目前置知识.html#arduino">一、什么是Arduino？</a></li>
+<li class="toctree-l2"><a class="reference internal" href="项目前置知识.html#python">二、什么是Python？</a></li>
+<li class="toctree-l2"><a class="reference internal" href="项目前置知识.html#id3">三、如何编辑Python代码？</a></li>
+<li class="toctree-l2"><a class="reference internal" href="项目前置知识.html#pinpong">四、什么是pinpong库？</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="LED闪烁.html">项目1 LED闪烁</a><ul>
+<li class="toctree-l1"><a class="reference internal" href="LED闪烁.html">项目1  LED闪烁</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="LED闪烁.html#id1">一、概述</a></li>
 <li class="toctree-l2"><a class="reference internal" href="LED闪烁.html#id2">二、项目实施</a></li>
-<li class="toctree-l2"><a class="reference internal" href="LED闪烁.html#id10">三、代码分析</a></li>
-<li class="toctree-l2"><a class="reference internal" href="LED闪烁.html#id11">四、硬件分析</a></li>
+<li class="toctree-l2"><a class="reference internal" href="LED闪烁.html#id5">三、代码分析</a></li>
+<li class="toctree-l2"><a class="reference internal" href="LED闪烁.html#id6">四、硬件分析</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="神奇的按键.html">项目2 神奇的按键</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="神奇的按键.html#id2">一、概述</a></li>
-<li class="toctree-l2"><a class="reference internal" href="神奇的按键.html#id3">二、项目实施</a></li>
-<li class="toctree-l2"><a class="reference internal" href="神奇的按键.html#id10">三、代码分析</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="调光台灯.html">项目3 调光台灯</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="调光台灯.html#id2">一、概述</a></li>
 <li class="toctree-l2"><a class="reference internal" href="调光台灯.html#id3">二、项目实施</a></li>
-<li class="toctree-l2"><a class="reference internal" href="调光台灯.html#id10">三、代码分析</a></li>
+<li class="toctree-l2"><a class="reference internal" href="调光台灯.html#id6">三、代码分析</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="智能节能灯.html">项目4 智能节能灯</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="智能节能灯.html#id2">一、概述</a></li>
 <li class="toctree-l2"><a class="reference internal" href="智能节能灯.html#id3">二、项目实施</a></li>
-<li class="toctree-l2"><a class="reference internal" href="智能节能灯.html#id10">三、代码分析</a></li>
-<li class="toctree-l2"><a class="reference internal" href="智能节能灯.html#id11">四、硬件分析</a></li>
+<li class="toctree-l2"><a class="reference internal" href="智能节能灯.html#id6">三、代码分析</a></li>
+<li class="toctree-l2"><a class="reference internal" href="智能节能灯.html#id7">四、硬件分析</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="近视警报器.html">项目5 近视警示器</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="近视警报器.html#id2">一、概述</a></li>
 <li class="toctree-l2"><a class="reference internal" href="近视警报器.html#id3">二、项目实施</a></li>
-<li class="toctree-l2"><a class="reference internal" href="近视警报器.html#id13">三、代码分析</a></li>
-<li class="toctree-l2"><a class="reference internal" href="近视警报器.html#id14">四、硬件分析</a></li>
+<li class="toctree-l2"><a class="reference internal" href="近视警报器.html#id7">三、代码分析</a></li>
+<li class="toctree-l2"><a class="reference internal" href="近视警报器.html#id8">四、硬件分析</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="噪声检测仪.html">项目6 噪声检测仪</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="噪声检测仪.html#id2">一、概述</a></li>
 <li class="toctree-l2"><a class="reference internal" href="噪声检测仪.html#id3">二、项目实施</a></li>
-<li class="toctree-l2"><a class="reference internal" href="噪声检测仪.html#id10">三、代码分析</a></li>
-<li class="toctree-l2"><a class="reference internal" href="噪声检测仪.html#id11">四、硬件分析</a></li>
+<li class="toctree-l2"><a class="reference internal" href="噪声检测仪.html#id6">三、代码分析</a></li>
+<li class="toctree-l2"><a class="reference internal" href="噪声检测仪.html#id7">四、硬件分析</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="模拟交通灯.html">项目7 模拟交通灯</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="模拟交通灯.html#id2">一、概述</a></li>
 <li class="toctree-l2"><a class="reference internal" href="模拟交通灯.html#id3">二、项目实施</a></li>
-<li class="toctree-l2"><a class="reference internal" href="模拟交通灯.html#id8">三、代码分析</a></li>
-<li class="toctree-l2"><a class="reference internal" href="模拟交通灯.html#id9">四、硬件分析</a></li>
+<li class="toctree-l2"><a class="reference internal" href="模拟交通灯.html#id4">三、代码分析</a></li>
+<li class="toctree-l2"><a class="reference internal" href="模拟交通灯.html#id5">四、硬件分析</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="桌面气象站.html">项目8 桌面气象站</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="桌面气象站.html#id2">一、概述</a></li>
 <li class="toctree-l2"><a class="reference internal" href="桌面气象站.html#id3">二、项目实施</a></li>
-<li class="toctree-l2"><a class="reference internal" href="桌面气象站.html#id10">三、代码分析</a></li>
-<li class="toctree-l2"><a class="reference internal" href="桌面气象站.html#id11">四、硬件分析</a></li>
+<li class="toctree-l2"><a class="reference internal" href="桌面气象站.html#id6">三、代码分析</a></li>
+<li class="toctree-l2"><a class="reference internal" href="桌面气象站.html#id7">四、硬件分析</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="游园人数统计.html">项目9 游园人数统计</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="游园人数统计.html#id2">一、概述</a></li>
 <li class="toctree-l2"><a class="reference internal" href="游园人数统计.html#id3">二、项目实施</a></li>
-<li class="toctree-l2"><a class="reference internal" href="游园人数统计.html#id10">三、代码分析</a></li>
-<li class="toctree-l2"><a class="reference internal" href="游园人数统计.html#id11">四、硬件分析</a></li>
+<li class="toctree-l2"><a class="reference internal" href="游园人数统计.html#id6">三、代码分析</a></li>
+<li class="toctree-l2"><a class="reference internal" href="游园人数统计.html#id7">四、硬件分析</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="定时浇花装置.html">项目10 定时浇花装置</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="定时浇花装置.html#id2">一、概述</a></li>
 <li class="toctree-l2"><a class="reference internal" href="定时浇花装置.html#id3">二、项目实施</a></li>
-<li class="toctree-l2"><a class="reference internal" href="定时浇花装置.html#id10">三、代码分析</a></li>
-<li class="toctree-l2"><a class="reference internal" href="定时浇花装置.html#id11">四、硬件分析</a></li>
+<li class="toctree-l2"><a class="reference internal" href="定时浇花装置.html#id6">三、代码分析</a></li>
+<li class="toctree-l2"><a class="reference internal" href="定时浇花装置.html#id7">四、硬件分析</a></li>
 </ul>
 </li>
 </ul>
@@ -285,7 +279,7 @@
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="项目准备.html" class="btn btn-neutral float-right" title="项目前置知识" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="项目前置知识.html" class="btn btn-neutral float-right" title="项目前置知识" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
         <a href="../../2.pinpong示例/示例程序-mlx90614.html" class="btn btn-neutral float-left" title="3-04-mlx90614:红外测温" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>

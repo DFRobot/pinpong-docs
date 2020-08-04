@@ -94,19 +94,19 @@
 <p class="caption"><span class="caption-text">pinpong教程</span></p>
 <ul class="current">
 <li class="toctree-l1 current"><a class="reference internal" href="index.html">进阶教程</a><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="项目准备.html">项目前置知识</a></li>
-<li class="toctree-l2"><a class="reference internal" href="LED闪烁.html">项目1 LED闪烁</a></li>
+<li class="toctree-l2"><a class="reference internal" href="项目前置知识.html">项目前置知识</a></li>
+<li class="toctree-l2"><a class="reference internal" href="LED闪烁.html">项目1  LED闪烁</a></li>
 <li class="toctree-l2"><a class="reference internal" href="神奇的按键.html">项目2 神奇的按键</a></li>
 <li class="toctree-l2"><a class="reference internal" href="调光台灯.html">项目3 调光台灯</a></li>
 <li class="toctree-l2 current"><a class="current reference internal" href="#">项目4 智能节能灯</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#id2">一、概述</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#id3">二、项目实施</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="#id4">（1）通过光线亮度控制小灯</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#id7">（2）加入声音传感器检测</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id5">（2）加入声音传感器检测</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="#id10">三、代码分析</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#id11">四、硬件分析</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id6">三、代码分析</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id7">四、硬件分析</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="近视警报器.html">项目5 近视警示器</a></li>
@@ -119,6 +119,13 @@
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../高级教程/index.html">高级教程</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../经典案例/index.html">经典案例</a></li>
+</ul>
+<p class="caption"><span class="caption-text">pinpong类库</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../3.pinpong类库/API列表-Board类.html">PinPong类 Board class</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../3.pinpong类库/API列表-Pin类.html">Pin类 Pin class</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../3.pinpong类库/API列表-ADC类.html">ADC类 ADC class</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../3.pinpong类库/API列表-PWM类.html">PWM类 PWM class</a></li>
 </ul>
 <p class="caption"><span class="caption-text">pinpong更新记录</span></p>
 <ul>
@@ -198,15 +205,14 @@
 <h1>项目4 智能节能灯<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="id2">
 <h2>一、概述<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
-<p>在前面的章节我们学习了如何点亮小灯，如何调节亮度等等功能，那像楼道灯那样的，只会在黑夜且发出声音才会亮起的灯是如何实现的呢？我们将在本项目中学习。</p>
+<p>在前面的章节我们学习了如何点亮小灯，如何调节亮度等等功能，那像楼道灯那样，只会在黑夜且发出声音时才会亮起的灯是如何实现的呢？我们将在本项目中学习。</p>
 <img alt="../../_images/4th.png" src="../../_images/4th.png" />
 </div>
 <div class="section" id="id3">
 <h2>二、项目实施<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="id4">
 <h3>（1）通过光线亮度控制小灯<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h3>
-<div class="section" id="id5">
-<h4>硬件准备：<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h4>
+<p><strong>硬件准备：</strong></p>
 <p>主控：Arduino UNO、IO 传感器扩展板 V7.1</p>
 <p>模块：LED发光模块、光线传感器</p>
 <p>连接线：TypeAtoB方口USB连接线</p>
@@ -214,124 +220,118 @@
 <ul class="simple">
 <li><p>将LED模块接入D13引脚,光线传感器接入A2引脚</p></li>
 </ul>
-</div>
-<div class="section" id="id6">
-<h4>程序编写：<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h4>
-<p>1、在示例程序中找到adc.py，并用IDLE打开，并修改端口号，或删去端口号，使用自动识别。</p>
+<p><strong>程序编写：</strong></p>
+<ol class="arabic simple">
+<li><p>打开pingpong库的官方文档，找到基础库示例中的“模拟输入”，并用IDLE打开。</p></li>
+</ol>
 <img alt="../../_images/0411.png" src="../../_images/0411.png" />
-<p>2、修改代码，当亮度低于100的时候，点亮LED灯。</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">sys</span>
-<span class="kn">import</span> <span class="nn">time</span>
-<span class="kn">from</span> <span class="nn">pinpong.pinpong</span> <span class="kn">import</span> <span class="o">*</span>
-
-<span class="n">board</span> <span class="o">=</span> <span class="n">PinPong</span><span class="p">(</span><span class="s2">&quot;uno&quot;</span><span class="p">,</span><span class="s2">&quot;com5&quot;</span><span class="p">)</span>
-<span class="n">board</span><span class="o">.</span><span class="n">connect</span><span class="p">()</span>
-<span class="n">light</span> <span class="o">=</span> <span class="n">ADC</span><span class="p">(</span><span class="n">board</span><span class="p">,</span> <span class="n">Pin</span><span class="p">(</span><span class="n">board</span><span class="p">,</span> <span class="n">Pin</span><span class="o">.</span><span class="n">A2</span><span class="p">))</span>
-<span class="n">d13</span> <span class="o">=</span> <span class="n">Pin</span><span class="p">(</span><span class="n">board</span><span class="p">,</span> <span class="n">Pin</span><span class="o">.</span><span class="n">D13</span><span class="p">,</span> <span class="n">Pin</span><span class="o">.</span><span class="n">OUT</span><span class="p">)</span>
-
+<ol class="arabic simple" start="2">
+<li><p>修改代码，当亮度低于100的时候，点亮LED灯。</p></li>
+</ol>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">time</span>
+<span class="kn">from</span> <span class="nn">pinpong.board</span> <span class="kn">import</span> <span class="n">Board</span><span class="p">,</span><span class="n">Pin</span>
+<span class="n">Board</span><span class="p">(</span><span class="s2">&quot;uno&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">begin</span><span class="p">()</span>
+<span class="n">Light</span> <span class="o">=</span> <span class="n">Pin</span><span class="p">(</span><span class="n">Pin</span><span class="o">.</span><span class="n">A2</span><span class="p">,</span><span class="n">Pin</span><span class="o">.</span><span class="n">ANALOG</span><span class="p">)</span>
+<span class="n">LED</span> <span class="o">=</span> <span class="n">Pin</span><span class="p">(</span><span class="n">Pin</span><span class="o">.</span><span class="n">D13</span><span class="p">,</span> <span class="n">Pin</span><span class="o">.</span><span class="n">OUT</span><span class="p">)</span>
 <span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
-  <span class="n">vl</span> <span class="o">=</span> <span class="n">light</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
-  <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Light=&quot;</span><span class="p">,</span> <span class="n">vl</span><span class="p">)</span>
-  <span class="k">if</span> <span class="n">vl</span> <span class="o">&lt;</span> <span class="mi">100</span> <span class="p">:</span>
-    <span class="n">d13</span><span class="o">.</span><span class="n">value</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
-  <span class="k">else</span> <span class="p">:</span>
-    <span class="n">d13</span><span class="o">.</span><span class="n">value</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+    <span class="n">vl</span><span class="o">=</span><span class="n">Light</span><span class="o">.</span><span class="n">read_analog</span><span class="p">()</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Light=&quot;</span><span class="p">,</span><span class="n">vl</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">vl</span> <span class="o">&lt;</span> <span class="mi">100</span><span class="p">:</span>
+        <span class="n">LED</span><span class="o">.</span><span class="n">write_digital</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">LED</span><span class="o">.</span><span class="n">write_digital</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
 </pre></div>
 </div>
-<p>3、摁下F5运行程序，查看效果。当遮住光线传感器的时候LED灯会亮起，恢复后LED灯会熄灭。</p>
+<ol class="arabic simple" start="3">
+<li><p>摁下F5运行程序，查看效果。当遮住光线传感器的时候LED灯会亮起，恢复后LED灯会熄灭。</p></li>
+</ol>
 <img alt="../../_images/0412.png" src="../../_images/0412.png" />
-<p>注意：在程序运行时不可以拔掉与Arduino连接的USB线，且不能关闭新弹出的Python shell运行窗口，如果拔线或者关闭运行窗口，程序功能就会停止执行。</p>
 </div>
-</div>
-<div class="section" id="id7">
-<h3>（2）加入声音传感器检测<a class="headerlink" href="#id7" title="Permalink to this headline">¶</a></h3>
-<div class="section" id="id8">
-<h4>硬件准备：<a class="headerlink" href="#id8" title="Permalink to this headline">¶</a></h4>
+<div class="section" id="id5">
+<h3>（2）加入声音传感器检测<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h3>
+<p><strong>硬件准备：</strong></p>
 <p>主控：Arduino UNO、IO 传感器扩展板 V7.1</p>
 <p>模块：LED发光模块、光线传感器、声音传感器</p>
 <p>连接线：TypeAtoB方口USB连接线</p>
-<p>硬件连接图：</p>
 <img alt="../../_images/04LDL2.png" src="../../_images/04LDL2.png" />
 <ul class="simple">
 <li><p>将LED模块接入D13引脚，光线传感器接到A2引脚，声音传感器接到A1引脚。</p></li>
 </ul>
-</div>
-<div class="section" id="id9">
-<h4>程序编写：<a class="headerlink" href="#id9" title="Permalink to this headline">¶</a></h4>
-<p>1、设计程序逻辑图</p>
-<img alt="../../_images/04log.png" src="../../_images/04log.png" />
-<p>2、导入必要的包和初始化设置。</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">sys</span>
-<span class="kn">import</span> <span class="nn">time</span>
-<span class="kn">from</span> <span class="nn">pinpong.pinpong</span> <span class="kn">import</span> <span class="o">*</span>
+<p><strong>程序编写</strong></p>
+<ol class="arabic simple">
+<li><p>设计程序逻辑图</p></li>
+</ol>
+<img alt="../../_images/04Log.png" src="../../_images/04Log.png" />
+<ol class="arabic simple" start="2">
+<li><p>导入必要的包和初始化设置。</p></li>
+</ol>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">time</span>
+<span class="kn">from</span> <span class="nn">pinpong.board</span> <span class="kn">import</span> <span class="n">Board</span><span class="p">,</span><span class="n">Pin</span>
 
-<span class="n">board</span> <span class="o">=</span> <span class="n">PinPong</span><span class="p">(</span><span class="s2">&quot;uno&quot;</span><span class="p">,</span><span class="s2">&quot;com5&quot;</span><span class="p">)</span>
-<span class="n">board</span><span class="o">.</span><span class="n">connect</span><span class="p">()</span>
+<span class="n">Board</span><span class="p">(</span><span class="s2">&quot;uno&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">begin</span><span class="p">()</span>
 
-<span class="n">sound</span> <span class="o">=</span> <span class="n">ADC</span><span class="p">(</span><span class="n">board</span><span class="p">,</span> <span class="n">Pin</span><span class="p">(</span><span class="n">board</span><span class="p">,</span> <span class="n">Pin</span><span class="o">.</span><span class="n">A1</span><span class="p">))</span>
-<span class="n">light</span> <span class="o">=</span> <span class="n">ADC</span><span class="p">(</span><span class="n">board</span><span class="p">,</span> <span class="n">Pin</span><span class="p">(</span><span class="n">board</span><span class="p">,</span> <span class="n">Pin</span><span class="o">.</span><span class="n">A2</span><span class="p">))</span>
-<span class="n">d13</span> <span class="o">=</span> <span class="n">Pin</span><span class="p">(</span><span class="n">board</span><span class="p">,</span> <span class="n">Pin</span><span class="o">.</span><span class="n">D13</span><span class="p">,</span> <span class="n">Pin</span><span class="o">.</span><span class="n">OUT</span><span class="p">)</span>
+<span class="n">Sound</span> <span class="o">=</span> <span class="n">Pin</span><span class="p">(</span><span class="n">Pin</span><span class="o">.</span><span class="n">A1</span><span class="p">,</span><span class="n">Pin</span><span class="o">.</span><span class="n">ANALOG</span><span class="p">)</span>
+<span class="n">Light</span> <span class="o">=</span> <span class="n">Pin</span><span class="p">(</span><span class="n">Pin</span><span class="o">.</span><span class="n">A2</span><span class="p">,</span><span class="n">Pin</span><span class="o">.</span><span class="n">ANALOG</span><span class="p">)</span>
+<span class="n">LED</span> <span class="o">=</span> <span class="n">Pin</span><span class="p">(</span><span class="n">Pin</span><span class="o">.</span><span class="n">D13</span><span class="p">,</span> <span class="n">Pin</span><span class="o">.</span><span class="n">OUT</span><span class="p">)</span>
 </pre></div>
 </div>
-<p>3、加入逻辑判断部分。</p>
+<ol class="arabic simple" start="3">
+<li><p>加入判断</p></li>
+</ol>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
-  <span class="n">vs</span> <span class="o">=</span> <span class="n">sound</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
-  <span class="n">vl</span> <span class="o">=</span> <span class="n">light</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
-  <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Sound=&quot;</span><span class="p">,</span><span class="n">vs</span><span class="p">,</span><span class="s2">&quot;Light=&quot;</span><span class="p">,</span> <span class="n">vl</span><span class="p">)</span>
-  <span class="k">if</span> <span class="n">vs</span> <span class="o">&gt;</span> <span class="mi">200</span> <span class="ow">and</span> <span class="n">vl</span> <span class="o">&lt;</span> <span class="mi">100</span> <span class="p">:</span>
-    <span class="n">d13</span><span class="o">.</span><span class="n">value</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
-    <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
-  <span class="k">else</span> <span class="p">:</span>
-    <span class="n">d13</span><span class="o">.</span><span class="n">value</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+    <span class="n">vs</span><span class="o">=</span><span class="n">Sound</span><span class="o">.</span><span class="n">read_analog</span><span class="p">()</span>
+    <span class="n">vl</span><span class="o">=</span><span class="n">Light</span><span class="o">.</span><span class="n">read_analog</span><span class="p">()</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Sound=&quot;</span><span class="p">,</span><span class="n">vs</span><span class="p">,</span><span class="s2">&quot;Light=&quot;</span><span class="p">,</span><span class="n">vl</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">vs</span><span class="o">&gt;</span><span class="mi">200</span> <span class="ow">and</span> <span class="n">vl</span> <span class="o">&lt;</span> <span class="mi">100</span><span class="p">:</span>
+        <span class="n">LED</span><span class="o">.</span><span class="n">write_digital</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+        <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">LED</span><span class="o">.</span><span class="n">write_digital</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
 </pre></div>
 </div>
-<p>4、运行代码，当遮住光线传感器且发出声音时，LED灯会亮3秒然后熄灭。</p>
+<ol class="arabic simple" start="4">
+<li><p>运行代码，当遮住光线传感器且发出声音时，LED灯会点亮，当没有声音或光线传感器没有被遮住的状态维持3秒以上时，LED灯会熄灭。</p></li>
+</ol>
 <img alt="../../_images/0421.png" src="../../_images/0421.png" />
 </div>
 </div>
-</div>
-<div class="section" id="id10">
-<h2>三、代码分析<a class="headerlink" href="#id10" title="Permalink to this headline">¶</a></h2>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">sys</span>
-<span class="kn">import</span> <span class="nn">time</span>
-<span class="kn">from</span> <span class="nn">pinpong.pinpong</span> <span class="kn">import</span> <span class="o">*</span>  <span class="c1">#导入必要的库函数</span>
+<div class="section" id="id6">
+<h2>三、代码分析<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">time</span>
+<span class="kn">from</span> <span class="nn">pinpong.board</span> <span class="kn">import</span> <span class="n">Board</span><span class="p">,</span><span class="n">Pin</span> <span class="c1">#导入必要的库函数</span>
 
-<span class="n">board</span> <span class="o">=</span> <span class="n">PinPong</span><span class="p">(</span><span class="s2">&quot;uno&quot;</span><span class="p">,</span><span class="s2">&quot;com5&quot;</span><span class="p">)</span>  <span class="c1">#初始化设置Aduino</span>
-<span class="n">board</span><span class="o">.</span><span class="n">connect</span><span class="p">()</span>                <span class="c1">#连接Arduino，并检测固件</span>
+<span class="n">Board</span><span class="p">(</span><span class="s2">&quot;uno&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">begin</span><span class="p">()</span><span class="c1">#初始化，选择板型(uno、leonardo、xugu)和端口号，不输入端口号则进行自动识别</span>
 
-<span class="n">sound</span> <span class="o">=</span> <span class="n">ADC</span><span class="p">(</span><span class="n">board</span><span class="p">,</span> <span class="n">Pin</span><span class="p">(</span><span class="n">board</span><span class="p">,</span> <span class="n">Pin</span><span class="o">.</span><span class="n">A1</span><span class="p">))</span>  <span class="c1">#初始化模拟引脚A1，检测声音大小</span>
-<span class="n">light</span> <span class="o">=</span> <span class="n">ADC</span><span class="p">(</span><span class="n">board</span><span class="p">,</span> <span class="n">Pin</span><span class="p">(</span><span class="n">board</span><span class="p">,</span> <span class="n">Pin</span><span class="o">.</span><span class="n">A2</span><span class="p">))</span>  <span class="c1">#初始化模拟引脚A2，检测光线强度</span>
-<span class="n">d13</span> <span class="o">=</span> <span class="n">Pin</span><span class="p">(</span><span class="n">board</span><span class="p">,</span> <span class="n">Pin</span><span class="o">.</span><span class="n">D13</span><span class="p">,</span> <span class="n">Pin</span><span class="o">.</span><span class="n">OUT</span><span class="p">)</span>    <span class="c1">#初始化13号数字引脚</span>
-
+<span class="n">Sound</span> <span class="o">=</span> <span class="n">Pin</span><span class="p">(</span><span class="n">Pin</span><span class="o">.</span><span class="n">A1</span><span class="p">,</span><span class="n">Pin</span><span class="o">.</span><span class="n">ANALOG</span><span class="p">)</span> <span class="c1">#初始化声音传感器引脚为A1，检测声音大小</span>
+<span class="n">Light</span> <span class="o">=</span> <span class="n">Pin</span><span class="p">(</span><span class="n">Pin</span><span class="o">.</span><span class="n">A2</span><span class="p">,</span><span class="n">Pin</span><span class="o">.</span><span class="n">ANALOG</span><span class="p">)</span><span class="c1">#初始化光线传感器引脚为A2，检测光线强度</span>
+<span class="n">LED</span> <span class="o">=</span> <span class="n">Pin</span><span class="p">(</span><span class="n">Pin</span><span class="o">.</span><span class="n">D13</span><span class="p">,</span> <span class="n">Pin</span><span class="o">.</span><span class="n">OUT</span><span class="p">)</span> <span class="c1">#初始化LED引脚为D13</span>
 <span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
-  <span class="n">vs</span> <span class="o">=</span> <span class="n">sound</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
-  <span class="n">vl</span> <span class="o">=</span> <span class="n">light</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
-  <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Sound=&quot;</span><span class="p">,</span><span class="n">vs</span><span class="p">,</span><span class="s2">&quot;Light=&quot;</span><span class="p">,</span> <span class="n">vl</span><span class="p">)</span>  <span class="c1">#打印声音和光线数据</span>
-  <span class="k">if</span> <span class="n">vs</span> <span class="o">&gt;</span> <span class="mi">200</span> <span class="ow">and</span> <span class="n">vl</span> <span class="o">&lt;</span> <span class="mi">100</span> <span class="p">:</span>      <span class="c1">#判断光线和声音大小</span>
-    <span class="n">d13</span><span class="o">.</span><span class="n">value</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
-    <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
-  <span class="k">else</span> <span class="p">:</span>
-    <span class="n">d13</span><span class="o">.</span><span class="n">value</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+    <span class="n">vs</span><span class="o">=</span><span class="n">Sound</span><span class="o">.</span><span class="n">read_analog</span><span class="p">()</span><span class="c1">#读取模拟声音信号数值</span>
+    <span class="n">vl</span><span class="o">=</span><span class="n">Light</span><span class="o">.</span><span class="n">read_analog</span><span class="p">()</span><span class="c1">#读取模拟灯光信号数值</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Sound=&quot;</span><span class="p">,</span><span class="n">vs</span><span class="p">,</span><span class="s2">&quot;Light=&quot;</span><span class="p">,</span><span class="n">vl</span><span class="p">)</span><span class="c1">#打印声音和光线数据</span>
+    <span class="k">if</span> <span class="n">vs</span><span class="o">&gt;</span><span class="mi">200</span> <span class="ow">and</span> <span class="n">vl</span> <span class="o">&lt;</span> <span class="mi">100</span><span class="p">:</span><span class="c1">#判断光线和声音大小</span>
+        <span class="n">LED</span><span class="o">.</span><span class="n">write_digital</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+        <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">LED</span><span class="o">.</span><span class="n">write_digital</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
 </pre></div>
 </div>
-<p>如何进行多条件判断</p>
+<p><strong>如何进行多条件判断</strong></p>
 <p>在本项目中我们需要判断两个条件，在我们做逻辑判断的时候经常会需要进行多条件判断，有些时候是需要两个条件都要满足的，有些时候是两个条件满足任意一条就可以了。在这种情况下，我们应该如何编写程序呢？</p>
 <p>两条条件都需要满足的情况下，我们可以这样写</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="n">条件A</span> <span class="ow">and</span> <span class="n">条件B</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="n">条件A</span> <span class="ow">and</span> <span class="n">条件B</span>
 </pre></div>
 </div>
 <p>两条条件满足任一即可的情况下，我们可以这样写</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="n">条件A</span> <span class="ow">or</span> <span class="n">条件B</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="n">条件A</span> <span class="ow">or</span> <span class="n">条件B</span>
 </pre></div>
 </div>
-<p>想要得到反向的结果，即当x为true，得到的结果为false，当x为false时，得到的结果为true，我们可以这样写</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="ow">not</span> <span class="n">条件</span>
-</pre></div>
+<p>想要得到反向的结果，即当x为true，得到的结果为false，当x为false时，得到的结果为true，我们可以这样写
+not 条件。</p>
 </div>
-</div>
-<div class="section" id="id11">
-<h2>四、硬件分析<a class="headerlink" href="#id11" title="Permalink to this headline">¶</a></h2>
-<p>在项目中我们用到了两种传感器，光线传感器和声音传感器</p>
+<div class="section" id="id7">
+<h2>四、硬件分析<a class="headerlink" href="#id7" title="Permalink to this headline">¶</a></h2>
+<p>在项目中我们用到了两种传感器，光线传感器和声音传感器。</p>
 <p>光线传感器是将光信号变成电信号的特殊电子元件，在光线传感器中起到主要作用的就是就是光敏二极管。光敏二极管是光敏电阻中的一种。光明电阻在黑暗环境中，具有非常高阻值的电阻。光线越强，电阻值反而越低。随着两端电阻值的减小，电压也就相应减小，所以从模拟口独到的值也就变小。我们读取的数据也是由此而来的。</p>
 <img alt="../../_images/lightsen.png" src="../../_images/lightsen.png" />
 <p>声音传感器的作用相当于一个麦克风。它用来接收声波，反馈声音的振动图像。在声音传感器上起到主要作用的就是麦克风，声波使麦克风内的薄膜震动，导致内部电容的变化，而产生与之对应的电压变化，经过转换为可监测的电压值反馈而来。</p>

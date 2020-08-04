@@ -94,8 +94,8 @@
 <p class="caption"><span class="caption-text">pinpong教程</span></p>
 <ul class="current">
 <li class="toctree-l1 current"><a class="reference internal" href="index.html">进阶教程</a><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="项目准备.html">项目前置知识</a></li>
-<li class="toctree-l2"><a class="reference internal" href="LED闪烁.html">项目1 LED闪烁</a></li>
+<li class="toctree-l2"><a class="reference internal" href="项目前置知识.html">项目前置知识</a></li>
+<li class="toctree-l2"><a class="reference internal" href="LED闪烁.html">项目1  LED闪烁</a></li>
 <li class="toctree-l2"><a class="reference internal" href="神奇的按键.html">项目2 神奇的按键</a></li>
 <li class="toctree-l2"><a class="reference internal" href="调光台灯.html">项目3 调光台灯</a></li>
 <li class="toctree-l2"><a class="reference internal" href="智能节能灯.html">项目4 智能节能灯</a></li>
@@ -108,17 +108,24 @@
 <li class="toctree-l3"><a class="reference internal" href="#id2">一、概述</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#id3">二、项目实施</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="#id4">（1）驱动继电器</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#id7">（2）用继电器控制水泵</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id5">（2）用继电器控制水泵</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="#id10">三、代码分析</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#id11">四、硬件分析</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id6">三、代码分析</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id7">四、硬件分析</a></li>
 </ul>
 </li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../高级教程/index.html">高级教程</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../经典案例/index.html">经典案例</a></li>
+</ul>
+<p class="caption"><span class="caption-text">pinpong类库</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../3.pinpong类库/API列表-Board类.html">PinPong类 Board class</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../3.pinpong类库/API列表-Pin类.html">Pin类 Pin class</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../3.pinpong类库/API列表-ADC类.html">ADC类 ADC class</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../3.pinpong类库/API列表-PWM类.html">PWM类 PWM class</a></li>
 </ul>
 <p class="caption"><span class="caption-text">pinpong更新记录</span></p>
 <ul>
@@ -205,8 +212,7 @@
 <h2>二、项目实施<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="id4">
 <h3>（1）驱动继电器<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h3>
-<div class="section" id="id5">
-<h4>硬件准备：<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h4>
+<p><strong>硬件准备：</strong></p>
 <p>主控：Arduino UNO、IO 传感器扩展板 V7.1</p>
 <p>模块：继电器模块</p>
 <p>连接线：TypeAtoB方口USB连接线</p>
@@ -214,18 +220,16 @@
 <ul class="simple">
 <li><p>将继电器接入13号数字接口</p></li>
 </ul>
-</div>
-<div class="section" id="id6">
-<h4>程序编写：<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h4>
-<p>1、继电器是通过高低电平来控制开关的，所以我们可以参考blink.py。运行这段程序会出现的效果是继电器随着L灯的闪烁会有“啪嗒”声，这就是继电器内的电磁开关在切换时发出的声音。</p>
+<p><strong>程序编写：</strong></p>
+<ol class="arabic simple">
+<li><p>继电器是通过高低电平来控制开关的，所以我们可以参考官方文档基础库示例中的“数字输出”。运行这段程序会出现的效果是继电器随着L灯的闪烁会有“啪嗒”声，这就是继电器内的电磁开关在切换时发出的声音。</p></li>
+</ol>
 <img alt="../../_images/1012.png" src="../../_images/1012.png" />
 </div>
-</div>
-<div class="section" id="id7">
-<h3>（2）用继电器控制水泵<a class="headerlink" href="#id7" title="Permalink to this headline">¶</a></h3>
-<p>要实现浇花的功能那么就会需要使用到水泵来帮我们实现，但是水泵的工作电压大多是12V的，但是我们使用的arduino uno的输出电压是5v，无法直接驱动水泵，这时我们就需要借助继电器来驱动水泵了.</p>
-<div class="section" id="id8">
-<h4>硬件准备：<a class="headerlink" href="#id8" title="Permalink to this headline">¶</a></h4>
+<div class="section" id="id5">
+<h3>（2）用继电器控制水泵<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h3>
+<p>要实现浇花的功能那么就会需要使用到水泵来帮我们实现，但是水泵的工作电压大多是12V的，但是我们使用的arduino uno的输出电压是5v，无法直接驱动水泵，这时我们就需要借助继电器来驱动水泵了。</p>
+<p><strong>硬件准备：</strong></p>
 <p>主控：Arduino UNO、IO 传感器扩展板 V7.1</p>
 <p>模块：继电器模块、水泵、12V电源</p>
 <p>连接线：TypeAtoB方口USB连接线</p>
@@ -234,97 +238,104 @@
 <li><p>将继电器接入13号数字接口</p></li>
 <li><p>水泵与继电器连接</p></li>
 </ul>
-</div>
-<div class="section" id="id9">
-<h4>程序编写：<a class="headerlink" href="#id9" title="Permalink to this headline">¶</a></h4>
-<p>1、浇花需要每隔一定的时间再执行，那如何控制间隔时间呢？用之前项目中最常用的 time.sleep（） 行不行？</p>
-<p>用延时功能来控制是可以实现功能的，但是无法精确的定位在指定的时间，限制非常多，每次重启程序延时的时间就会重新计算，影响浇水的效率。</p>
-<p>2、这里我们将使用time函数的time.strftime()功能来定位时间，如示例中，在每天下午15点30分10秒的时候打印“浇花”。在实际使用中将继电器执行功能加进来就可以了。</p>
+<p><strong>程序编写</strong></p>
+<ol class="arabic simple">
+<li><p>浇花需要每隔一定的时间再执行，那如何控制间隔时间呢？用之前项目中最常用的time.sleep（）行不行？用延时功能来控制是可以实现功能的，但是无法精确的定位在指定的时间，限制非常多，每次重启程序延时的时间就会重新计算，影响浇水的效率。</p></li>
+<li><p>这里我们将使用time函数的time.strftime()功能来定位时间，如示例中，在每天下午15点30分10秒的时候打印“浇花”。在实际使用中将继电器执行功能加进来就可以了。</p></li>
+</ol>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">time</span>
 <span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
-  <span class="n">time_now</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">strftime</span><span class="p">(</span><span class="s2">&quot;%H:%M:%S&quot;</span><span class="p">,</span> <span class="n">time</span><span class="o">.</span><span class="n">localtime</span><span class="p">())</span> <span class="c1"># 刷新</span>
-  <span class="k">if</span> <span class="n">time_now</span> <span class="o">==</span> <span class="s2">&quot;15:30:00&quot;</span><span class="p">:</span> <span class="c1">#此处设置每天定时的时间</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;浇花&quot;</span><span class="p">)</span>
-    <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">time_now</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">strftime</span><span class="p">(</span><span class="s2">&quot;%H:%M:%S&quot;</span><span class="p">,</span> <span class="n">time</span><span class="o">.</span><span class="n">localtime</span><span class="p">())</span>
+<span class="k">if</span> <span class="n">time_now</span> <span class="o">==</span> <span class="s2">&quot;15:30:10&quot;</span><span class="p">:</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;浇花&quot;</span><span class="p">)</span>
+<span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
 </pre></div>
 </div>
-<p>3、加入继电器实现每天定时浇水功能。</p>
+<ol class="arabic simple" start="3">
+<li><p>加入继电器实现每天定时浇水功能。</p></li>
+</ol>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">time</span>
-<span class="kn">from</span> <span class="nn">pinpong.pinpong</span> <span class="kn">import</span> <span class="n">PinPong</span><span class="p">,</span><span class="n">Pin</span>
+<span class="kn">from</span> <span class="nn">pinpong.board</span> <span class="kn">import</span> <span class="n">Board</span><span class="p">,</span><span class="n">Pin</span>
 
-<span class="n">board</span> <span class="o">=</span> <span class="n">PinPong</span><span class="p">(</span><span class="s2">&quot;uno&quot;</span><span class="p">)</span>  <span class="c1">#初始化，选择板型和端口号，不输入则留空进行自动识别</span>
+<span class="n">Board</span><span class="p">(</span><span class="s2">&quot;uno&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">begin</span><span class="p">()</span>
+<span class="n">led</span> <span class="o">=</span> <span class="n">Pin</span><span class="p">(</span><span class="n">Pin</span><span class="o">.</span><span class="n">D13</span><span class="p">,</span> <span class="n">Pin</span><span class="o">.</span><span class="n">OUT</span><span class="p">)</span>
+<span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+    <span class="n">time_set</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">strftime</span><span class="p">(</span><span class="s2">&quot;%H:%M:%S&quot;</span><span class="p">,</span><span class="n">time</span><span class="o">.</span><span class="n">localtime</span><span class="p">())</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">time_set</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">time_set</span> <span class="o">==</span> <span class="s2">&quot;15:30:10&quot;</span><span class="p">:</span>
+        <span class="n">led</span><span class="o">.</span><span class="n">write_digital</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;浇花&quot;</span><span class="p">)</span>
+        <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">led</span><span class="o">.</span><span class="n">write_digital</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+        <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="id6">
+<h2>三、代码分析<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">time</span>
+<span class="kn">from</span> <span class="nn">pinpong.board</span> <span class="kn">import</span> <span class="n">Board</span><span class="p">,</span><span class="n">Pin</span>
 
-<span class="n">led</span> <span class="o">=</span> <span class="n">Pin</span><span class="p">(</span><span class="n">board</span><span class="p">,</span> <span class="n">Pin</span><span class="o">.</span><span class="n">D13</span><span class="p">,</span> <span class="n">Pin</span><span class="o">.</span><span class="n">OUT</span><span class="p">)</span> <span class="c1">#引脚初始化为电平输出</span>
+<span class="n">Board</span><span class="p">(</span><span class="s2">&quot;uno&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">begin</span><span class="p">()</span> <span class="c1">#初始化，选择板型(uno、leonardo、xugu)和端口号，不输入端口号则进行自动识别</span>
+<span class="n">led</span> <span class="o">=</span> <span class="n">Pin</span><span class="p">(</span><span class="n">Pin</span><span class="o">.</span><span class="n">D13</span><span class="p">,</span> <span class="n">Pin</span><span class="o">.</span><span class="n">OUT</span><span class="p">)</span> <span class="c1">#初始化继电器引脚在D13</span>
 
 <span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
-  <span class="n">time_set</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">strftime</span><span class="p">(</span><span class="s2">&quot;%H:%M:%S&quot;</span><span class="p">,</span><span class="n">time</span><span class="o">.</span><span class="n">localtime</span><span class="p">())</span> <span class="c1">#刷新</span>
-  <span class="k">if</span> <span class="n">time_set</span> <span class="o">==</span> <span class="s2">&quot;10:00:00&quot;</span><span class="p">:</span>  <span class="c1">#设定为每天早上十点钟浇水</span>
-   <span class="n">led</span><span class="o">.</span><span class="n">value</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span> <span class="c1">#输出高电平</span>
-   <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;浇花&quot;</span><span class="p">)</span> <span class="c1">#终端打印信息</span>
-   <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span> <span class="c1">#等待5秒 保持状态</span>
-  <span class="k">else</span><span class="p">:</span>
-   <span class="n">led</span><span class="o">.</span><span class="n">value</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span> <span class="c1">#输出低电平</span>
-   <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span> <span class="c1">#等待1秒 保持状态</span>
+    <span class="n">time_set</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">strftime</span><span class="p">(</span><span class="s2">&quot;%H:%M:%S&quot;</span><span class="p">,</span><span class="n">time</span><span class="o">.</span><span class="n">localtime</span><span class="p">())</span><span class="c1">#刷新时间</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">time_set</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">time_set</span> <span class="o">==</span> <span class="s2">&quot;15:30:10&quot;</span><span class="p">:</span> <span class="c1">#设定每天15:30:10浇水</span>
+        <span class="n">led</span><span class="o">.</span><span class="n">write_digital</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span><span class="c1">#输出高电平，继电器吸合</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;浇花&quot;</span><span class="p">)</span><span class="c1">#终端打印信息</span>
+        <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span><span class="c1">#等待5秒 保持状态</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">led</span><span class="o">.</span><span class="n">write_digital</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span><span class="c1">#输出低电平</span>
+        <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span><span class="c1">#等待1秒 保持状态</span>
 </pre></div>
 </div>
-</div>
-</div>
-</div>
-<div class="section" id="id10">
-<h2>三、代码分析<a class="headerlink" href="#id10" title="Permalink to this headline">¶</a></h2>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">time</span>
-<span class="kn">from</span> <span class="nn">pinpong.pinpong</span> <span class="kn">import</span> <span class="n">PinPong</span><span class="p">,</span><span class="n">Pin</span>
-
-<span class="n">board</span> <span class="o">=</span> <span class="n">PinPong</span><span class="p">(</span><span class="s2">&quot;uno&quot;</span><span class="p">)</span>  <span class="c1">#初始化，选择板型和端口号，不输入则留空进行自动识别</span>
-
-<span class="n">led</span> <span class="o">=</span> <span class="n">Pin</span><span class="p">(</span><span class="n">board</span><span class="p">,</span> <span class="n">Pin</span><span class="o">.</span><span class="n">D13</span><span class="p">,</span> <span class="n">Pin</span><span class="o">.</span><span class="n">OUT</span><span class="p">)</span> <span class="c1">#引脚初始化为电平输出</span>
-
-<span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
-  <span class="n">time_set</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">strftime</span><span class="p">(</span><span class="s2">&quot;%H:%M:%S&quot;</span><span class="p">,</span><span class="n">time</span><span class="o">.</span><span class="n">localtime</span><span class="p">())</span> <span class="c1">#刷新</span>
-  <span class="k">if</span> <span class="n">time_set</span> <span class="o">==</span> <span class="s2">&quot;10:00:00&quot;</span><span class="p">:</span>  <span class="c1">#设定为每天早上十点钟浇水</span>
-   <span class="n">led</span><span class="o">.</span><span class="n">value</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span> <span class="c1">#输出高电平</span>
-   <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;浇花&quot;</span><span class="p">)</span> <span class="c1">#终端打印信息</span>
-   <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span> <span class="c1">#等待5秒 保持状态</span>
-  <span class="k">else</span><span class="p">:</span>
-   <span class="n">led</span><span class="o">.</span><span class="n">value</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span> <span class="c1">#输出低电平</span>
-   <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span> <span class="c1">#等待1秒 保持状态</span>
-</pre></div>
-</div>
-<p>time库函数</p>
+<p><strong>time库函数</strong></p>
 <p>time库在我们之前的案例中一直有使用到的一个库，但是我们大多数情况只用到了其中的延时的功能，其实还有很多功能，让我们来了解一下吧。</p>
 <p>time库是python中处理时间的标准库</p>
-<p>1、time库的使用</p>
-<ul class="simple">
-<li><p>时间获取——-time() ctime()  gmtime()</p></li>
-<li><p>时间格式化——-strftime()  strptime()</p></li>
-<li><p>程序计时——-sleep()  perf_counter()</p></li>
-</ul>
-<p>2、时间获取函数</p>
-<ul class="simple">
-<li><p>time()——-获取当前时间戳，浮点数形式</p></li>
-<li><p>ctime()——-以可读的方式返回字符串时间</p></li>
-<li><p>gmtime()——-计算机可以处理的时间格式</p></li>
-</ul>
-<p>3、时间格式化</p>
-<ul class="simple">
-<li><p>strftime()——-将时间进行合理输出</p></li>
-<li><p>strptime()——-自定义时间</p></li>
-</ul>
-<p>4、程序计时</p>
-<ul class="simple">
-<li><p>perf_counter()——-测量时间函数</p></li>
-<li><p>sleep()——-产生时间函数,模拟休眠的时间，单位是秒，可以是浮点数</p></li>
-</ul>
+<ol class="arabic simple">
+<li><p>time库的使用</p></li>
+</ol>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">时间获取</span><span class="o">-------</span><span class="n">time</span><span class="p">()</span> <span class="n">ctime</span><span class="p">()</span>  <span class="n">localtime</span><span class="p">()</span>
+<span class="n">时间格式化</span><span class="o">-------</span><span class="n">strftime</span><span class="p">()</span>  <span class="n">strptime</span><span class="p">()</span>
+<span class="n">程序计时</span><span class="o">-------</span><span class="n">sleep</span><span class="p">()</span>  <span class="n">perf_counter</span><span class="p">()</span>
+</pre></div>
 </div>
-<div class="section" id="id11">
-<h2>四、硬件分析<a class="headerlink" href="#id11" title="Permalink to this headline">¶</a></h2>
-<p>继电器</p>
+<ol class="arabic simple" start="2">
+<li><p>时间获取函数</p></li>
+</ol>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>time()-------获取当前时间戳，浮点数形式
+ctime()-------以可读的方式返回字符串时间
+localtime()-------计算机可以处理的时间格式
+</pre></div>
+</div>
+<ol class="arabic simple" start="3">
+<li><p>时间格式化</p></li>
+</ol>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">strftime</span><span class="p">()</span><span class="o">-------</span><span class="n">将时间进行合理输出</span>
+<span class="n">strptime</span><span class="p">()</span><span class="o">-------</span><span class="n">自定义时间</span>
+</pre></div>
+</div>
+<ol class="arabic simple" start="4">
+<li><p>程序计时</p></li>
+</ol>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>perf_counter()-------测量时间函数
+sleep()-------产生时间函数,模拟休眠的时间，单位是秒，可以是浮点数
+</pre></div>
+</div>
+</div>
+<div class="section" id="id7">
+<h2>四、硬件分析<a class="headerlink" href="#id7" title="Permalink to this headline">¶</a></h2>
+<p><strong>继电器</strong></p>
 <p>继电器（英文名称：relay）是一种电控制器件，是当输入量（激励量）的变化达到规定要求时，在电气输出电路中使被控量发生预定的阶跃变化的一种电器。它具有控制系统（又称输入回路）和被控制系统（又称输出回路）之间的互动关系。通常应用于自动化的控制电路中，它实际上是用小电流去控制大电流运作的一种“自动开关”。故在电路中起着自动调节、安全保护、转换电路等作用。</p>
 <p>光看文字描述有点难以理解，下面看看图示帮助理解继电器的作用。继电器工作原理图：</p>
 <img alt="../../_images/1030.png" src="../../_images/1030.png" />
 <p>这里有两个电源回路，一个是线圈部分的回路另一个是设备（灯珠）端的回路。我们把线圈铁芯这端理解成掌控板这端，设备（灯珠）端我们理解成水泵；线圈电源就是掌控板的输出电压5V，被控制端电源电压就是我们驱动水泵的12V电源。我们通过5V的电压控制线圈铁芯这个电磁铁，当继电器高电平时，线圈通电，将衔铁吸引，这样设备端的回路就接通了。</p>
 <img alt="../../_images/1031.png" src="../../_images/1031.png" />
-<p>继电器的作用</p>
+<p><strong>继电器的作用</strong></p>
 <p>继电器是具有隔离功能的自动开关元件，广泛应用于遥控、遥测、通讯、自动控制、机电一体化及电力电子设备中，是最重要的控制元件之一。</p>
 <p>继电器一般都有能反映一定输入变量（如电流、电压、功率、阻抗、频率、温度、压力、速度、光等）的感应机构（输入部分）；有能对被控电路实现“通”、“断”控制的执行机构（输出部分）；在继电器的输入部分和输出部分之间，还有对输入量进行耦合隔离，功能处理和对输出部分进行驱动的中间机构（驱动部分）。</p>
 <p>作为控制元件，概括起来，继电器有如下几种作用：</p>

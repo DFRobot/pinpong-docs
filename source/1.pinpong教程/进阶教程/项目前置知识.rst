@@ -1,28 +1,28 @@
+=============
 项目前置知识
-===============
+=============
 
 ----------------
 概述
 ----------------
 
-
 本系列教程是基于win10操作系统下，使用Python3通过pinpong库来控制Arduino UNO板来实现项目功能，在本节中我们将了解以下内容：
 
-1、什么是Arduino？
+一、 什么是Arduino？
 
-2、什么是Python？
+二、 什么是Python？
 
-3、如何编辑Python代码？
+三、 如何编辑Python代码？
 
-4、什么是pinpong库？
+四、 什么是pinpong库？
 
-------------------
-1.什么是Arduino？
-------------------
+--------------------
+一、什么是Arduino？
+--------------------
 
 Arduino是一个开放源码电子原型平台，拥有灵活、易用的硬件和软件。Arduino专为设计师，工艺美术人员，业余 爱好者，以及对开发互动装置或互动式开发环境感兴趣的人而设的。
 
-Arduino可以接收来自各种传感器的输入信号从而检测出运行环境，并通过控制光源，电机以及其他驱动器来影响 其周围环境。板上的微控制器编程使用Arduino编程语言（基于Wiring）和Arduino开发环境（以Processing为基 础）。Arduino可以独立运行，也可以与计算机上运行的软件（例如，Flash，Processing，MaxMSP）进行通 信。Arduino开发 IDE 接口基于开放源代码，可以让您免费下载使用开发出更多令人惊艳的互动作品。
+Arduino可以接收来自各种传感器的输入信号从而检测出运行环境，并通过控制光源，电机以及其他驱动器来影响 其周围环境。板上的微控制器编程使用Arduino编程语言（基于Wiring）和Arduino开发环境（以Processing为基 础）。Arduino可以独立运行，也可以与计算机上运行的软件（例如，Flash，Processing，MaxMSP）进行通信。Arduino开发 IDE 接口基于开放源代码，可以让您免费下载使用开发出更多令人惊艳的互动作品。
 
 Arduino是人们连接各种任务的粘合剂。要给Arduino下一个最准确的定义，最好用一些实例来描述。
 
@@ -55,40 +55,40 @@ Arduino系列有众多的型号，其中最为经典的就是Arduino UNO了。�
 
 .. image::  images/uno引脚.png
 
-------------------
-2.什么是Python？
-------------------
+--------------------
+二、什么是Python？
+--------------------
 
-Python是一种跨平台的计算机程序设计语言。 是一个高层次的结合了解释性、编译性、互动性和面向对象的脚本语言。最初被设计用于编写自动化脚本(shell)，随着版本的不断更新和语言新功能的添加，越多被用于独立的、大型项目的开发。
+Python是一种跨平台的计算机程序设计语言。是一个高层次的结合了解释性、编译性、互动性和面向对象的脚本语言。最初被设计用于编写自动化脚本(shell)，随着版本的不断更新和语言新功能的添加，越多被用于独立的、大型项目的开发。
 
 Python是一种解释型脚本语言，可以应用于以下领域：
   
-◆Web 和 Internet开发
+◆ Web 和 Internet开发
 
-◆科学计算和统计
+◆ 科学计算和统计
 
-◆人工智能
+◆ 人工智能
 
-◆桌面界面开发
+◆ 桌面界面开发
+ 
+◆ 软件开发
 
-◆软件开发
+◆ 后端开发
 
-◆后端开发
+◆ 网络爬虫
 
-◆网络爬虫
-
-----------------------
-3.如何编辑Python代码？
-----------------------
+------------------------
+三、如何编辑Python代码？
+------------------------
 
 可以用很多方法来编辑Python代码，甚至你可以使用文本编辑器编辑代码。在项目中我们将主要使用Python安装后自带的IDLE来编辑代码。
 
 3.1如何安装Python
 --------------------
 
-1、首先打开Python的下载链接（ `Python下载 <https://www.python.org/downloads/windows/>`_ ）找到【Download Windows x86-64 executable installer】下载Python安装包，项目中使用到的Python版本为3.7。选择适合的版本下载安装即可。
+1、首先打开Python的下载链接（ `Python下载 <https://www.python.org/downloads/windows/>`_ ）找到【Download Windows x86-64 executable installer】下载Python安装包，项目中使用到的Python版本为3.8.5。选择适合的版本下载安装即可。
 
-2、安装Python，注意在安装时勾选add Python 3.7 to path。（如果安装时未勾选，可以搜索如何在windows系统下添加python环境变量来补救）
+2、安装Python，注意在安装时勾选add Python x.x to path，然后点击Install Now进行安装。（如果安装时未勾选，可以重新安装时勾选）
 
 .. image::  images/addpath.png
 
@@ -121,7 +121,7 @@ Python是一种解释型脚本语言，可以应用于以下领域：
 
 .. image::  images/IDLE03.png
 
-4、保存代码，运行程序。如果是带*号的未保存状态执行运行功能的话，软件也会提示你保存后才可以运行。
+4、保存代码，点击菜单“Run Module”或按键盘上的“F5”键运行程序。如果是带*号的未保存状态执行运行功能的话，软件也会提示你保存后才可以运行。
 
 .. image::  images/IDLE04.png
 
@@ -131,15 +131,24 @@ Python是一种解释型脚本语言，可以应用于以下领域：
 
 IDLE的使用可以参考官方文档： `官方文档 <https://docs.python.org/zh-cn/3/library/idle.html>`_ 
 
--------------------
-4.什么是pinpong库？
--------------------
+---------------------
+四、什么是pinpong库？
+---------------------
 
-pinpong库是有DFRobot公司推出的一款用于连通Python与Arduino的库函数，基于Firmata协议并兼容MicroPython语法。
+PinPong库是一套控制开源硬件主控板的Pyhton库，基于Firmata协议并兼容MicroPython语法，5分钟即可让你上手使用Python控制Arduino。
 
-Firmata是一个PC与MCU（Microcontroller Unit的缩写，即微控制单元，也称为单片机）通讯的一个常用协议。其宗旨是能与任何主机PC软件包兼容。到目前为止，已经得到不少语言的支持（包括Python），这样可方便地将对协议的支持加入软件系统中。Firmata起初是针对于PC与Arduino通讯的固件(Firmware)，其目标是让开发者可以通过PC软件完全地控件Arduino。
+借助于PinPong库，直接用Python代码就能给各种常见的开源硬件编程。其原理是给开源硬件烧录一个特定的固件，使开源硬件可以通过串口与电脑通讯，执行各种命令。
+
+PinPong库的名称由“Pin”和“Pong”组成，“Pin”指引脚，“PinPong”为“乒乓球”的谐音，指信号的往复。
+
+pinpong库的设计，是为了让开发者在开发过程中不用被繁杂的硬件型号束缚，而将重点转移到软件的实现。哪怕程序编写初期用Arduino开发，部署时改成了掌控板，只要修改一下硬件的参数就能正常运行，实现了“一次编写处处运行”。
 
 使用pinpong库可以结合Python丰富的扩展库资源来驱动Arduino。
 
 附：
-pinpong库安装教程：`点击打开 <https://pinpong.readthedocs.io/zh_CN/latest/1.pinpong%E6%95%99%E7%A8%8B/%E5%AE%89%E8%A3%85%E6%95%99%E7%A8%8B/index.html>`_  
+
+如何安装pinpong库？
+
+在windows系统上使用快捷键win+R输入cmd，在弹出的小黑窗中输入 pip install pinpong 即可完成安装。
+
+在pinpong官方文档 `点击打开 <https://pinpong.readthedocs.io>`_   中可以查看详细安装教程。

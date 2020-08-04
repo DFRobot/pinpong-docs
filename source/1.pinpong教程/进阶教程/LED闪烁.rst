@@ -1,11 +1,12 @@
-项目1 LED闪烁
+===============
+项目1  LED闪烁
 ===============
 
 ----------------
 一、概述
 ----------------
 
-Hello World是所有编程语言学习的第一课，但是在单片机学习中，我们的Hello World叫做Blink。Blink是什么意思呢？闪烁。其实Blink就是点亮单片机上的板载LED灯，并让它闪烁的一个程序。
+Hello World是所有编程语言学习的第一课，但是在Arduino学习中，我们的Hello World叫做Blink。Blink是什么意思呢？闪烁。其实Blink就是点亮Arduino机上的板载LED灯，并让它闪烁的一个程序。
 
 .. image::  images/LED.png
 
@@ -16,9 +17,7 @@ Hello World是所有编程语言学习的第一课，但是在单片机学习中
 （1）点亮板载LED灯
 -------------------
 
-`````````````
-硬件准备：  
-`````````````
+**硬件准备：**
 
 主控：Arduino UNO
 
@@ -26,84 +25,60 @@ Hello World是所有编程语言学习的第一课，但是在单片机学习中
 
 .. image::  images/UNOR3.png
 
+**软件准备：**
 
-````````````
-软件准备：
-````````````
+本教程项目使用操作系统为Win10，Python版本为3.8.5，编译器使用Python自带IDLE编辑器，Arduino板使用pinpong库驱动。
 
-项目使用操作系统为Win10，Python版本为3.7，编译器使用原生Python IDLE，使用pinpong库驱动
+1、打开pinpong官方文档，找到基础库示例中的“blink”，并用IDLE打开。
 
-1、找到Python3安装目录下的pinpong库文件夹。
-
-运行Python3，输入：
-
-import os
- 
-print（os.path) 
-
-.. image::  images/找地址01.png
-
- 
-打开任意一个文件夹，将路径复制进去，找到../site-packages/pinpong/examples,可以找到pinpong的示例程序。
-
-.. image::  images/找地址02.png
-
-2、打开【examples】文件夹，找到blink.py示例程序，右键选择Edit with IDLE→Edit with IDLE3.7 即可使用IDLE打开Python程序编辑内容。
+2、 blink.py示例程序，右键选择Edit with IDLE→Edit with IDLE3.8.5 即可使用IDLE打开Python程序编辑内容。
 
 .. image::  images/blink.png
 
-````````````
-程序编写：
-````````````
+**程序编写：**
 
 
-1、在上步打开的blink.py示例程序中，可以自动识别Arduino UNO接在电脑上的端口号。当电脑上同类主板接入多个时也可以单独针对需要控制的主控板设置端口号，如果只有一块主板连接建议使用自动识别功能。
-
-.. image::  images/blink.png
+将Arduino Uno主板通过USB连接到电脑后，无需选择端口，在运行程序时会自动识别端口，如识别失败则可以采用“指定端口初始化”的形式手动指定COM口。
 
 注：第一次使用pinpong库会自动给Arduino主板烧录Firmata固件。所以不需要专门给Arduino上传固件。
 
-2、摁下F5运行程序，会提示保存程序，点击确定保存即可。运行成功后会弹出一个新的窗口，等待程序运行如图所示即为成功。查看效果。Arduino Uno上的板载LED会按照亮1秒，熄灭1秒的规律闪烁。
+按下F5运行程序，会提示保存程序，点击确定保存即可。运行成功后会弹出一个新的窗口，等待程序运行如图所示即为成功。
+
+查看效果。Arduino Uno上的板载LED会按照亮1秒，熄灭1秒的规律闪烁。（如果此步执行没有成功可以查看官方文档中的常见问题）
 
 .. image::  images/blink03.png
 
-（如果此步执行没有成功可以查看文末常见问题）
+注意：在程序运行时不可以拔掉与Arduino连接的USB线，且不能关闭新弹出的运行窗口，如果拔线或者关闭运行窗口，程序功能就会停止执行。
 
-注意：在程序运行时不可以拔掉与Arduino连接的USB线，且不能关闭新弹出的Python shell运行窗口，如果拔线或者关闭运行窗口，程序功能就会停止执行。
-
-运行效果
+**运行效果**
 
 .. image::  images/arduinoL.png
 
 红圈中的LED灯会按照亮1秒，熄灭1秒的规律闪烁。
 
-3、如果我们想要修改小灯闪烁的频率，应该怎么修改程序？只需要修改代码中延时部分的时长即可。如图所示修改后的效果为小灯点亮2秒，熄灭1秒。
+1、如果我们想要修改小灯闪烁的频率，应该怎么修改程序？只需要修改代码中延时部分的时长即可。如图所示修改后的效果为小灯点亮2秒，熄灭1秒。
 
 .. code-block:: python
 
-
- 
- import time
- from pinpong.pinpong import *   #导入必要库
-
- board = PinPong("uno")   #初始化，选择板型和端口号，不输入则留空进行自动识别
- led = Pin(board, Pin.D13, Pin.OUT)  #初始化13数字引脚为数字输出
-
- while True:
-   led.value(1)  #13引脚高电平
-   time.sleep(2) #持续1秒
-   print("LED on")
-
-   led.value(0)  #13引脚低电平
-   time.sleep(1) #持续2秒
-   print("LED off")
+  #实验效果：控制arduino UNO板载LED灯一秒闪烁一次
+  #接线：使用windows或linux电脑连接一块arduino主控板
+  import time
+  from pinpong.board import Board,Pin
+  Board("uno").begin()               #初始化，选择板型和端口号，不输入端口号则进行自动识别
+  #Board("uno","COM36").begin()      #windows下指定端口初始化
+  #Board("uno","/dev/ttyACM0").begin() #linux下指定端口初始化
+  #Board("uno","/dev/cu.usbmodem14101").begin()   #mac下指定端口初始化
+  led = Pin(Pin.D13, Pin.OUT) #引脚初始化为电平输出
+  while True:
+    led.write_digital(1) #输出高电平
+    time.sleep(2) #等待2秒 保持状态
+    led.write_digital(0) #输出低电平
+    time.sleep(1) #等待1秒 保持状态
 
 （2）点亮外接LED灯
 --------------------
 
-`````````````
-硬件准备：
-`````````````
+**硬件准备：**
 
 主控：Arduino UNO、IO 传感器扩展板 V7.1
 
@@ -115,30 +90,45 @@ print（os.path)
 
 .. image::  images/01blink.png
 
-* 将扩展板接入Arduino Uno主控板上，组装时注意对准后在压入，以防压弯插针。
+- 将扩展板接入Arduino Uno主控板上，组装时注意对准后在压入，以防压弯插针。
 
-* 将LED模块接入10号数字引脚。
+- 将LED模块接入10号数字引脚。
 
+**程序编写：**
 
-````````````
-程序编写：
-````````````
-
-1、我们在接线的时候将外接LED接到了10号引脚，所以我们需要修改程序才可以点亮这颗外接的小灯。将LED_PIN 对应的引脚修改为10，
+1、我们在接线的时候将外接LED接到了10号引脚，所以我们需要修改程序才可以点亮这颗外接的小灯，将led 对应的引脚修改为10。
 
 .. image::  images/LEDpin.png
 
-2、如果想要小灯有一个呼吸灯的效果应该如何执行？找到示例程序中的write_analog.py，并用Python IDLE打开。
+2、如果想要小灯有一个呼吸灯的效果应该如何执行？找到示例程序中的PWM模拟输出功能，并用Python IDLE运行。
 
 3、修改引脚号与端口号，然后运行程序，小灯就会循环执行LED灯渐渐变亮，到最亮时熄灭的命令。
 
-这是一段代替示例程序的文本（PWM功能施工中）
+.. code-block:: python
+
+    示例程序
+    # -*- coding: utf-8 -*-
+    #实验效果：小灯会循环执行渐渐变亮，到最亮时熄灭的命令
+    #接线：使用windows或linux电脑连接一块arduino主控板，主控板D6接一个LED灯模块
+    import time
+    from pinpong.board import Board,Pin,PWM #导入PWM类实现模拟输出
+
+    Board("uno").begin()  #初始化，选择板型和端口号，不输入端口号则进行自动识别
+    #Board("uno","COM36").begin()  #windows下指定端口初始化
+    #Board("uno","/dev/ttyACM0").begin()   #linux下指定端口初始化
+    #Board("uno","/dev/cu.usbmodem14101").begin()   #mac下指定端口初始化
+
+    pwm0 = PWM(Pin(Pin.D6)) #将Pin传入PWM中实现模拟输出
+
+    while True:
+    for i in range(255): #从0到255循环
+        pwm0.duty(i)  #设置模拟输出值
+        print(i)
+        time.sleep(0.05)
 
 ----------------
 三、代码分析
 ----------------
-
-这是一段代替示例程序的文本（PWM功能施工中）
 
 数字信号与模拟信号
 
