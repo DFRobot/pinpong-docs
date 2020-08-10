@@ -60,6 +60,29 @@
 
 **程序编写：**
 
+.. code-block:: python
+
+    import time
+    from pinpong.board import Board,Pin
+
+    Board("uno").begin()               #初始化，选择板型(uno、leonardo、xugu)和端口号，不输入端口号则进行自动识别
+
+    pwm0 = Pin(Pin.D6, Pin.PWM) #初始化引脚为PWM模式 模拟输出方法2
+    adc0 = Pin(Pin.A0, Pin.ANALOG) #引脚初始化为电平输出
+
+    while True:
+        v = adc0.read_analog() #读取A0口模拟信号数值
+        L = int(v*255/1024)
+        pwm0.write_analog(L) #PWM输出
+        print("A0=",L)
+
+运行代码，旋转旋钮LED灯会慢慢亮起和熄灭。
+
+.. image::  images/0322.png
+
+三、代码分析
+============
+
 1. 导入必要的包和初始化设置。
 
 .. code-block:: python
@@ -84,28 +107,6 @@
     pwm0.write_analog(L) #PWM输出
     print("A0=",L)
 
-4. 运行代码，旋转旋钮LED灯会慢慢亮起和熄灭。
-
-.. image::  images/0322.png
-
-三、代码分析
-============
-
-.. code-block:: python
-
-    import time
-    from pinpong.board import Board,Pin
-
-    Board("uno").begin()               #初始化，选择板型(uno、leonardo、xugu)和端口号，不输入端口号则进行自动识别
-
-    pwm0 = Pin(Pin.D6, Pin.PWM) #初始化引脚为PWM模式 模拟输出方法2
-    adc0 = Pin(Pin.A0, Pin.ANALOG) #引脚初始化为电平输出
-
-    while True:
-        v = adc0.read_analog() #读取A0口模拟信号数值
-        L = int(v*255/1024)
-        pwm0.write_analog(L) #PWM输出
-        print("A0=",L)
 
 **数据类型-整数类型**
 

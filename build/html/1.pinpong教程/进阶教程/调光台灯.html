@@ -242,6 +242,27 @@
 <li><p>将LED发光模块接入6号数字引脚，将旋钮模块接入A0模拟引脚</p></li>
 </ul>
 <p><strong>程序编写：</strong></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">time</span>
+<span class="kn">from</span> <span class="nn">pinpong.board</span> <span class="kn">import</span> <span class="n">Board</span><span class="p">,</span><span class="n">Pin</span>
+
+<span class="n">Board</span><span class="p">(</span><span class="s2">&quot;uno&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">begin</span><span class="p">()</span>               <span class="c1">#初始化，选择板型(uno、leonardo、xugu)和端口号，不输入端口号则进行自动识别</span>
+
+<span class="n">pwm0</span> <span class="o">=</span> <span class="n">Pin</span><span class="p">(</span><span class="n">Pin</span><span class="o">.</span><span class="n">D6</span><span class="p">,</span> <span class="n">Pin</span><span class="o">.</span><span class="n">PWM</span><span class="p">)</span> <span class="c1">#初始化引脚为PWM模式 模拟输出方法2</span>
+<span class="n">adc0</span> <span class="o">=</span> <span class="n">Pin</span><span class="p">(</span><span class="n">Pin</span><span class="o">.</span><span class="n">A0</span><span class="p">,</span> <span class="n">Pin</span><span class="o">.</span><span class="n">ANALOG</span><span class="p">)</span> <span class="c1">#引脚初始化为电平输出</span>
+
+<span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+    <span class="n">v</span> <span class="o">=</span> <span class="n">adc0</span><span class="o">.</span><span class="n">read_analog</span><span class="p">()</span> <span class="c1">#读取A0口模拟信号数值</span>
+    <span class="n">L</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">v</span><span class="o">*</span><span class="mi">255</span><span class="o">/</span><span class="mi">1024</span><span class="p">)</span>
+    <span class="n">pwm0</span><span class="o">.</span><span class="n">write_analog</span><span class="p">(</span><span class="n">L</span><span class="p">)</span> <span class="c1">#PWM输出</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;A0=&quot;</span><span class="p">,</span><span class="n">L</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>运行代码，旋转旋钮LED灯会慢慢亮起和熄灭。</p>
+<img alt="../../_images/0322.png" src="../../_images/0322.png" />
+</div>
+</div>
+<div class="section" id="id6">
+<h2>三、代码分析<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h2>
 <ol class="arabic simple">
 <li><p>导入必要的包和初始化设置。</p></li>
 </ol>
@@ -264,29 +285,6 @@
 </ol>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">pwm0</span><span class="o">.</span><span class="n">write_analog</span><span class="p">(</span><span class="n">L</span><span class="p">)</span> <span class="c1">#PWM输出</span>
 <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;A0=&quot;</span><span class="p">,</span><span class="n">L</span><span class="p">)</span>
-</pre></div>
-</div>
-<ol class="arabic simple" start="4">
-<li><p>运行代码，旋转旋钮LED灯会慢慢亮起和熄灭。</p></li>
-</ol>
-<img alt="../../_images/0322.png" src="../../_images/0322.png" />
-</div>
-</div>
-<div class="section" id="id6">
-<h2>三、代码分析<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h2>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">time</span>
-<span class="kn">from</span> <span class="nn">pinpong.board</span> <span class="kn">import</span> <span class="n">Board</span><span class="p">,</span><span class="n">Pin</span>
-
-<span class="n">Board</span><span class="p">(</span><span class="s2">&quot;uno&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">begin</span><span class="p">()</span>               <span class="c1">#初始化，选择板型(uno、leonardo、xugu)和端口号，不输入端口号则进行自动识别</span>
-
-<span class="n">pwm0</span> <span class="o">=</span> <span class="n">Pin</span><span class="p">(</span><span class="n">Pin</span><span class="o">.</span><span class="n">D6</span><span class="p">,</span> <span class="n">Pin</span><span class="o">.</span><span class="n">PWM</span><span class="p">)</span> <span class="c1">#初始化引脚为PWM模式 模拟输出方法2</span>
-<span class="n">adc0</span> <span class="o">=</span> <span class="n">Pin</span><span class="p">(</span><span class="n">Pin</span><span class="o">.</span><span class="n">A0</span><span class="p">,</span> <span class="n">Pin</span><span class="o">.</span><span class="n">ANALOG</span><span class="p">)</span> <span class="c1">#引脚初始化为电平输出</span>
-
-<span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
-    <span class="n">v</span> <span class="o">=</span> <span class="n">adc0</span><span class="o">.</span><span class="n">read_analog</span><span class="p">()</span> <span class="c1">#读取A0口模拟信号数值</span>
-    <span class="n">L</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">v</span><span class="o">*</span><span class="mi">255</span><span class="o">/</span><span class="mi">1024</span><span class="p">)</span>
-    <span class="n">pwm0</span><span class="o">.</span><span class="n">write_analog</span><span class="p">(</span><span class="n">L</span><span class="p">)</span> <span class="c1">#PWM输出</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;A0=&quot;</span><span class="p">,</span><span class="n">L</span><span class="p">)</span>
 </pre></div>
 </div>
 <p><strong>数据类型-整数类型</strong></p>

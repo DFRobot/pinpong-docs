@@ -93,42 +93,6 @@
 
 **程序编写**
 
-1. 导入必要库和模块，参考之前使用过LED灯的案例加上本次使用的LCD屏所需的部分。
-
-.. code-block:: python
-
-    import time
-    from pinpong.board import Board,Pin
-    from pinpong.libs.lcd1602 import LCD1602_I2C 
-
-2. 然后对需要用到的功能进行初始化设置。
-
-.. code-block:: python
-
-    Board("uno").begin()               
-    ledR = Pin(Pin.D13,Pin.OUT)
-    ledG = Pin(Pin.D11,Pin.OUT)
-    ledY = Pin(Pin.D7,Pin.OUT)
-    lcd = LCD1602_I2C(i2c_addr=0x20) 
-    lcd.backlight(True)  
-    lcd.clear()  
-
-3. 设置一段红灯的倒计时功能，另外两种灯用相同的方法设置。
-
-.. code-block:: python
-
-    for G in range(30,-1,-1):
-        ledR.write_digital(0)
-        ledG.write_digital(1)
-        ledY.write_digital(0)
-        lcd.set_cursor(7,1)  
-        lcd.print(G) 
-        time.sleep(1)
-        lcd.clear()
-
-三、代码分析
-============
-
 .. code-block:: python
 
     import time
@@ -171,7 +135,43 @@
             time.sleep(1)
             lcd.clear()
 
-for i in range（）的作用：
+三、代码分析
+============
+
+1. 导入必要库和模块，参考之前使用过LED灯的案例加上本次使用的LCD屏所需的部分。
+
+.. code-block:: python
+
+    import time
+    from pinpong.board import Board,Pin
+    from pinpong.libs.lcd1602 import LCD1602_I2C 
+
+2. 然后对需要用到的功能进行初始化设置。
+
+.. code-block:: python
+
+    Board("uno").begin()               
+    ledR = Pin(Pin.D13,Pin.OUT)
+    ledG = Pin(Pin.D11,Pin.OUT)
+    ledY = Pin(Pin.D7,Pin.OUT)
+    lcd = LCD1602_I2C(i2c_addr=0x20) 
+    lcd.backlight(True)  
+    lcd.clear()  
+
+3. 设置一段红灯的倒计时功能，另外两种灯用相同的方法设置。
+
+.. code-block:: python
+
+    for G in range(30,-1,-1):
+        ledR.write_digital(0)
+        ledG.write_digital(1)
+        ledY.write_digital(0)
+        lcd.set_cursor(7,1)  
+        lcd.print(G) 
+        time.sleep(1)
+        lcd.clear()
+
+**for i in range（）的作用：**
 
 range（）是一个函数，for i in range（）就是给 i 赋值，比如：
 

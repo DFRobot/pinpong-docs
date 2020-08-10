@@ -73,41 +73,6 @@
 
 **程序编写**
 
-1. 导入必要库和模块，参考之前使用过的LCD屏所需的部分和adc部分。
-
-.. code-block:: python
-
-    import time
-    from pinpong.board import Board,Pin
-    from pinpong.libs.lcd1602 import LCD1602_I2C
-
-2. 然后对需要用到的功能进行初始化设置。
-
-.. code-block:: python
-
-    Board("uno").begin()
-    adc0 = Pin(Pin.A0, Pin.ANALOG) 
-    lcd = LCD1602_I2C(i2c_addr=0x20)
-    lcd.backlight(True)
-    lcd.clear()
-    lcd.set_cursor(2,0)
-    lcd.print('temperature')
-
-3. 让屏幕显示温度，每隔一秒钟刷新。
-
-.. code-block:: python
-
-    while True:
-        v = adc0.read_analog()
-        tem = round(v*(5/10.24),2)
-        lcd.set_cursor(5,1)
-        lcd.print(str(tem))
-        lcd.print('C')
-        time.sleep(1)
-
-三、代码分析
-=============
-
 .. code-block:: python
 
     import time
@@ -121,6 +86,41 @@
     lcd.clear()#清屏
     lcd.set_cursor(2,0)#设置光标位置
     lcd.print('temperature')#显示“temperature”
+
+    while True:
+        v = adc0.read_analog()#读取模拟量的值
+        tem = round(v*(5/10.24),2)#将读到的数值转化为温度数据
+        lcd.set_cursor(5,1)
+        lcd.print(str(tem))
+        lcd.print('C')
+        time.sleep(1)
+
+三、代码分析
+=============
+
+1. 导入必要库和模块，参考之前使用过的LCD屏所需的部分和adc部分。
+
+.. code-block:: python
+
+    import time
+    from pinpong.board import Board,Pin
+    from pinpong.libs.lcd1602 import LCD1602_I2C
+
+2. 然后对需要用到的功能进行初始化设置。
+
+.. code-block:: python
+
+    Board("uno").begin()#初始化，选择板型(uno、leonardo、xugu)和端口号，不输入端口号则进行自动识别
+    adc0 = Pin(Pin.A0, Pin.ANALOG) #初始化温度读取引脚在A0
+    lcd = LCD1602_I2C(i2c_addr=0x20)#初始化LCD的I2C地址
+    lcd.backlight(True) #打开背光
+    lcd.clear()#清屏
+    lcd.set_cursor(2,0)#设置光标位置
+    lcd.print('temperature')#显示“temperature”
+
+3. 让屏幕显示温度，每隔一秒钟刷新。
+
+.. code-block:: python
 
     while True:
         v = adc0.read_analog()#读取模拟量的值

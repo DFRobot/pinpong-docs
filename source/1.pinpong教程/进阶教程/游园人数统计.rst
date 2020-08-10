@@ -72,6 +72,33 @@
 
 **程序编写**
 
+.. code-block:: python
+
+    import time
+    from pinpong.board import Board,Pin
+    from pinpong.libs.lcd1602 import LCD1602_I2C
+
+    Board("uno").begin()#初始化，选择板型(uno、leonardo、xugu)和端口号，不输入端口号则进行自动识别
+    sw = Pin(Pin.D8, Pin.IN) #初始化红外开关引脚在D8
+    lcd = LCD1602_I2C(i2c_addr=0x20)#初始化LCD的I2C地址
+    lcd.backlight(True) #打开背光
+    lcd.clear()#清屏
+    v=0
+    lcd.set_cursor(2,0)#设置光标位置
+    lcd.print('Visitors')#显示标题
+
+    while True:
+        if sw.read_digital() == 0:
+            v = v+1
+            led.write_digital(1)
+            time.sleep(0.5)
+        print(v)
+        lcd.set_cursor(7,1)#设置光标位置
+        lcd.print(v)#显示人数
+
+三、代码分析
+==============
+
 1. 导入必要库和模块，参考之前使用过的LCD屏所需的部分和pin部分。
 
 .. code-block:: python
@@ -84,47 +111,18 @@
 
 .. code-block:: python
 
-    Board("uno").begin()
-    sw = Pin(Pin.D8, Pin.IN) 
-    led = Pin(Pin.D13, Pin.OUT) 
-    lcd = LCD1602_I2C(i2c_addr=0x20)
-    lcd.backlight(True) 
-    lcd.clear()
-    v=1
-    lcd.set_cursor(2,0)
-    lcd.print('Visitors')
+    Board("uno").begin()#初始化，选择板型(uno、leonardo、xugu)和端口号，不输入端口号则进行自动识别
+    sw = Pin(Pin.D8, Pin.IN) #初始化红外开关引脚在D8
+    lcd = LCD1602_I2C(i2c_addr=0x20)#初始化LCD的I2C地址
+    lcd.backlight(True) #打开背光
+    lcd.clear()#清屏
+    v=0
+    lcd.set_cursor(2,0)#设置光标位置
+    lcd.print('Visitors')#显示标题
 
 3. 每当有人经过就将变量v增加1并用显示屏显示人数。
 
 .. code-block:: python
-
-    while True:
-        if sw.read_digital() == 0:
-            v = v+1
-            led.write_digital(1)
-            time.sleep(0.5)
-        print(v)
-        lcd.set_cursor(7,1)
-        lcd.print(v)
-
-三、代码分析
-==============
-
-.. code-block:: python
-
-    import time
-    from pinpong.board import Board,Pin
-    from pinpong.libs.lcd1602 import LCD1602_I2C
-
-    Board("uno").begin()#初始化，选择板型(uno、leonardo、xugu)和端口号，不输入端口号则进行自动识别
-    sw = Pin(Pin.D8, Pin.IN) #初始化红外开关引脚在D8
-    led = Pin(Pin.D13, Pin.OUT) #初始化红外开关引脚在D8
-    lcd = LCD1602_I2C(i2c_addr=0x20)#初始化LCD的I2C地址
-    lcd.backlight(True) #打开背光
-    lcd.clear()#清屏
-    v=1
-    lcd.set_cursor(2,0)#设置光标位置
-    lcd.print('Visitors')#显示标题
 
     while True:
         if sw.read_digital() == 0:

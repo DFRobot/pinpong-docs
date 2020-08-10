@@ -51,7 +51,7 @@
         else:
             LED.write_digital(0)
 
-3. 摁下F5运行程序，查看效果。当遮住光线传感器的时候LED灯会亮起，恢复后LED灯会熄灭。
+3. 摁下F5运行程序，查看效果。当亮度低于100（遮住光线传感器）的时候LED灯会亮起，恢复后LED灯会熄灭。
 
 .. image:: images/0412.png
 
@@ -73,43 +73,38 @@
 
 **程序编写**
 
-1. 设计程序逻辑图
-
-.. image:: images/04Log.png
-
-2. 导入必要的包和初始化设置。
-
 .. code-block:: python
 
     import time
-    from pinpong.board import Board,Pin
+    from pinpong.board import Board,Pin #导入必要的库函数
 
-    Board("uno").begin()
+    Board("uno").begin()#初始化，选择板型(uno、leonardo、xugu)和端口号，不输入端口号则进行自动识别
 
-    Sound = Pin(Pin.A1,Pin.ANALOG)
-    Light = Pin(Pin.A2,Pin.ANALOG)
-    LED = Pin(Pin.D13, Pin.OUT) 
-
-3. 加入判断
-
-.. code-block:: python
-
+    Sound = Pin(Pin.A1,Pin.ANALOG) #初始化声音传感器引脚为A1，检测声音大小
+    Light = Pin(Pin.A2,Pin.ANALOG)#初始化光线传感器引脚为A2，检测光线强度
+    LED = Pin(Pin.D13, Pin.OUT) #初始化LED引脚为D13
     while True:
-        vs=Sound.read_analog()
-        vl=Light.read_analog()
-        print("Sound=",vs,"Light=",vl)
-        if vs>200 and vl < 100:
+        vs=Sound.read_analog()#读取模拟声音信号数值
+        vl=Light.read_analog()#读取模拟灯光信号数值
+        print("Sound=",vs,"Light=",vl)#打印声音和光线数据
+        if vs>200 and vl < 100:#判断光线和声音大小
             LED.write_digital(1)
             time.sleep(3)
         else:
             LED.write_digital(0)
 
-4. 运行代码，当遮住光线传感器且发出声音时，LED灯会点亮，当没有声音或光线传感器没有被遮住的状态维持3秒以上时，LED灯会熄灭。
+运行代码，当亮度值低于100且声音值大于200时（遮住光线传感器且发出声音时），LED灯会点亮，当没有声音或光线传感器没有被遮住的状态维持3秒以上时，LED灯会熄灭。
 
 .. image:: images/0421.png
 
 三、代码分析
 ============
+
+1. 设计程序逻辑图
+
+.. image:: images/04Log.png
+
+2. 导入必要的包和初始化设置。
 
 .. code-block:: python
 
@@ -121,6 +116,11 @@
     Sound = Pin(Pin.A1,Pin.ANALOG) #初始化声音传感器引脚为A1，检测声音大小
     Light = Pin(Pin.A2,Pin.ANALOG)#初始化光线传感器引脚为A2，检测光线强度
     LED = Pin(Pin.D13, Pin.OUT) #初始化LED引脚为D13
+
+3. 加入判断
+
+.. code-block:: python
+
     while True:
         vs=Sound.read_analog()#读取模拟声音信号数值
         vl=Light.read_analog()#读取模拟灯光信号数值

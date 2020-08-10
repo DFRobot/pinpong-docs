@@ -273,43 +273,6 @@
 <li><p>将红色LED灯模块接D13数字引脚、绿色LED灯模块接D11数字引脚、黄色LED灯模块接D7数字引脚</p></li>
 </ul>
 <p><strong>程序编写</strong></p>
-<ol class="arabic simple">
-<li><p>导入必要库和模块，参考之前使用过LED灯的案例加上本次使用的LCD屏所需的部分。</p></li>
-</ol>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">time</span>
-<span class="kn">from</span> <span class="nn">pinpong.board</span> <span class="kn">import</span> <span class="n">Board</span><span class="p">,</span><span class="n">Pin</span>
-<span class="kn">from</span> <span class="nn">pinpong.libs.lcd1602</span> <span class="kn">import</span> <span class="n">LCD1602_I2C</span>
-</pre></div>
-</div>
-<ol class="arabic simple" start="2">
-<li><p>然后对需要用到的功能进行初始化设置。</p></li>
-</ol>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">Board</span><span class="p">(</span><span class="s2">&quot;uno&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">begin</span><span class="p">()</span>
-<span class="n">ledR</span> <span class="o">=</span> <span class="n">Pin</span><span class="p">(</span><span class="n">Pin</span><span class="o">.</span><span class="n">D13</span><span class="p">,</span><span class="n">Pin</span><span class="o">.</span><span class="n">OUT</span><span class="p">)</span>
-<span class="n">ledG</span> <span class="o">=</span> <span class="n">Pin</span><span class="p">(</span><span class="n">Pin</span><span class="o">.</span><span class="n">D11</span><span class="p">,</span><span class="n">Pin</span><span class="o">.</span><span class="n">OUT</span><span class="p">)</span>
-<span class="n">ledY</span> <span class="o">=</span> <span class="n">Pin</span><span class="p">(</span><span class="n">Pin</span><span class="o">.</span><span class="n">D7</span><span class="p">,</span><span class="n">Pin</span><span class="o">.</span><span class="n">OUT</span><span class="p">)</span>
-<span class="n">lcd</span> <span class="o">=</span> <span class="n">LCD1602_I2C</span><span class="p">(</span><span class="n">i2c_addr</span><span class="o">=</span><span class="mh">0x20</span><span class="p">)</span>
-<span class="n">lcd</span><span class="o">.</span><span class="n">backlight</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
-<span class="n">lcd</span><span class="o">.</span><span class="n">clear</span><span class="p">()</span>
-</pre></div>
-</div>
-<ol class="arabic simple" start="3">
-<li><p>设置一段红灯的倒计时功能，另外两种灯用相同的方法设置。</p></li>
-</ol>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">G</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">30</span><span class="p">,</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="o">-</span><span class="mi">1</span><span class="p">):</span>
-    <span class="n">ledR</span><span class="o">.</span><span class="n">write_digital</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
-    <span class="n">ledG</span><span class="o">.</span><span class="n">write_digital</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
-    <span class="n">ledY</span><span class="o">.</span><span class="n">write_digital</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
-    <span class="n">lcd</span><span class="o">.</span><span class="n">set_cursor</span><span class="p">(</span><span class="mi">7</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span>
-    <span class="n">lcd</span><span class="o">.</span><span class="n">print</span><span class="p">(</span><span class="n">G</span><span class="p">)</span>
-    <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
-    <span class="n">lcd</span><span class="o">.</span><span class="n">clear</span><span class="p">()</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="section" id="id4">
-<h2>三、代码分析<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">time</span>
 <span class="kn">from</span> <span class="nn">pinpong.board</span> <span class="kn">import</span> <span class="n">Board</span><span class="p">,</span><span class="n">Pin</span>
 <span class="kn">from</span> <span class="nn">pinpong.libs.lcd1602</span> <span class="kn">import</span> <span class="n">LCD1602_I2C</span>
@@ -351,7 +314,44 @@
         <span class="n">lcd</span><span class="o">.</span><span class="n">clear</span><span class="p">()</span>
 </pre></div>
 </div>
-<p>for i in range（）的作用：</p>
+</div>
+</div>
+<div class="section" id="id4">
+<h2>三、代码分析<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic simple">
+<li><p>导入必要库和模块，参考之前使用过LED灯的案例加上本次使用的LCD屏所需的部分。</p></li>
+</ol>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">time</span>
+<span class="kn">from</span> <span class="nn">pinpong.board</span> <span class="kn">import</span> <span class="n">Board</span><span class="p">,</span><span class="n">Pin</span>
+<span class="kn">from</span> <span class="nn">pinpong.libs.lcd1602</span> <span class="kn">import</span> <span class="n">LCD1602_I2C</span>
+</pre></div>
+</div>
+<ol class="arabic simple" start="2">
+<li><p>然后对需要用到的功能进行初始化设置。</p></li>
+</ol>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">Board</span><span class="p">(</span><span class="s2">&quot;uno&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">begin</span><span class="p">()</span>
+<span class="n">ledR</span> <span class="o">=</span> <span class="n">Pin</span><span class="p">(</span><span class="n">Pin</span><span class="o">.</span><span class="n">D13</span><span class="p">,</span><span class="n">Pin</span><span class="o">.</span><span class="n">OUT</span><span class="p">)</span>
+<span class="n">ledG</span> <span class="o">=</span> <span class="n">Pin</span><span class="p">(</span><span class="n">Pin</span><span class="o">.</span><span class="n">D11</span><span class="p">,</span><span class="n">Pin</span><span class="o">.</span><span class="n">OUT</span><span class="p">)</span>
+<span class="n">ledY</span> <span class="o">=</span> <span class="n">Pin</span><span class="p">(</span><span class="n">Pin</span><span class="o">.</span><span class="n">D7</span><span class="p">,</span><span class="n">Pin</span><span class="o">.</span><span class="n">OUT</span><span class="p">)</span>
+<span class="n">lcd</span> <span class="o">=</span> <span class="n">LCD1602_I2C</span><span class="p">(</span><span class="n">i2c_addr</span><span class="o">=</span><span class="mh">0x20</span><span class="p">)</span>
+<span class="n">lcd</span><span class="o">.</span><span class="n">backlight</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">lcd</span><span class="o">.</span><span class="n">clear</span><span class="p">()</span>
+</pre></div>
+</div>
+<ol class="arabic simple" start="3">
+<li><p>设置一段红灯的倒计时功能，另外两种灯用相同的方法设置。</p></li>
+</ol>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">G</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">30</span><span class="p">,</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="o">-</span><span class="mi">1</span><span class="p">):</span>
+    <span class="n">ledR</span><span class="o">.</span><span class="n">write_digital</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+    <span class="n">ledG</span><span class="o">.</span><span class="n">write_digital</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+    <span class="n">ledY</span><span class="o">.</span><span class="n">write_digital</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+    <span class="n">lcd</span><span class="o">.</span><span class="n">set_cursor</span><span class="p">(</span><span class="mi">7</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span>
+    <span class="n">lcd</span><span class="o">.</span><span class="n">print</span><span class="p">(</span><span class="n">G</span><span class="p">)</span>
+    <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+    <span class="n">lcd</span><span class="o">.</span><span class="n">clear</span><span class="p">()</span>
+</pre></div>
+</div>
+<p><strong>for i in range（）的作用：</strong></p>
 <p>range（）是一个函数，for i in range（）就是给 i 赋值，比如：</p>
 <p>for i in range（30）：</p>
 <p>就是把0~30依次赋值给i，在程序中加入的</p>

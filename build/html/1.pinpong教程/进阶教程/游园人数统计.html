@@ -256,6 +256,33 @@
 <li><p>将红外光电开关接入8号数字接口</p></li>
 </ul>
 <p><strong>程序编写</strong></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">time</span>
+<span class="kn">from</span> <span class="nn">pinpong.board</span> <span class="kn">import</span> <span class="n">Board</span><span class="p">,</span><span class="n">Pin</span>
+<span class="kn">from</span> <span class="nn">pinpong.libs.lcd1602</span> <span class="kn">import</span> <span class="n">LCD1602_I2C</span>
+
+<span class="n">Board</span><span class="p">(</span><span class="s2">&quot;uno&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">begin</span><span class="p">()</span><span class="c1">#初始化，选择板型(uno、leonardo、xugu)和端口号，不输入端口号则进行自动识别</span>
+<span class="n">sw</span> <span class="o">=</span> <span class="n">Pin</span><span class="p">(</span><span class="n">Pin</span><span class="o">.</span><span class="n">D8</span><span class="p">,</span> <span class="n">Pin</span><span class="o">.</span><span class="n">IN</span><span class="p">)</span> <span class="c1">#初始化红外开关引脚在D8</span>
+<span class="n">lcd</span> <span class="o">=</span> <span class="n">LCD1602_I2C</span><span class="p">(</span><span class="n">i2c_addr</span><span class="o">=</span><span class="mh">0x20</span><span class="p">)</span><span class="c1">#初始化LCD的I2C地址</span>
+<span class="n">lcd</span><span class="o">.</span><span class="n">backlight</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span> <span class="c1">#打开背光</span>
+<span class="n">lcd</span><span class="o">.</span><span class="n">clear</span><span class="p">()</span><span class="c1">#清屏</span>
+<span class="n">v</span><span class="o">=</span><span class="mi">0</span>
+<span class="n">lcd</span><span class="o">.</span><span class="n">set_cursor</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">0</span><span class="p">)</span><span class="c1">#设置光标位置</span>
+<span class="n">lcd</span><span class="o">.</span><span class="n">print</span><span class="p">(</span><span class="s1">&#39;Visitors&#39;</span><span class="p">)</span><span class="c1">#显示标题</span>
+
+<span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+    <span class="k">if</span> <span class="n">sw</span><span class="o">.</span><span class="n">read_digital</span><span class="p">()</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="n">v</span> <span class="o">=</span> <span class="n">v</span><span class="o">+</span><span class="mi">1</span>
+        <span class="n">led</span><span class="o">.</span><span class="n">write_digital</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+        <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mf">0.5</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">v</span><span class="p">)</span>
+    <span class="n">lcd</span><span class="o">.</span><span class="n">set_cursor</span><span class="p">(</span><span class="mi">7</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span><span class="c1">#设置光标位置</span>
+    <span class="n">lcd</span><span class="o">.</span><span class="n">print</span><span class="p">(</span><span class="n">v</span><span class="p">)</span><span class="c1">#显示人数</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="id6">
+<h2>三、代码分析<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h2>
 <ol class="arabic simple">
 <li><p>导入必要库和模块，参考之前使用过的LCD屏所需的部分和pin部分。</p></li>
 </ol>
@@ -267,49 +294,20 @@
 <ol class="arabic simple" start="2">
 <li><p>然后对需要用到的功能进行初始化设置。</p></li>
 </ol>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">Board</span><span class="p">(</span><span class="s2">&quot;uno&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">begin</span><span class="p">()</span>
-<span class="n">sw</span> <span class="o">=</span> <span class="n">Pin</span><span class="p">(</span><span class="n">Pin</span><span class="o">.</span><span class="n">D8</span><span class="p">,</span> <span class="n">Pin</span><span class="o">.</span><span class="n">IN</span><span class="p">)</span>
-<span class="n">led</span> <span class="o">=</span> <span class="n">Pin</span><span class="p">(</span><span class="n">Pin</span><span class="o">.</span><span class="n">D13</span><span class="p">,</span> <span class="n">Pin</span><span class="o">.</span><span class="n">OUT</span><span class="p">)</span>
-<span class="n">lcd</span> <span class="o">=</span> <span class="n">LCD1602_I2C</span><span class="p">(</span><span class="n">i2c_addr</span><span class="o">=</span><span class="mh">0x20</span><span class="p">)</span>
-<span class="n">lcd</span><span class="o">.</span><span class="n">backlight</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
-<span class="n">lcd</span><span class="o">.</span><span class="n">clear</span><span class="p">()</span>
-<span class="n">v</span><span class="o">=</span><span class="mi">1</span>
-<span class="n">lcd</span><span class="o">.</span><span class="n">set_cursor</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">0</span><span class="p">)</span>
-<span class="n">lcd</span><span class="o">.</span><span class="n">print</span><span class="p">(</span><span class="s1">&#39;Visitors&#39;</span><span class="p">)</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">Board</span><span class="p">(</span><span class="s2">&quot;uno&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">begin</span><span class="p">()</span><span class="c1">#初始化，选择板型(uno、leonardo、xugu)和端口号，不输入端口号则进行自动识别</span>
+<span class="n">sw</span> <span class="o">=</span> <span class="n">Pin</span><span class="p">(</span><span class="n">Pin</span><span class="o">.</span><span class="n">D8</span><span class="p">,</span> <span class="n">Pin</span><span class="o">.</span><span class="n">IN</span><span class="p">)</span> <span class="c1">#初始化红外开关引脚在D8</span>
+<span class="n">lcd</span> <span class="o">=</span> <span class="n">LCD1602_I2C</span><span class="p">(</span><span class="n">i2c_addr</span><span class="o">=</span><span class="mh">0x20</span><span class="p">)</span><span class="c1">#初始化LCD的I2C地址</span>
+<span class="n">lcd</span><span class="o">.</span><span class="n">backlight</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span> <span class="c1">#打开背光</span>
+<span class="n">lcd</span><span class="o">.</span><span class="n">clear</span><span class="p">()</span><span class="c1">#清屏</span>
+<span class="n">v</span><span class="o">=</span><span class="mi">0</span>
+<span class="n">lcd</span><span class="o">.</span><span class="n">set_cursor</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">0</span><span class="p">)</span><span class="c1">#设置光标位置</span>
+<span class="n">lcd</span><span class="o">.</span><span class="n">print</span><span class="p">(</span><span class="s1">&#39;Visitors&#39;</span><span class="p">)</span><span class="c1">#显示标题</span>
 </pre></div>
 </div>
 <ol class="arabic simple" start="3">
 <li><p>每当有人经过就将变量v增加1并用显示屏显示人数。</p></li>
 </ol>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
-    <span class="k">if</span> <span class="n">sw</span><span class="o">.</span><span class="n">read_digital</span><span class="p">()</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
-        <span class="n">v</span> <span class="o">=</span> <span class="n">v</span><span class="o">+</span><span class="mi">1</span>
-        <span class="n">led</span><span class="o">.</span><span class="n">write_digital</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
-        <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mf">0.5</span><span class="p">)</span>
-    <span class="nb">print</span><span class="p">(</span><span class="n">v</span><span class="p">)</span>
-    <span class="n">lcd</span><span class="o">.</span><span class="n">set_cursor</span><span class="p">(</span><span class="mi">7</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span>
-    <span class="n">lcd</span><span class="o">.</span><span class="n">print</span><span class="p">(</span><span class="n">v</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="section" id="id6">
-<h2>三、代码分析<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h2>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">time</span>
-<span class="kn">from</span> <span class="nn">pinpong.board</span> <span class="kn">import</span> <span class="n">Board</span><span class="p">,</span><span class="n">Pin</span>
-<span class="kn">from</span> <span class="nn">pinpong.libs.lcd1602</span> <span class="kn">import</span> <span class="n">LCD1602_I2C</span>
-
-<span class="n">Board</span><span class="p">(</span><span class="s2">&quot;uno&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">begin</span><span class="p">()</span><span class="c1">#初始化，选择板型(uno、leonardo、xugu)和端口号，不输入端口号则进行自动识别</span>
-<span class="n">sw</span> <span class="o">=</span> <span class="n">Pin</span><span class="p">(</span><span class="n">Pin</span><span class="o">.</span><span class="n">D8</span><span class="p">,</span> <span class="n">Pin</span><span class="o">.</span><span class="n">IN</span><span class="p">)</span> <span class="c1">#初始化红外开关引脚在D8</span>
-<span class="n">led</span> <span class="o">=</span> <span class="n">Pin</span><span class="p">(</span><span class="n">Pin</span><span class="o">.</span><span class="n">D13</span><span class="p">,</span> <span class="n">Pin</span><span class="o">.</span><span class="n">OUT</span><span class="p">)</span> <span class="c1">#初始化红外开关引脚在D8</span>
-<span class="n">lcd</span> <span class="o">=</span> <span class="n">LCD1602_I2C</span><span class="p">(</span><span class="n">i2c_addr</span><span class="o">=</span><span class="mh">0x20</span><span class="p">)</span><span class="c1">#初始化LCD的I2C地址</span>
-<span class="n">lcd</span><span class="o">.</span><span class="n">backlight</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span> <span class="c1">#打开背光</span>
-<span class="n">lcd</span><span class="o">.</span><span class="n">clear</span><span class="p">()</span><span class="c1">#清屏</span>
-<span class="n">v</span><span class="o">=</span><span class="mi">1</span>
-<span class="n">lcd</span><span class="o">.</span><span class="n">set_cursor</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">0</span><span class="p">)</span><span class="c1">#设置光标位置</span>
-<span class="n">lcd</span><span class="o">.</span><span class="n">print</span><span class="p">(</span><span class="s1">&#39;Visitors&#39;</span><span class="p">)</span><span class="c1">#显示标题</span>
-
-<span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
     <span class="k">if</span> <span class="n">sw</span><span class="o">.</span><span class="n">read_digital</span><span class="p">()</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
         <span class="n">v</span> <span class="o">=</span> <span class="n">v</span><span class="o">+</span><span class="mi">1</span>
         <span class="n">led</span><span class="o">.</span><span class="n">write_digital</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>

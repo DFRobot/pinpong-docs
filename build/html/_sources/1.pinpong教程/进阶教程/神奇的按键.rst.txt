@@ -11,9 +11,8 @@
 
 .. image::  images/2nd.png
 
-----------------
 二、项目实施
-----------------
+==============
 
 （1）使用按钮点亮小灯
 ---------------------
@@ -30,9 +29,7 @@
 
 * 将LED发光模块接入13号数字引脚，将按钮模块接入8号数字引脚
 
-````````````
-程序编写：
-````````````
+**程序编写：**
 
 1、 打开pingpong库的官方文档，找到基础库示例中的“数字输入”，并用IDLE打开。
 
@@ -66,64 +63,6 @@
 
 **程序编写：**
 
-1、导入必要的包和初始化设置。
-
-.. code-block:: python
-
-    import time
-    from pinpong.board import Board,Pin
-
-    board = Board("uno").begin()  #初始化，选择板型和端口号，不输入端口号则进行自动识别
-    #board = Board("uno","COM36").begin()  #windows下指定端口初始化
-    #board = Board("uno","/dev/ttyACM0").begin()   #linux下指定端口初始化
-    #board = Board("uno","/dev/cu.usbmodem14101").begin()   #mac下指定端口初始化
-
-    btn = Pin(Pin.D8, Pin.IN) #引脚初始化为电平输入
-    led = Pin(Pin.D13, Pin.OUT)#引脚初始化为电平输出
-
-2、我们需要一个按键能够得到两个不同的结果，那么就需要设置一个中间值来实现切换状态的作用。所以首先我们要设置一个变量i=0。
-
-.. code-block:: python
-
-    i = 0 #设置变量i=0
-
-
-3、接着加入判断，判断按钮摁下的状态。为了方便设置，定义变量v为按钮的状态。
-
-.. code-block:: python
-
-    while True:
-    v = btn.read_digital()  #读取引脚电平
-    #print(v)  #终端打印读取的电平状态
-    if (v == 1):
-
-
-4、然后加入判断，借助i来区别状态，如逻辑图所示，每次摁下按钮时i的值会在0和1之间切换，借助i值的变化来确定LED灯的亮灭状态即可，根据逻辑完成代码。
-
-.. image::  images/pinpong02.png
-
-
-.. code-block:: python
-
-    if (i == 1):
-        i=0
-        led.write_digital(0)  #将按钮状态设置给led灯引脚
-        print("LED off")
-        else:
-        i=1
-        led.write_digital(1)  #将按钮状态设置给led灯引脚
-        print("LED on")
-    
-        time.sleep(0.5)
-
-5、运行代码，摁下按钮可以切换LED灯的亮灭。
-
-.. image::  images/0221.png
-
-----------------
-三、代码分析
-----------------
-
 .. code-block:: python
 
     import time
@@ -153,7 +92,65 @@
     
         time.sleep(0.5)
 
-什么是按键抖动？
+
+运行代码，摁下按钮可以切换LED灯的亮灭。
+
+.. image::  images/0221.png
+
+三、代码分析
+==============
+
+1、导入必要的包和初始化设置。
+
+.. code-block:: python
+
+    import time
+    from pinpong.board import Board,Pin
+
+    board = Board("uno").begin()  #初始化，选择板型和端口号，不输入端口号则进行自动识别
+    #board = Board("uno","COM36").begin()  #windows下指定端口初始化
+    #board = Board("uno","/dev/ttyACM0").begin()   #linux下指定端口初始化
+    #board = Board("uno","/dev/cu.usbmodem14101").begin()   #mac下指定端口初始化
+
+    btn = Pin(Pin.D8, Pin.IN) #引脚初始化为电平输入
+    led = Pin(Pin.D13, Pin.OUT)#引脚初始化为电平输出
+
+2、我们需要一个按键能够得到两个不同的结果，那么就需要设置一个中间值来实现切换状态的作用。所以首先我们要设置一个变量i=0。
+
+.. code-block:: python
+
+    i = 0 #设置变量i=0
+
+
+3、接着加入判断，判断按钮摁下的状态。为了方便设置，定义变量v为按钮的状态。
+
+.. code-block:: python
+
+    while True:
+        v = btn.read_digital()  #读取引脚电平
+        #print(v)  #终端打印读取的电平状态
+        if (v == 1):
+
+
+4、然后加入判断，借助i来区别状态，如逻辑图所示，每次摁下按钮时i的值会在0和1之间切换，借助i值的变化来确定LED灯的亮灭状态即可，根据逻辑完成代码。
+
+.. image::  images/pinpong02.png
+
+
+.. code-block:: python
+
+    if (i == 1):
+        i=0
+        led.write_digital(0)  #将按钮状态设置给led灯引脚
+        print("LED off")
+        else:
+        i=1
+        led.write_digital(1)  #将按钮状态设置给led灯引脚
+        print("LED on")
+    
+        time.sleep(0.5)
+
+**什么是按键抖动？**
 
 我们想象的开关电路是“按下按键-立刻导通”“再次按下-立刻断开”，而实际上并非如此。 
 
@@ -161,7 +158,7 @@
 
 .. image::  images/btnshanke.jpg
 
-那又如何消除按键抖动呢？ 
+**那又如何消除按键抖动呢？**
 
 常用除抖动方法有两种：软件方法和硬件方法。这里重点讲讲方便简单的软件方法。
 

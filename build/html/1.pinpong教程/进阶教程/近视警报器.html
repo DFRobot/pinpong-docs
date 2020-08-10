@@ -264,47 +264,6 @@
 <li><p>将蜂鸣器模块接入D4引脚。</p></li>
 </ul>
 <p><strong>程序编写</strong></p>
-<ol class="arabic simple">
-<li><p>设计程序逻辑图</p></li>
-</ol>
-<img alt="../../_images/05log.png" src="../../_images/05log.png" />
-<ol class="arabic simple" start="2">
-<li><p>导入必要的包和初始化设置。</p></li>
-</ol>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">time</span>
-<span class="kn">from</span> <span class="nn">pinpong.board</span> <span class="kn">import</span> <span class="n">Board</span><span class="p">,</span><span class="n">Pin</span><span class="p">,</span><span class="n">SR04_URM10</span><span class="p">,</span><span class="n">Tone</span>
-
-<span class="n">Board</span><span class="p">(</span><span class="s2">&quot;uno&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">begin</span><span class="p">()</span>
-
-<span class="n">tone</span> <span class="o">=</span> <span class="n">Tone</span><span class="p">(</span><span class="n">Pin</span><span class="p">(</span><span class="n">Pin</span><span class="o">.</span><span class="n">D4</span><span class="p">))</span>
-<span class="n">TRIGER_PIN</span> <span class="o">=</span> <span class="n">Pin</span><span class="p">(</span><span class="n">Pin</span><span class="o">.</span><span class="n">D7</span><span class="p">)</span>
-<span class="n">ECHO_PIN</span> <span class="o">=</span> <span class="n">Pin</span><span class="p">(</span><span class="n">Pin</span><span class="o">.</span><span class="n">D8</span><span class="p">)</span>
-
-<span class="n">tone</span><span class="o">.</span><span class="n">freq</span><span class="p">(</span><span class="mi">200</span><span class="p">)</span>
-<span class="n">sonar</span> <span class="o">=</span> <span class="n">SR04_URM10</span><span class="p">(</span><span class="n">TRIGER_PIN</span><span class="p">,</span><span class="n">ECHO_PIN</span><span class="p">)</span>
-</pre></div>
-</div>
-<ol class="arabic simple" start="3">
-<li><p>加入判断</p></li>
-</ol>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
-    <span class="n">dis</span> <span class="o">=</span> <span class="n">sonar</span><span class="o">.</span><span class="n">distance_cm</span><span class="p">()</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;distance = </span><span class="si">%d</span><span class="s2"> cm&quot;</span><span class="o">%</span><span class="n">dis</span><span class="p">)</span>
-    <span class="k">if</span> <span class="n">dis</span> <span class="o">&lt;</span> <span class="mi">50</span><span class="p">:</span>
-        <span class="n">tone</span><span class="o">.</span><span class="n">on</span><span class="p">()</span>
-        <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
-    <span class="k">else</span><span class="p">:</span>
-        <span class="n">tone</span><span class="o">.</span><span class="n">off</span><span class="p">()</span>
-</pre></div>
-</div>
-<ol class="arabic simple" start="4">
-<li><p>运行代码，当超声波传感器监测到距离小于50时，蜂鸣器会报警提示距离桌面太近。</p></li>
-</ol>
-<img alt="../../_images/0531.png" src="../../_images/0531.png" />
-</div>
-</div>
-<div class="section" id="id7">
-<h2>三、代码分析<a class="headerlink" href="#id7" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">time</span>
 <span class="kn">from</span> <span class="nn">pinpong.board</span> <span class="kn">import</span> <span class="n">Board</span><span class="p">,</span><span class="n">Pin</span><span class="p">,</span><span class="n">SR04_URM10</span><span class="p">,</span><span class="n">Tone</span><span class="c1">#导入必要的库函数</span>
 
@@ -319,6 +278,45 @@
 
 <span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
     <span class="n">dis</span> <span class="o">=</span> <span class="n">sonar</span><span class="o">.</span><span class="n">distance_cm</span><span class="p">()</span> <span class="c1">#读取超声波传感器距离</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;distance = </span><span class="si">%d</span><span class="s2"> cm&quot;</span><span class="o">%</span><span class="n">dis</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">dis</span> <span class="o">&lt;</span> <span class="mi">50</span><span class="p">:</span>
+        <span class="n">tone</span><span class="o">.</span><span class="n">on</span><span class="p">()</span>
+        <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">tone</span><span class="o">.</span><span class="n">off</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>运行代码，当超声波传感器监测到距离小于50时，蜂鸣器会报警提示距离桌面太近。</p>
+<img alt="../../_images/0531.png" src="../../_images/0531.png" />
+</div>
+</div>
+<div class="section" id="id7">
+<h2>三、代码分析<a class="headerlink" href="#id7" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic simple">
+<li><p>设计程序逻辑图</p></li>
+</ol>
+<img alt="../../_images/05log.png" src="../../_images/05log.png" />
+<ol class="arabic simple" start="2">
+<li><p>导入必要的包和初始化设置。</p></li>
+</ol>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">time</span>
+<span class="kn">from</span> <span class="nn">pinpong.board</span> <span class="kn">import</span> <span class="n">Board</span><span class="p">,</span><span class="n">Pin</span><span class="p">,</span><span class="n">SR04_URM10</span><span class="p">,</span><span class="n">Tone</span><span class="c1">#导入必要的库函数</span>
+
+<span class="n">Board</span><span class="p">(</span><span class="s2">&quot;uno&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">begin</span><span class="p">()</span><span class="c1">#初始化，选择板型(uno、leonardo、xugu)和端口号，不输入端口号则进行自动识别</span>
+
+<span class="n">tone</span> <span class="o">=</span> <span class="n">Tone</span><span class="p">(</span><span class="n">Pin</span><span class="p">(</span><span class="n">Pin</span><span class="o">.</span><span class="n">D4</span><span class="p">))</span><span class="c1">#初始化蜂鸣器模块引脚为D4</span>
+<span class="n">TRIGER_PIN</span> <span class="o">=</span> <span class="n">Pin</span><span class="p">(</span><span class="n">Pin</span><span class="o">.</span><span class="n">D7</span><span class="p">)</span><span class="c1">#初始化超声波传感器TRIG引脚为D7</span>
+<span class="n">ECHO_PIN</span> <span class="o">=</span> <span class="n">Pin</span><span class="p">(</span><span class="n">Pin</span><span class="o">.</span><span class="n">D8</span><span class="p">)</span><span class="c1">#初始化超声波传感器ECHO引脚为D8</span>
+
+<span class="n">tone</span><span class="o">.</span><span class="n">freq</span><span class="p">(</span><span class="mi">200</span><span class="p">)</span> <span class="c1">#初始化蜂鸣器频率</span>
+<span class="n">sonar</span> <span class="o">=</span> <span class="n">SR04_URM10</span><span class="p">(</span><span class="n">TRIGER_PIN</span><span class="p">,</span><span class="n">ECHO_PIN</span><span class="p">)</span><span class="c1">#初始化超声波传感器</span>
+</pre></div>
+</div>
+<ol class="arabic simple" start="3">
+<li><p>加入判断</p></li>
+</ol>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+    <span class="n">dis</span> <span class="o">=</span> <span class="n">sonar</span><span class="o">.</span><span class="n">distance_cm</span><span class="p">()</span><span class="c1">#读取超声波传感器距离</span>
     <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;distance = </span><span class="si">%d</span><span class="s2"> cm&quot;</span><span class="o">%</span><span class="n">dis</span><span class="p">)</span>
     <span class="k">if</span> <span class="n">dis</span> <span class="o">&lt;</span> <span class="mi">50</span><span class="p">:</span>
         <span class="n">tone</span><span class="o">.</span><span class="n">on</span><span class="p">()</span>

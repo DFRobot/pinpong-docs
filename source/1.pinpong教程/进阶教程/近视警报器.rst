@@ -85,46 +85,6 @@
 
 **程序编写**
 
-1. 设计程序逻辑图
-
-.. image::  images/05log.png
-
-2. 导入必要的包和初始化设置。
-
-.. code-block:: python
-
-    import time
-    from pinpong.board import Board,Pin,SR04_URM10,Tone
-
-    Board("uno").begin()
-
-    tone = Tone(Pin(Pin.D4))
-    TRIGER_PIN = Pin(Pin.D7)
-    ECHO_PIN = Pin(Pin.D8)
-
-    tone.freq(200)
-    sonar = SR04_URM10(TRIGER_PIN,ECHO_PIN)
-
-3. 加入判断
-
-.. code-block:: python
-
-    while True:
-        dis = sonar.distance_cm() 
-        print("distance = %d cm"%dis)
-        if dis < 50:
-            tone.on()
-            time.sleep(1)
-        else:
-            tone.off()
-
-4. 运行代码，当超声波传感器监测到距离小于50时，蜂鸣器会报警提示距离桌面太近。
-
-.. image::  images/0531.png
-
-三、代码分析
-============
-
 .. code-block:: python
 
     import time
@@ -147,6 +107,47 @@
             time.sleep(1)
         else:
             tone.off()
+
+运行代码，当超声波传感器监测到距离小于50时，蜂鸣器会报警提示距离桌面太近。
+
+.. image::  images/0531.png
+
+三、代码分析
+============
+
+1. 设计程序逻辑图
+
+.. image::  images/05log.png
+
+2. 导入必要的包和初始化设置。
+
+.. code-block:: python
+
+    import time
+    from pinpong.board import Board,Pin,SR04_URM10,Tone#导入必要的库函数
+
+    Board("uno").begin()#初始化，选择板型(uno、leonardo、xugu)和端口号，不输入端口号则进行自动识别
+
+    tone = Tone(Pin(Pin.D4))#初始化蜂鸣器模块引脚为D4
+    TRIGER_PIN = Pin(Pin.D7)#初始化超声波传感器TRIG引脚为D7
+    ECHO_PIN = Pin(Pin.D8)#初始化超声波传感器ECHO引脚为D8
+
+    tone.freq(200) #初始化蜂鸣器频率
+    sonar = SR04_URM10(TRIGER_PIN,ECHO_PIN)#初始化超声波传感器
+
+3. 加入判断
+
+.. code-block:: python
+
+    while True:
+        dis = sonar.distance_cm()#读取超声波传感器距离
+        print("distance = %d cm"%dis)
+        if dis < 50:
+            tone.on()
+            time.sleep(1)
+        else:
+            tone.off()
+
 
 四、硬件分析
 ==============
