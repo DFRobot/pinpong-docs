@@ -4,7 +4,17 @@ Windows平台安装
 ==================
 1. 安装Python3。pinpong库依赖Python，因此请确保电脑安装了Python3，如果已经安装，此步可以略过。 
  
-- 如果没有安装Python3，则需要进行安装, 注意安装最后一步勾选add to path，Python下载地址： `点击打开 <https://www.python.org/>`_ 
+- 如果没有安装Python3，则需要进行安装, Python下载地址： `点击打开 <https://www.python.org/>`_ 
+
+.. image::  images/win_installpython1.jpg
+
+- Windows平台对应点击Windows，然后选择最新版本下载（也可选择其他版本）
+
+.. image::  images/win_installpython2.jpg
+
+.. image::  images/win_installpython3.png
+
+- 下载完成后根据引导进行安装，注意安装最后一步勾选add to path，将python加入到环境变量。
     
 .. image::  images/addpath.png
 

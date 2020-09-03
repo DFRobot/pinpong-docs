@@ -15,17 +15,17 @@ pin = Pin(board, vpin, mode)
 
 - board: 通过pinpong类创建的板子的对象,默认板子可以省略此参数。
 
-- vpin: 板子上所用到的引脚号。(数字引脚1-Pin.D1, 模拟引脚1-PinA1)
+- vpin: 板子上所用到的引脚号。(数字引脚1-Pin.D1, 模拟引脚1-Pin.A1)
 
-- mode: 定义引脚的输出，输出。Pin.IN， Pin.OUT (定义模拟量引脚时省略，默认输入)
+- mode: 定义引脚的输入、输出。Pin.IN， Pin.OUT (定义模拟量引脚时省略，默认输入)
 
 定义一个数字输入，比如按键，
 
-button_pin = (board, Pin.D8, Pin.IN)
+button_pin = (Pin.D8, Pin.IN)
 
 定义一个模拟量传感器，
 
-Analog_pin = (board, Pin.A0)
+Analog_pin = (Pin.A0)
 
 ----------------
 方法 method
