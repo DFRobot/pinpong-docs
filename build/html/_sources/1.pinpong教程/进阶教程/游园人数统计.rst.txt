@@ -47,10 +47,10 @@
     led = Pin(Pin.D13, Pin.OUT)
 
     while True:
-    v = btn.read_digital()  
-    print(v)
-    led.write_digital(not v) 
-    time.sleep(0.1)
+        v = btn.read_digital()  
+        print(v)
+        led.write_digital(not v) 
+        time.sleep(0.1)
 
 -------------------
 （2）让屏幕显示人数

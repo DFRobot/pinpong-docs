@@ -240,10 +240,10 @@
 <span class="n">led</span> <span class="o">=</span> <span class="n">Pin</span><span class="p">(</span><span class="n">Pin</span><span class="o">.</span><span class="n">D13</span><span class="p">,</span> <span class="n">Pin</span><span class="o">.</span><span class="n">OUT</span><span class="p">)</span>
 
 <span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
-<span class="n">v</span> <span class="o">=</span> <span class="n">btn</span><span class="o">.</span><span class="n">read_digital</span><span class="p">()</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">v</span><span class="p">)</span>
-<span class="n">led</span><span class="o">.</span><span class="n">write_digital</span><span class="p">(</span><span class="ow">not</span> <span class="n">v</span><span class="p">)</span>
-<span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mf">0.1</span><span class="p">)</span>
+    <span class="n">v</span> <span class="o">=</span> <span class="n">btn</span><span class="o">.</span><span class="n">read_digital</span><span class="p">()</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">v</span><span class="p">)</span>
+    <span class="n">led</span><span class="o">.</span><span class="n">write_digital</span><span class="p">(</span><span class="ow">not</span> <span class="n">v</span><span class="p">)</span>
+    <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mf">0.1</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
