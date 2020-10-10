@@ -13,3 +13,4 @@
    示例程序-urm09.rst
    示例程序-rgb1602.rst
    示例程序-mlx90614.rst
+   示例程序-nfc.rst
