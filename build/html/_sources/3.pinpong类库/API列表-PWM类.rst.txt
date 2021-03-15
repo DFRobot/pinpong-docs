@@ -9,7 +9,7 @@ PWM类 PWM class
 
 pwm0 = PWM(board, Pin(board, Pin.D6))
 
-- board: 通过pinpong类创建的板子对象,默认板子可以省略此参数。
+- board: 通过pinpong类创建的板子对象,只有一块板子时可以省略此参数。
 
 - Pin: 通过pin类创建的引脚对象。
 

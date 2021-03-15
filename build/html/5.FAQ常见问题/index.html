@@ -3,9 +3,9 @@
 <!DOCTYPE html>
 <html class="writer-html5" lang="zh-cn" >
 <head>
-  <meta charset="utf-8">
+  <meta charset="utf-8" />
   
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
   <title>常见问题 &mdash; pinpong 0.1 documentation</title>
   
@@ -16,7 +16,10 @@
 
   
   
+
   
+  
+
   
 
   
@@ -29,7 +32,6 @@
         <script src="../_static/jquery.js"></script>
         <script src="../_static/underscore.js"></script>
         <script src="../_static/doctools.js"></script>
-        <script src="../_static/language_data.js"></script>
     
     <script type="text/javascript" src="../_static/js/theme.js"></script>
 
@@ -50,7 +52,7 @@
           
 
           
-            <a href="../index.html" class="icon icon-home" alt="Documentation Home"> pinpong
+            <a href="../index.html" class="icon icon-home"> pinpong
           
 
           
@@ -91,6 +93,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../2.pinpong%E7%A4%BA%E4%BE%8B/index1.html">基础库示例</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../2.pinpong%E7%A4%BA%E4%BE%8B/index2.html">常用库示例</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../2.pinpong%E7%A4%BA%E4%BE%8B/index3.html">扩展库示例</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../2.pinpong%E7%A4%BA%E4%BE%8B/%E6%9B%B4%E5%A4%9A%E7%A4%BA%E4%BE%8B.html">更多示例</a></li>
 </ul>
 <p class="caption"><span class="caption-text">pinpong教程</span></p>
 <ul>
@@ -114,6 +117,7 @@
 <ul class="current">
 <li class="toctree-l1 current"><a class="current reference internal" href="#">常见问题</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#importerror-cannot-import-name-pin">虚谷号上出现错误：ImportError: cannot import name ‘Pin’</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#pinpong">使用pinpong库控制的硬件可以脱离电脑运行吗？</a></li>
 </ul>
 </li>
 </ul>
@@ -156,6 +160,8 @@
 
 
 
+
+
 <div role="navigation" aria-label="breadcrumbs navigation">
 
   <ul class="wy-breadcrumbs">
@@ -167,7 +173,7 @@
     
       <li class="wy-breadcrumbs-aside">
         
-            
+          
             <a href="../_sources/5.FAQ常见问题/index.rst.txt" rel="nofollow"> View page source</a>
           
         
@@ -191,6 +197,13 @@
 <li><p>如依然出现，则尝试卸载重装pinpong库,终端运行: pip uninstall pinpong  ，然后重启虚谷号后重新安装: pip install pinpong</p></li>
 </ol>
 </div>
+<div class="section" id="pinpong">
+<h2>使用pinpong库控制的硬件可以脱离电脑运行吗？<a class="headerlink" href="#pinpong" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic simple">
+<li><p>pinpong是一个Python库，主要实现硬件与Python的交互，因此只有能运行Python（注意: <a class="reference external" href="https://www.baidu.com/s?ie=UTF-8&amp;wd=micropython%E5%92%8Cpython">Python和microPython</a> 不一样 ）的设备才可以使用，因此如果要脱离PC，可以使用树莓派、LattePanda等便携式单板计算机。</p></li>
+<li><p>使用实时通信的方式与Python交互运行，后续将考虑开发通过网络的方式进行通信以实现在电脑上运行pinpong（Python），通过网络实时控制带网络功能的硬件设备。</p></li>
+</ol>
+</div>
 </div>
 
 
@@ -198,35 +211,28 @@
            
           </div>
           <footer>
-  
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
-      
-      
-        <a href="../4.pinpong%E6%9B%B4%E6%96%B0%E8%AE%B0%E5%BD%95/index.html" class="btn btn-neutral float-left" title="开发计划" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
-      
+        <a href="../4.pinpong%E6%9B%B4%E6%96%B0%E8%AE%B0%E5%BD%95/index.html" class="btn btn-neutral float-left" title="开发计划" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
     </div>
-  
 
   <hr/>
 
   <div role="contentinfo">
     <p>
-        
-        &copy; Copyright 2020, DFRobot
+        &#169; Copyright 2020, DFRobot.
 
     </p>
   </div>
     
     
     
-    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
     
-    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
     
     provided by <a href="https://readthedocs.org">Read the Docs</a>. 
 
 </footer>
-
         </div>
       </div>
 

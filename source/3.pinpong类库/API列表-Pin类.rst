@@ -13,7 +13,7 @@ Pin类 Pin class
 
 pin = Pin(board, vpin, mode)
 
-- board: 通过pinpong类创建的板子的对象,默认板子可以省略此参数。
+- board: 通过pinpong类创建的板子的对象,只有一块板子时可以省略此参数。
 
 - vpin: 板子上所用到的引脚号。(数字引脚1-Pin.D1, 模拟引脚1-Pin.A1)
 

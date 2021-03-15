@@ -3,9 +3,9 @@
 <!DOCTYPE html>
 <html class="writer-html5" lang="zh-cn" >
 <head>
-  <meta charset="utf-8">
+  <meta charset="utf-8" />
   
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
   <title>1-01-blink:数字输出 &mdash; pinpong 0.1 documentation</title>
   
@@ -16,7 +16,10 @@
 
   
   
+
   
+  
+
   
 
   
@@ -29,7 +32,6 @@
         <script src="../_static/jquery.js"></script>
         <script src="../_static/underscore.js"></script>
         <script src="../_static/doctools.js"></script>
-        <script src="../_static/language_data.js"></script>
     
     <script type="text/javascript" src="../_static/js/theme.js"></script>
 
@@ -51,7 +53,7 @@
           
 
           
-            <a href="../index.html" class="icon icon-home" alt="Documentation Home"> pinpong
+            <a href="../index.html" class="icon icon-home"> pinpong
           
 
           
@@ -99,6 +101,7 @@
 </li>
 <li class="toctree-l1"><a class="reference internal" href="index2.html">常用库示例</a></li>
 <li class="toctree-l1"><a class="reference internal" href="index3.html">扩展库示例</a></li>
+<li class="toctree-l1"><a class="reference internal" href="%E6%9B%B4%E5%A4%9A%E7%A4%BA%E4%BE%8B.html">更多示例</a></li>
 </ul>
 <p class="caption"><span class="caption-text">pinpong教程</span></p>
 <ul>
@@ -161,6 +164,8 @@
 
 
 
+
+
 <div role="navigation" aria-label="breadcrumbs navigation">
 
   <ul class="wy-breadcrumbs">
@@ -174,7 +179,7 @@
     
       <li class="wy-breadcrumbs-aside">
         
-            
+          
             <a href="../_sources/2.pinpong示例/示例程序-blink.rst.txt" rel="nofollow"> View page source</a>
           
         
@@ -196,10 +201,11 @@
 <span class="kn">import</span> <span class="nn">time</span>
 <span class="kn">from</span> <span class="nn">pinpong.board</span> <span class="kn">import</span> <span class="n">Board</span><span class="p">,</span><span class="n">Pin</span>
 
-<span class="n">Board</span><span class="p">(</span><span class="s2">&quot;uno&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">begin</span><span class="p">()</span>               <span class="c1">#初始化，选择板型(uno、leonardo、xugu)和端口号，不输入端口号则进行自动识别</span>
+<span class="n">Board</span><span class="p">(</span><span class="s2">&quot;uno&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">begin</span><span class="p">()</span>               <span class="c1">#初始化，选择板型(uno、microbit、RPi、handpy)和端口号，不输入端口号则进行自动识别</span>
 <span class="c1">#Board(&quot;uno&quot;,&quot;COM36&quot;).begin()      #windows下指定端口初始化</span>
 <span class="c1">#Board(&quot;uno&quot;,&quot;/dev/ttyACM0&quot;).begin() #linux下指定端口初始化</span>
 <span class="c1">#Board(&quot;uno&quot;,&quot;/dev/cu.usbmodem14101&quot;).begin()   #mac下指定端口初始化</span>
+
 
 <span class="n">led</span> <span class="o">=</span> <span class="n">Pin</span><span class="p">(</span><span class="n">Pin</span><span class="o">.</span><span class="n">D13</span><span class="p">,</span> <span class="n">Pin</span><span class="o">.</span><span class="n">OUT</span><span class="p">)</span> <span class="c1">#引脚初始化为电平输出</span>
 
@@ -222,37 +228,29 @@
            
           </div>
           <footer>
-  
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
-      
-        <a href="%E7%A4%BA%E4%BE%8B%E7%A8%8B%E5%BA%8F-button.html" class="btn btn-neutral float-right" title="1-02-button:数字输入" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
-      
-      
-        <a href="index1.html" class="btn btn-neutral float-left" title="基础库示例" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
-      
+        <a href="%E7%A4%BA%E4%BE%8B%E7%A8%8B%E5%BA%8F-button.html" class="btn btn-neutral float-right" title="1-02-button:数字输入" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="index1.html" class="btn btn-neutral float-left" title="基础库示例" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
     </div>
-  
 
   <hr/>
 
   <div role="contentinfo">
     <p>
-        
-        &copy; Copyright 2020, DFRobot
+        &#169; Copyright 2020, DFRobot.
 
     </p>
   </div>
     
     
     
-    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
     
-    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
     
     provided by <a href="https://readthedocs.org">Read the Docs</a>. 
 
 </footer>
-
         </div>
       </div>
 
