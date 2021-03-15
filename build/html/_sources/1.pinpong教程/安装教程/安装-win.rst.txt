@@ -25,6 +25,8 @@ Windows平台安装
 
 3. 安装pinpong库。小黑窗中输入pip install pinpong ，等待片刻即可安装完成。
 
+.. 注意:: 如果网络较慢安装不成功，可以指定国内源进行安装： pip install pinpong -i http://mirrors.aliyun.com/pypi/simple/
+
 .. image::  images/win_install3.jpg
 
 4. 帮助命令。在小黑窗中输入pinpong ，即可输出当前版本信息、官方文档网址、库列表查看、端口号。
