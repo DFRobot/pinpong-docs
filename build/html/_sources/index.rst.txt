@@ -16,7 +16,7 @@ pinpong库的名称由“Pin”和“Pong”组成，“Pin”指引脚，“Pin
 
 pinpong库的设计，是为了让开发者在开发过程中不用被繁杂的硬件型号束缚，而将重点转移到软件的实现。哪怕程序编写初期用Arduino开发，部署时改成了掌控板，只要修改一下硬件的参数就能正常运行，实现了“一次编写处处运行”。
 
-.. 注意:: 当前PinPong库正在快速更新中，已支持Arduino系列uno、leonardo、mega2560,ESP32系列掌控板（handpy）以及micro:bit板，其他主控板及更多扩展库将逐步支持。
+.. 注意:: 当前PinPong库正在快速更新中，已支持Arduino系列uno、leonardo、mega2560,ESP32系列掌控板（handpy）以及micro:bit板，传感器支持50+，其他主控板及更多扩展库将逐步支持。
 
 
 本文档推荐阅读流程：
