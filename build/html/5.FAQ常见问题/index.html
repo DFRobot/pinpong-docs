@@ -94,6 +94,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../2.pinpong%E7%A4%BA%E4%BE%8B/index1.html">基础库示例</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../2.pinpong%E7%A4%BA%E4%BE%8B/index2.html">常用库示例</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../2.pinpong%E7%A4%BA%E4%BE%8B/index3.html">扩展库示例</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../2.pinpong%E7%A4%BA%E4%BE%8B/indexhandpy.html">掌控板示例</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../2.pinpong%E7%A4%BA%E4%BE%8B/%E6%9B%B4%E5%A4%9A%E7%A4%BA%E4%BE%8B.html">更多示例</a></li>
 </ul>
 <p class="caption"><span class="caption-text">pinpong教程</span></p>
@@ -119,6 +120,7 @@
 <li class="toctree-l1 current"><a class="current reference internal" href="#">常见问题</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#importerror-cannot-import-name-pin">虚谷号上出现错误：ImportError: cannot import name ‘Pin’</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#pinpong">使用pinpong库控制的硬件可以脱离电脑运行吗？</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#serialexcedption-could-not-open-port-com-permissionerror-13-none-5">运行程序时出现SerialExcedption: could not open port ‘COM’: PermissionError(13,’拒绝访问。’,None,5 怎么办？</a></li>
 </ul>
 </li>
 </ul>
@@ -203,6 +205,14 @@
 <ol class="arabic simple">
 <li><p>pinpong是一个Python库，主要实现硬件与Python的交互，因此只有能运行Python（注意: <a class="reference external" href="https://www.baidu.com/s?ie=UTF-8&amp;wd=micropython%E5%92%8Cpython">Python和microPython</a> 不一样 ）的设备才可以使用，因此如果要脱离PC，可以使用树莓派、LattePanda等便携式单板计算机。</p></li>
 <li><p>使用实时通信的方式与Python交互运行，后续将考虑开发通过网络的方式进行通信以实现在电脑上运行pinpong（Python），通过网络实时控制带网络功能的硬件设备。</p></li>
+</ol>
+</div>
+<div class="section" id="serialexcedption-could-not-open-port-com-permissionerror-13-none-5">
+<h2>运行程序时出现SerialExcedption: could not open port ‘COM’: PermissionError(13,’拒绝访问。’,None,5 怎么办？<a class="headerlink" href="#serialexcedption-could-not-open-port-com-permissionerror-13-none-5" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic simple">
+<li><p>此错误说明有设备占用了串口，或上一次程序没有正常关闭，或当前识别的串口错误。</p></li>
+<li><p>如果是以前可以正常使用而本地运行无法使用则一般为串口被占用了，则可以尝试关闭上一次的程序及其他占用串口的软件，或重新插拔USB口及重启电脑。</p></li>
+<li><p>如果是第一次使用这个主控板，则可能为串口没有安装驱动，需要安装一次驱动（推荐使用Mind+内置的一键安装驱动功能），或打开设备管理器查看是否有端口（COM）。</p></li>
 </ol>
 </div>
 </div>

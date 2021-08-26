@@ -51,6 +51,7 @@ pinpong库的设计，是为了让开发者在开发过程中不用被繁杂的�
    2.pinpong示例/index1.rst
    2.pinpong示例/index2.rst
    2.pinpong示例/index3.rst
+   2.pinpong示例/indexhandpy.rst
    2.pinpong示例/更多示例.rst
 
 
