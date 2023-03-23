@@ -21,11 +21,11 @@ pin = Pin(board, vpin, mode)
 
 定义一个数字输入，比如按键，
 
-button_pin = (Pin.D8, Pin.IN)
+button_pin = Pin(Pin.D8, Pin.IN)
 
-定义一个模拟量传感器，
+定义一个模拟量传感器引脚，
 
-Analog_pin = (Pin.A0)
+Analog_pin = Pin(Pin.A0)
 
 ----------------
 方法 method
