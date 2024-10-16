@@ -12,7 +12,7 @@ pip install sphinx_rtd_theme
 - 实时预览
 ```bash
 pip install sphinx-autobuild
-sphinx-autobuild . _build/html
+sphinx-autobuild source build/html
 #127.0.0.1:8000
 ```
 

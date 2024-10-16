@@ -67,4 +67,6 @@ board = PinPong(board_name,port)
 
     连接arduino板，检测固件版本，若没有烧录固件或版本有误，会烧录最新固件。
 
+    传入参数True表示强制烧录固件。  
+
 

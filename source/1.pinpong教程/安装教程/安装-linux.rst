@@ -4,6 +4,7 @@ Linux 平台安装
 
 终端中输入sudo pip install pinpong即可安装。  
 
+.. 注意:: 如果网络较慢安装不成功，可以指定国内源进行安装： pip install pinpong -i http://mirrors.aliyun.com/pypi/simple/
 
 .. code-block:: bash
 

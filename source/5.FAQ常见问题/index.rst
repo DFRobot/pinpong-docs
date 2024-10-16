@@ -2,6 +2,11 @@
 常见问题
 ========
 
+使用行空板出现错误怎么办？
+-----------------------------------------------------------------
+可以直接查看行空板官方文档的常见问题目录：https://www.unihiker.com.cn/wiki/FAQ
+
+
 虚谷号上出现错误：ImportError: cannot import name 'Pin'
 -----------------------------------------------------------------
 
@@ -13,7 +18,7 @@
 使用pinpong库控制的硬件可以脱离电脑运行吗？
 -----------------------------------------------------------------
 
-#. pinpong是一个Python库，主要实现硬件与Python的交互，因此只有能运行Python（注意: Python和microPython_ 不一样 ）的设备才可以使用，因此如果要脱离PC，可以使用树莓派、LattePanda等便携式单板计算机。
+#. pinpong是一个Python库，主要实现硬件与Python的交互，因此只有能运行Python（注意: Python和microPython_ 不一样 ）的设备才可以使用，因此如果要脱离PC，可以使用树莓派、行空板等可以运行操作系统的板子。
 #. 使用实时通信的方式与Python交互运行，后续将考虑开发通过网络的方式进行通信以实现在电脑上运行pinpong（Python），通过网络实时控制带网络功能的硬件设备。
 
 ..  _Python和microPython: https://www.baidu.com/s?ie=UTF-8&wd=micropython%E5%92%8Cpython
