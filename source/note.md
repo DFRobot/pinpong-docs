@@ -3,10 +3,17 @@
 - 安装sphinx、rest、rtdtheme
 
 ```bash
-pip install sphinx==3.3.0
-pip install restructuredtext-lint==1.3.1
-pip install sphinx_rtd_theme==0.5.1
+pip install sphinx
+pip install restructuredtext-lint
+pip install sphinx_rtd_theme
 #修改conf.py配置主题    html_theme = 'sphinx_rtd_theme'
+
+```
+- 实时预览
+```bash
+pip install sphinx-autobuild
+sphinx-autobuild . _build/html
+#127.0.0.1:8000
 ```
 
 - 编译
