@@ -1,0 +1,296 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="zh-cn" data-content_root="../../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>项目4 智能节能灯 &mdash; pinpong 0.1 documentation</title>
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=e59714d7" />
+
+  
+      <script src="../../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../../_static/documentation_options.js?v=aa29ce3f"></script>
+      <script src="../../_static/doctools.js?v=9bcbadda"></script>
+      <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="项目5 近视警示器" href="%E8%BF%91%E8%A7%86%E8%AD%A6%E6%8A%A5%E5%99%A8.html" />
+    <link rel="prev" title="项目3 调光台灯" href="%E8%B0%83%E5%85%89%E5%8F%B0%E7%81%AF.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../../index.html" class="icon icon-home">
+            pinpong
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">pinpong介绍</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../0.pinpong%E4%BB%8B%E7%BB%8D/%E7%AE%80%E4%BB%8B.html">简介</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../%E5%AE%89%E8%A3%85%E6%95%99%E7%A8%8B/index.html">安装教程</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">pinpong示例</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../2.pinpong%E7%A4%BA%E4%BE%8B/index1.html">基础库示例</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../2.pinpong%E7%A4%BA%E4%BE%8B/index2.html">常用库示例</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../2.pinpong%E7%A4%BA%E4%BE%8B/index3.html">扩展库示例</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../2.pinpong%E7%A4%BA%E4%BE%8B/indexunihiker.html">行空板示例</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../2.pinpong%E7%A4%BA%E4%BE%8B/indexhandpy.html">掌控板示例</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../2.pinpong%E7%A4%BA%E4%BE%8B/%E6%9B%B4%E5%A4%9A%E7%A4%BA%E4%BE%8B.html">更多示例</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">pinpong教程</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">系列教程</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="%E9%A1%B9%E7%9B%AE%E5%89%8D%E7%BD%AE%E7%9F%A5%E8%AF%86.html">项目前置知识</a></li>
+<li class="toctree-l2"><a class="reference internal" href="LED%E9%97%AA%E7%83%81.html">项目1  LED闪烁</a></li>
+<li class="toctree-l2"><a class="reference internal" href="%E7%A5%9E%E5%A5%87%E7%9A%84%E6%8C%89%E9%94%AE.html">项目2 神奇的按键</a></li>
+<li class="toctree-l2"><a class="reference internal" href="%E8%B0%83%E5%85%89%E5%8F%B0%E7%81%AF.html">项目3 调光台灯</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">项目4 智能节能灯</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id2">一、概述</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id3">二、项目实施</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id4">（1）通过光线亮度控制小灯</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id5">（2）加入声音传感器检测</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#id6">三、代码分析</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id7">四、硬件分析</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="%E8%BF%91%E8%A7%86%E8%AD%A6%E6%8A%A5%E5%99%A8.html">项目5 近视警示器</a></li>
+<li class="toctree-l2"><a class="reference internal" href="%E5%99%AA%E5%A3%B0%E6%A3%80%E6%B5%8B%E4%BB%AA.html">项目6 噪声检测仪</a></li>
+<li class="toctree-l2"><a class="reference internal" href="%E6%A8%A1%E6%8B%9F%E4%BA%A4%E9%80%9A%E7%81%AF.html">项目7 模拟交通灯</a></li>
+<li class="toctree-l2"><a class="reference internal" href="%E6%A1%8C%E9%9D%A2%E6%B0%94%E8%B1%A1%E7%AB%99.html">项目8 桌面气象站</a></li>
+<li class="toctree-l2"><a class="reference internal" href="%E6%B8%B8%E5%9B%AD%E4%BA%BA%E6%95%B0%E7%BB%9F%E8%AE%A1.html">项目9 游园人数统计</a></li>
+<li class="toctree-l2"><a class="reference internal" href="%E5%AE%9A%E6%97%B6%E6%B5%87%E8%8A%B1%E8%A3%85%E7%BD%AE.html">项目10 定时浇花装置</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../%E7%BB%8F%E5%85%B8%E6%A1%88%E4%BE%8B/index.html">经典案例</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">pinpong类库</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../3.pinpong%E7%B1%BB%E5%BA%93/API%E5%88%97%E8%A1%A8-Board%E7%B1%BB.html">PinPong类 Board class</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../3.pinpong%E7%B1%BB%E5%BA%93/API%E5%88%97%E8%A1%A8-Pin%E7%B1%BB.html">Pin类 Pin class</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../3.pinpong%E7%B1%BB%E5%BA%93/API%E5%88%97%E8%A1%A8-ADC%E7%B1%BB.html">ADC类 ADC class</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../3.pinpong%E7%B1%BB%E5%BA%93/API%E5%88%97%E8%A1%A8-PWM%E7%B1%BB.html">PWM类 PWM class</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">pinpong更新记录</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../4.pinpong%E6%9B%B4%E6%96%B0%E8%AE%B0%E5%BD%95/index.html">开发计划</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../4.pinpong%E6%9B%B4%E6%96%B0%E8%AE%B0%E5%BD%95/index.html#id2">更新记录</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">FAQ常见问题</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../5.FAQ%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98/index.html">常见问题</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">pinpong</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="index.html">系列教程</a></li>
+      <li class="breadcrumb-item active">项目4 智能节能灯</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../_sources/1.pinpong教程/进阶教程/智能节能灯.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="id1">
+<h1>项目4 智能节能灯<a class="headerlink" href="#id1" title="Link to this heading"></a></h1>
+<section id="id2">
+<h2>一、概述<a class="headerlink" href="#id2" title="Link to this heading"></a></h2>
+<p>在前面的章节我们学习了如何点亮小灯，如何调节亮度等等功能，那像楼道灯那样，只会在黑夜且发出声音时才会亮起的灯是如何实现的呢？我们将在本项目中学习。</p>
+<img alt="../../_images/4th.png" src="../../_images/4th.png" />
+</section>
+<section id="id3">
+<h2>二、项目实施<a class="headerlink" href="#id3" title="Link to this heading"></a></h2>
+<section id="id4">
+<h3>（1）通过光线亮度控制小灯<a class="headerlink" href="#id4" title="Link to this heading"></a></h3>
+<p><strong>硬件准备：</strong></p>
+<p>主控：Arduino UNO、IO 传感器扩展板 V7.1</p>
+<p>模块：LED发光模块、光线传感器</p>
+<p>连接线：TypeAtoB方口USB连接线</p>
+<img alt="../../_images/04LDL1.png" src="../../_images/04LDL1.png" />
+<ul class="simple">
+<li><p>将LED模块接入D13引脚,光线传感器接入A2引脚</p></li>
+</ul>
+<p><strong>程序编写：</strong></p>
+<ol class="arabic simple">
+<li><p>打开pingpong库的官方文档，找到基础库示例中的“模拟输入”，并用IDLE打开。</p></li>
+</ol>
+<img alt="../../_images/0411.png" src="../../_images/0411.png" />
+<ol class="arabic simple" start="2">
+<li><p>修改代码，当亮度低于100的时候，点亮LED灯。</p></li>
+</ol>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">time</span>
+<span class="kn">from</span> <span class="nn">pinpong.board</span> <span class="kn">import</span> <span class="n">Board</span><span class="p">,</span><span class="n">Pin</span>
+<span class="n">Board</span><span class="p">(</span><span class="s2">&quot;uno&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">begin</span><span class="p">()</span>
+<span class="n">Light</span> <span class="o">=</span> <span class="n">Pin</span><span class="p">(</span><span class="n">Pin</span><span class="o">.</span><span class="n">A2</span><span class="p">,</span><span class="n">Pin</span><span class="o">.</span><span class="n">ANALOG</span><span class="p">)</span>
+<span class="n">LED</span> <span class="o">=</span> <span class="n">Pin</span><span class="p">(</span><span class="n">Pin</span><span class="o">.</span><span class="n">D13</span><span class="p">,</span> <span class="n">Pin</span><span class="o">.</span><span class="n">OUT</span><span class="p">)</span>
+<span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+    <span class="n">vl</span><span class="o">=</span><span class="n">Light</span><span class="o">.</span><span class="n">read_analog</span><span class="p">()</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Light=&quot;</span><span class="p">,</span><span class="n">vl</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">vl</span> <span class="o">&lt;</span> <span class="mi">100</span><span class="p">:</span>
+        <span class="n">LED</span><span class="o">.</span><span class="n">write_digital</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">LED</span><span class="o">.</span><span class="n">write_digital</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+</pre></div>
+</div>
+<ol class="arabic simple" start="3">
+<li><p>摁下F5运行程序，查看效果。当亮度低于100（遮住光线传感器）的时候LED灯会亮起，恢复后LED灯会熄灭。</p></li>
+</ol>
+<img alt="../../_images/0412.png" src="../../_images/0412.png" />
+</section>
+<section id="id5">
+<h3>（2）加入声音传感器检测<a class="headerlink" href="#id5" title="Link to this heading"></a></h3>
+<p><strong>硬件准备：</strong></p>
+<p>主控：Arduino UNO、IO 传感器扩展板 V7.1</p>
+<p>模块：LED发光模块、光线传感器、声音传感器</p>
+<p>连接线：TypeAtoB方口USB连接线</p>
+<img alt="../../_images/04LDL2.png" src="../../_images/04LDL2.png" />
+<ul class="simple">
+<li><p>将LED模块接入D13引脚，光线传感器接到A2引脚，声音传感器接到A1引脚。</p></li>
+</ul>
+<p><strong>程序编写</strong></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">time</span>
+<span class="kn">from</span> <span class="nn">pinpong.board</span> <span class="kn">import</span> <span class="n">Board</span><span class="p">,</span><span class="n">Pin</span> <span class="c1">#导入必要的库函数</span>
+
+<span class="n">Board</span><span class="p">(</span><span class="s2">&quot;uno&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">begin</span><span class="p">()</span><span class="c1">#初始化，选择板型(uno、leonardo、xugu)和端口号，不输入端口号则进行自动识别</span>
+
+<span class="n">Sound</span> <span class="o">=</span> <span class="n">Pin</span><span class="p">(</span><span class="n">Pin</span><span class="o">.</span><span class="n">A1</span><span class="p">,</span><span class="n">Pin</span><span class="o">.</span><span class="n">ANALOG</span><span class="p">)</span> <span class="c1">#初始化声音传感器引脚为A1，检测声音大小</span>
+<span class="n">Light</span> <span class="o">=</span> <span class="n">Pin</span><span class="p">(</span><span class="n">Pin</span><span class="o">.</span><span class="n">A2</span><span class="p">,</span><span class="n">Pin</span><span class="o">.</span><span class="n">ANALOG</span><span class="p">)</span><span class="c1">#初始化光线传感器引脚为A2，检测光线强度</span>
+<span class="n">LED</span> <span class="o">=</span> <span class="n">Pin</span><span class="p">(</span><span class="n">Pin</span><span class="o">.</span><span class="n">D13</span><span class="p">,</span> <span class="n">Pin</span><span class="o">.</span><span class="n">OUT</span><span class="p">)</span> <span class="c1">#初始化LED引脚为D13</span>
+<span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+    <span class="n">vs</span><span class="o">=</span><span class="n">Sound</span><span class="o">.</span><span class="n">read_analog</span><span class="p">()</span><span class="c1">#读取模拟声音信号数值</span>
+    <span class="n">vl</span><span class="o">=</span><span class="n">Light</span><span class="o">.</span><span class="n">read_analog</span><span class="p">()</span><span class="c1">#读取模拟灯光信号数值</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Sound=&quot;</span><span class="p">,</span><span class="n">vs</span><span class="p">,</span><span class="s2">&quot;Light=&quot;</span><span class="p">,</span><span class="n">vl</span><span class="p">)</span><span class="c1">#打印声音和光线数据</span>
+    <span class="k">if</span> <span class="n">vs</span><span class="o">&gt;</span><span class="mi">200</span> <span class="ow">and</span> <span class="n">vl</span> <span class="o">&lt;</span> <span class="mi">100</span><span class="p">:</span><span class="c1">#判断光线和声音大小</span>
+        <span class="n">LED</span><span class="o">.</span><span class="n">write_digital</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+        <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">LED</span><span class="o">.</span><span class="n">write_digital</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>运行代码，当亮度值低于100且声音值大于200时（遮住光线传感器且发出声音时），LED灯会点亮，当没有声音或光线传感器没有被遮住的状态维持3秒以上时，LED灯会熄灭。</p>
+<img alt="../../_images/0421.png" src="../../_images/0421.png" />
+</section>
+</section>
+<section id="id6">
+<h2>三、代码分析<a class="headerlink" href="#id6" title="Link to this heading"></a></h2>
+<ol class="arabic simple">
+<li><p>设计程序逻辑图</p></li>
+</ol>
+<img alt="../../_images/04Log.png" src="../../_images/04Log.png" />
+<ol class="arabic simple" start="2">
+<li><p>导入必要的包和初始化设置。</p></li>
+</ol>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">time</span>
+<span class="kn">from</span> <span class="nn">pinpong.board</span> <span class="kn">import</span> <span class="n">Board</span><span class="p">,</span><span class="n">Pin</span> <span class="c1">#导入必要的库函数</span>
+
+<span class="n">Board</span><span class="p">(</span><span class="s2">&quot;uno&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">begin</span><span class="p">()</span><span class="c1">#初始化，选择板型(uno、leonardo、xugu)和端口号，不输入端口号则进行自动识别</span>
+
+<span class="n">Sound</span> <span class="o">=</span> <span class="n">Pin</span><span class="p">(</span><span class="n">Pin</span><span class="o">.</span><span class="n">A1</span><span class="p">,</span><span class="n">Pin</span><span class="o">.</span><span class="n">ANALOG</span><span class="p">)</span> <span class="c1">#初始化声音传感器引脚为A1，检测声音大小</span>
+<span class="n">Light</span> <span class="o">=</span> <span class="n">Pin</span><span class="p">(</span><span class="n">Pin</span><span class="o">.</span><span class="n">A2</span><span class="p">,</span><span class="n">Pin</span><span class="o">.</span><span class="n">ANALOG</span><span class="p">)</span><span class="c1">#初始化光线传感器引脚为A2，检测光线强度</span>
+<span class="n">LED</span> <span class="o">=</span> <span class="n">Pin</span><span class="p">(</span><span class="n">Pin</span><span class="o">.</span><span class="n">D13</span><span class="p">,</span> <span class="n">Pin</span><span class="o">.</span><span class="n">OUT</span><span class="p">)</span> <span class="c1">#初始化LED引脚为D13</span>
+</pre></div>
+</div>
+<ol class="arabic simple" start="3">
+<li><p>加入判断</p></li>
+</ol>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+    <span class="n">vs</span><span class="o">=</span><span class="n">Sound</span><span class="o">.</span><span class="n">read_analog</span><span class="p">()</span><span class="c1">#读取模拟声音信号数值</span>
+    <span class="n">vl</span><span class="o">=</span><span class="n">Light</span><span class="o">.</span><span class="n">read_analog</span><span class="p">()</span><span class="c1">#读取模拟灯光信号数值</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Sound=&quot;</span><span class="p">,</span><span class="n">vs</span><span class="p">,</span><span class="s2">&quot;Light=&quot;</span><span class="p">,</span><span class="n">vl</span><span class="p">)</span><span class="c1">#打印声音和光线数据</span>
+    <span class="k">if</span> <span class="n">vs</span><span class="o">&gt;</span><span class="mi">200</span> <span class="ow">and</span> <span class="n">vl</span> <span class="o">&lt;</span> <span class="mi">100</span><span class="p">:</span><span class="c1">#判断光线和声音大小</span>
+        <span class="n">LED</span><span class="o">.</span><span class="n">write_digital</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+        <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">LED</span><span class="o">.</span><span class="n">write_digital</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+</pre></div>
+</div>
+<p><strong>如何进行多条件判断</strong></p>
+<p>在本项目中我们需要判断两个条件，在我们做逻辑判断的时候经常会需要进行多条件判断，有些时候是需要两个条件都要满足的，有些时候是两个条件满足任意一条就可以了。在这种情况下，我们应该如何编写程序呢？</p>
+<p>两条条件都需要满足的情况下，我们可以这样写</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="n">条件A</span> <span class="ow">and</span> <span class="n">条件B</span>
+</pre></div>
+</div>
+<p>两条条件满足任一即可的情况下，我们可以这样写</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="n">条件A</span> <span class="ow">or</span> <span class="n">条件B</span>
+</pre></div>
+</div>
+<p>想要得到反向的结果，即当x为true，得到的结果为false，当x为false时，得到的结果为true，我们可以这样写
+not 条件。</p>
+</section>
+<section id="id7">
+<h2>四、硬件分析<a class="headerlink" href="#id7" title="Link to this heading"></a></h2>
+<p>在项目中我们用到了两种传感器，光线传感器和声音传感器。</p>
+<p>光线传感器是将光信号变成电信号的特殊电子元件，在光线传感器中起到主要作用的就是就是光敏二极管。光敏二极管是光敏电阻中的一种。光明电阻在黑暗环境中，具有非常高阻值的电阻。光线越强，电阻值反而越低。随着两端电阻值的减小，电压也就相应减小，所以从模拟口独到的值也就变小。我们读取的数据也是由此而来的。</p>
+<img alt="../../_images/lightsen.png" src="../../_images/lightsen.png" />
+<p>声音传感器的作用相当于一个麦克风。它用来接收声波，反馈声音的振动图像。在声音传感器上起到主要作用的就是麦克风，声波使麦克风内的薄膜震动，导致内部电容的变化，而产生与之对应的电压变化，经过转换为可监测的电压值反馈而来。</p>
+<img alt="../../_images/soundsen.png" src="../../_images/soundsen.png" />
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="%E8%B0%83%E5%85%89%E5%8F%B0%E7%81%AF.html" class="btn btn-neutral float-left" title="项目3 调光台灯" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="%E8%BF%91%E8%A7%86%E8%AD%A6%E6%8A%A5%E5%99%A8.html" class="btn btn-neutral float-right" title="项目5 近视警示器" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2020, DFRobot.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

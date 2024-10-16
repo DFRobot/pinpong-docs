@@ -1,0 +1,282 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="zh-cn" data-content_root="../../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>项目2 神奇的按键 &mdash; pinpong 0.1 documentation</title>
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=e59714d7" />
+
+  
+      <script src="../../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../../_static/documentation_options.js?v=aa29ce3f"></script>
+      <script src="../../_static/doctools.js?v=9bcbadda"></script>
+      <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="项目3 调光台灯" href="%E8%B0%83%E5%85%89%E5%8F%B0%E7%81%AF.html" />
+    <link rel="prev" title="项目1 LED闪烁" href="LED%E9%97%AA%E7%83%81.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../../index.html" class="icon icon-home">
+            pinpong
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">pinpong介绍</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../0.pinpong%E4%BB%8B%E7%BB%8D/%E7%AE%80%E4%BB%8B.html">简介</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../%E5%AE%89%E8%A3%85%E6%95%99%E7%A8%8B/index.html">安装教程</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">pinpong示例</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../2.pinpong%E7%A4%BA%E4%BE%8B/index1.html">基础库示例</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../2.pinpong%E7%A4%BA%E4%BE%8B/index2.html">常用库示例</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../2.pinpong%E7%A4%BA%E4%BE%8B/index3.html">扩展库示例</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../2.pinpong%E7%A4%BA%E4%BE%8B/indexunihiker.html">行空板示例</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../2.pinpong%E7%A4%BA%E4%BE%8B/indexhandpy.html">掌控板示例</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../2.pinpong%E7%A4%BA%E4%BE%8B/%E6%9B%B4%E5%A4%9A%E7%A4%BA%E4%BE%8B.html">更多示例</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">pinpong教程</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">系列教程</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="%E9%A1%B9%E7%9B%AE%E5%89%8D%E7%BD%AE%E7%9F%A5%E8%AF%86.html">项目前置知识</a></li>
+<li class="toctree-l2"><a class="reference internal" href="LED%E9%97%AA%E7%83%81.html">项目1  LED闪烁</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">项目2 神奇的按键</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id2">一、概述</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id3">二、项目实施</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id4">（1）使用按钮点亮小灯</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id5">（2）按钮开关灯</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#id6">三、代码分析</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="%E8%B0%83%E5%85%89%E5%8F%B0%E7%81%AF.html">项目3 调光台灯</a></li>
+<li class="toctree-l2"><a class="reference internal" href="%E6%99%BA%E8%83%BD%E8%8A%82%E8%83%BD%E7%81%AF.html">项目4 智能节能灯</a></li>
+<li class="toctree-l2"><a class="reference internal" href="%E8%BF%91%E8%A7%86%E8%AD%A6%E6%8A%A5%E5%99%A8.html">项目5 近视警示器</a></li>
+<li class="toctree-l2"><a class="reference internal" href="%E5%99%AA%E5%A3%B0%E6%A3%80%E6%B5%8B%E4%BB%AA.html">项目6 噪声检测仪</a></li>
+<li class="toctree-l2"><a class="reference internal" href="%E6%A8%A1%E6%8B%9F%E4%BA%A4%E9%80%9A%E7%81%AF.html">项目7 模拟交通灯</a></li>
+<li class="toctree-l2"><a class="reference internal" href="%E6%A1%8C%E9%9D%A2%E6%B0%94%E8%B1%A1%E7%AB%99.html">项目8 桌面气象站</a></li>
+<li class="toctree-l2"><a class="reference internal" href="%E6%B8%B8%E5%9B%AD%E4%BA%BA%E6%95%B0%E7%BB%9F%E8%AE%A1.html">项目9 游园人数统计</a></li>
+<li class="toctree-l2"><a class="reference internal" href="%E5%AE%9A%E6%97%B6%E6%B5%87%E8%8A%B1%E8%A3%85%E7%BD%AE.html">项目10 定时浇花装置</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../%E7%BB%8F%E5%85%B8%E6%A1%88%E4%BE%8B/index.html">经典案例</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">pinpong类库</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../3.pinpong%E7%B1%BB%E5%BA%93/API%E5%88%97%E8%A1%A8-Board%E7%B1%BB.html">PinPong类 Board class</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../3.pinpong%E7%B1%BB%E5%BA%93/API%E5%88%97%E8%A1%A8-Pin%E7%B1%BB.html">Pin类 Pin class</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../3.pinpong%E7%B1%BB%E5%BA%93/API%E5%88%97%E8%A1%A8-ADC%E7%B1%BB.html">ADC类 ADC class</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../3.pinpong%E7%B1%BB%E5%BA%93/API%E5%88%97%E8%A1%A8-PWM%E7%B1%BB.html">PWM类 PWM class</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">pinpong更新记录</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../4.pinpong%E6%9B%B4%E6%96%B0%E8%AE%B0%E5%BD%95/index.html">开发计划</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../4.pinpong%E6%9B%B4%E6%96%B0%E8%AE%B0%E5%BD%95/index.html#id2">更新记录</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">FAQ常见问题</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../5.FAQ%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98/index.html">常见问题</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">pinpong</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="index.html">系列教程</a></li>
+      <li class="breadcrumb-item active">项目2 神奇的按键</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../_sources/1.pinpong教程/进阶教程/神奇的按键.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="id1">
+<h1>项目2 神奇的按键<a class="headerlink" href="#id1" title="Link to this heading"></a></h1>
+<section id="id2">
+<h2>一、概述<a class="headerlink" href="#id2" title="Link to this heading"></a></h2>
+<p>按钮开关，也称作按键开关，早期也称作敏感型开关，广泛应用在灯，插座总开关，门铃，汽车中控台等。按键开关的出现给用电安全增加了一层保护膜，方便控制电器的同时也进一步保护了元器件。</p>
+<p>在Arduino 的学习过程中，我们会接触各种各样的输入设备，其中，按键开关是最简单 也是应用最广泛的一种。这里我们将用 Arduino 控制 LED 灯，实现按键按下开，再按下关的效果。</p>
+<img alt="../../_images/2nd.png" src="../../_images/2nd.png" />
+</section>
+<section id="id3">
+<h2>二、项目实施<a class="headerlink" href="#id3" title="Link to this heading"></a></h2>
+<section id="id4">
+<h3>（1）使用按钮点亮小灯<a class="headerlink" href="#id4" title="Link to this heading"></a></h3>
+<p><strong>硬件准备：</strong></p>
+<p>主控：Arduino UNO、IO 传感器扩展板 V7.1</p>
+<p>模块：LED发光模块、按钮模块</p>
+<p>连接线：TypeAtoB方口USB连接线</p>
+<img alt="../../_images/02btn.png" src="../../_images/02btn.png" />
+<ul class="simple">
+<li><p>将LED发光模块接入13号数字引脚，将按钮模块接入8号数字引脚</p></li>
+</ul>
+<p><strong>程序编写：</strong></p>
+<p>1、 打开pingpong库的官方文档，找到基础库示例中的“数字输入”，并用IDLE打开。</p>
+<img alt="../../_images/0211.png" src="../../_images/0211.png" />
+<p>2、按下F5运行程序，查看效果。当按下按钮时板载的LED灯会亮起（并打印1），松开会熄灭（打印0）。</p>
+<img alt="../../_images/0212.png" src="../../_images/0212.png" />
+<p>注意：在程序运行时不可以拔掉与Arduino连接的USB线，且不能关闭新弹出的Python shell运行窗口，如果拔线或者关闭运行窗口，程序功能就会停止执行。</p>
+</section>
+<section id="id5">
+<h3>（2）按钮开关灯<a class="headerlink" href="#id5" title="Link to this heading"></a></h3>
+<p>在上步完成的功能中,我们通过按键可以实现“按下按键-LED 亮”,“松开按键-LED 灭”,但实际运用的开关却是“首次按下打开,再次按下关闭”，我们将在本步中实现这个功能。</p>
+<p><strong>硬件准备：</strong></p>
+<p>主控：Arduino UNO、IO 传感器扩展板 V7.1</p>
+<p>模块：LED发光模块、按钮模块</p>
+<p>连接线：TypeAtoB方口USB连接线</p>
+<img alt="../../_images/02btn.png" src="../../_images/02btn.png" />
+<ul class="simple">
+<li><p>将LED发光模块接入13号数字引脚，将按钮模块接入8号数字引脚</p></li>
+</ul>
+<p><strong>程序编写：</strong></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">time</span>
+<span class="kn">from</span> <span class="nn">pinpong.board</span> <span class="kn">import</span> <span class="n">Board</span><span class="p">,</span><span class="n">Pin</span>
+
+<span class="n">board</span> <span class="o">=</span> <span class="n">Board</span><span class="p">(</span><span class="s2">&quot;uno&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">begin</span><span class="p">()</span>  <span class="c1">#初始化，选择板型和端口号，不输入端口号则进行自动识别</span>
+<span class="c1">#board = Board(&quot;uno&quot;,&quot;COM36&quot;).begin()  #windows下指定端口初始化</span>
+<span class="c1">#board = Board(&quot;uno&quot;,&quot;/dev/ttyACM0&quot;).begin()   #linux下指定端口初始化</span>
+<span class="c1">#board = Board(&quot;uno&quot;,&quot;/dev/cu.usbmodem14101&quot;).begin()   #mac下指定端口初始化</span>
+
+<span class="n">btn</span> <span class="o">=</span> <span class="n">Pin</span><span class="p">(</span><span class="n">Pin</span><span class="o">.</span><span class="n">D8</span><span class="p">,</span> <span class="n">Pin</span><span class="o">.</span><span class="n">IN</span><span class="p">)</span> <span class="c1">#引脚初始化为电平输入</span>
+<span class="n">led</span> <span class="o">=</span> <span class="n">Pin</span><span class="p">(</span><span class="n">Pin</span><span class="o">.</span><span class="n">D13</span><span class="p">,</span> <span class="n">Pin</span><span class="o">.</span><span class="n">OUT</span><span class="p">)</span>
+<span class="n">i</span><span class="o">=</span><span class="mi">0</span>  <span class="c1">#设置变量i=0</span>
+
+<span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+<span class="n">v</span> <span class="o">=</span> <span class="n">btn</span><span class="o">.</span><span class="n">read_digital</span><span class="p">()</span>  <span class="c1">#读取引脚电平</span>
+<span class="c1">#print(v)  #终端打印读取的电平状态</span>
+<span class="k">if</span> <span class="p">(</span><span class="n">v</span> <span class="o">==</span> <span class="mi">1</span><span class="p">):</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">i</span> <span class="o">==</span> <span class="mi">1</span><span class="p">):</span>
+    <span class="n">i</span><span class="o">=</span><span class="mi">0</span>
+    <span class="n">led</span><span class="o">.</span><span class="n">write_digital</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>  <span class="c1">#将按钮状态设置给led灯引脚</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;LED off&quot;</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+    <span class="n">i</span><span class="o">=</span><span class="mi">1</span>
+    <span class="n">led</span><span class="o">.</span><span class="n">write_digital</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>  <span class="c1">#将按钮状态设置给led灯引脚</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;LED on&quot;</span><span class="p">)</span>
+
+    <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mf">0.5</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>运行代码，摁下按钮可以切换LED灯的亮灭。</p>
+<img alt="../../_images/0221.png" src="../../_images/0221.png" />
+</section>
+</section>
+<section id="id6">
+<h2>三、代码分析<a class="headerlink" href="#id6" title="Link to this heading"></a></h2>
+<p>1、导入必要的包和初始化设置。</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">time</span>
+<span class="kn">from</span> <span class="nn">pinpong.board</span> <span class="kn">import</span> <span class="n">Board</span><span class="p">,</span><span class="n">Pin</span>
+
+<span class="n">board</span> <span class="o">=</span> <span class="n">Board</span><span class="p">(</span><span class="s2">&quot;uno&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">begin</span><span class="p">()</span>  <span class="c1">#初始化，选择板型和端口号，不输入端口号则进行自动识别</span>
+<span class="c1">#board = Board(&quot;uno&quot;,&quot;COM36&quot;).begin()  #windows下指定端口初始化</span>
+<span class="c1">#board = Board(&quot;uno&quot;,&quot;/dev/ttyACM0&quot;).begin()   #linux下指定端口初始化</span>
+<span class="c1">#board = Board(&quot;uno&quot;,&quot;/dev/cu.usbmodem14101&quot;).begin()   #mac下指定端口初始化</span>
+
+<span class="n">btn</span> <span class="o">=</span> <span class="n">Pin</span><span class="p">(</span><span class="n">Pin</span><span class="o">.</span><span class="n">D8</span><span class="p">,</span> <span class="n">Pin</span><span class="o">.</span><span class="n">IN</span><span class="p">)</span> <span class="c1">#引脚初始化为电平输入</span>
+<span class="n">led</span> <span class="o">=</span> <span class="n">Pin</span><span class="p">(</span><span class="n">Pin</span><span class="o">.</span><span class="n">D13</span><span class="p">,</span> <span class="n">Pin</span><span class="o">.</span><span class="n">OUT</span><span class="p">)</span><span class="c1">#引脚初始化为电平输出</span>
+</pre></div>
+</div>
+<p>2、我们需要一个按键能够得到两个不同的结果，那么就需要设置一个中间值来实现切换状态的作用。所以首先我们要设置一个变量i=0。</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">i</span> <span class="o">=</span> <span class="mi">0</span> <span class="c1">#设置变量i=0</span>
+</pre></div>
+</div>
+<p>3、接着加入判断，判断按钮摁下的状态。为了方便设置，定义变量v为按钮的状态。</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+    <span class="n">v</span> <span class="o">=</span> <span class="n">btn</span><span class="o">.</span><span class="n">read_digital</span><span class="p">()</span>  <span class="c1">#读取引脚电平</span>
+    <span class="c1">#print(v)  #终端打印读取的电平状态</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">v</span> <span class="o">==</span> <span class="mi">1</span><span class="p">):</span>
+</pre></div>
+</div>
+<p>4、然后加入判断，借助i来区别状态，如逻辑图所示，每次摁下按钮时i的值会在0和1之间切换，借助i值的变化来确定LED灯的亮灭状态即可，根据逻辑完成代码。</p>
+<img alt="../../_images/pinpong02.png" src="../../_images/pinpong02.png" />
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="p">(</span><span class="n">i</span> <span class="o">==</span> <span class="mi">1</span><span class="p">):</span>
+    <span class="n">i</span><span class="o">=</span><span class="mi">0</span>
+    <span class="n">led</span><span class="o">.</span><span class="n">write_digital</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>  <span class="c1">#将按钮状态设置给led灯引脚</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;LED off&quot;</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+    <span class="n">i</span><span class="o">=</span><span class="mi">1</span>
+    <span class="n">led</span><span class="o">.</span><span class="n">write_digital</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>  <span class="c1">#将按钮状态设置给led灯引脚</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;LED on&quot;</span><span class="p">)</span>
+
+    <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mf">0.5</span><span class="p">)</span>
+</pre></div>
+</div>
+<p><strong>什么是按键抖动？</strong></p>
+<p>我们想象的开关电路是“按下按键-立刻导通”“再次按下-立刻断开”，而实际上并非如此。</p>
+<p>按键通常采用机械弹性开关，而机械弹性开关在机械触点断开闭合的瞬间（通常 10ms左右），会由于弹性作用产生一系列的抖动，造成按键开关在闭合时不会立刻稳定的接通电路，在断开时也不会瞬时彻底断开。</p>
+<img alt="../../_images/btnshanke.jpg" src="../../_images/btnshanke.jpg" />
+<p><strong>那又如何消除按键抖动呢？</strong></p>
+<p>常用除抖动方法有两种：软件方法和硬件方法。这里重点讲讲方便简单的软件方法。</p>
+<p>我们已经知道弹性惯性产生的抖动时间为 10ms 左右，用延时命令推迟命令执行的时间就可以达到除抖动的效果。</p>
+<p>所以我们在代码中加入了0.5秒的延时以实现按键防抖的功能。</p>
+<img alt="../../_images/aftersleep.jpg" src="../../_images/aftersleep.jpg" />
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="LED%E9%97%AA%E7%83%81.html" class="btn btn-neutral float-left" title="项目1 LED闪烁" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="%E8%B0%83%E5%85%89%E5%8F%B0%E7%81%AF.html" class="btn btn-neutral float-right" title="项目3 调光台灯" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2020, DFRobot.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
